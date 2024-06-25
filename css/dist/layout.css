@@ -1,0 +1,2379 @@
+@charset "UTF-8";
+/* Start Bootstrap - Modern Business (https://startbootstrap.com/templates/modern-business)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ * 20200801 김세은 layout.scss 최초작성
+ */
+/* ---------------------------------------------------
+    DEFAULT VALUE
+----------------------------------------------------- */
+/* 가급적 extend대신 mixin을 사용 권장 */
+/*flex는 따로 gap을 설정하는 게 없으므로 위와 같이 만듬*/
+/*max-width 기본값 0은 트릭*/
+/*부트스트랩 sr-only와 동일*/
+@import url(../fonts/NanumGothic/font.css);
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+.defaultActivity, .defaultTable {
+  border-collapse: collapse;
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+
+/* ---------------------------------------------------
+    COMMON STYLE
+----------------------------------------------------- */
+/*rem 작업을 위한 10px로 조정*/
+html {
+  font-size: 10px;
+  font-family: "NanumGothic", sans-serif;
+  font-weight: 400;
+  color: #333333;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 0;
+}
+table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+  }
+}
+/* ---------------------------------------------------
+    LAYOUT STYLE
+----------------------------------------------------- */
+#skipAccesibility {
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+  background: #292929;
+  color: #fff;
+}
+
+/*FOR LAYOUT*/
+.gnb .container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#wrapper {
+  max-width: 1200px;
+}
+
+#content {
+  width: 100%;
+  min-height: 58rem;
+  padding-left: 4%;
+  padding-bottom: 4%;
+}
+#content .contentTitle {
+  margin-top: 1rem;
+  margin-bottom: 2.8rem;
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #333;
+}
+#content .contentIntro {
+  font-size: 1.3rem;
+  color: #8b8b8b;
+}
+#content .contentMenu {
+  display: flex;
+  font-size: 1.6rem;
+  line-height: 110%;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+#content .contentMenu a {
+  padding: 1.6rem 0;
+  font-size: 1.6rem;
+  border: 1px solid #dee2e6;
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#content .contentMenu .active {
+  background-color: #384958;
+  color: #fff;
+}
+#content .contentLocation {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  text-align: right;
+  color: #8b8b8b;
+}
+#content .contentLocationUtil {
+  display: inline-block;
+  padding-left: 2rem;
+}
+#content .contentLocationUtil i {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid #a9acb1;
+  cursor: pointer;
+  color: grey;
+}
+.majorHeading {
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  line-height: 4rem;
+  color: #333333;
+  position: relative;
+  /*border-top: 3px solid #009ddc; border-image: linear-gradient(to right, #009ddc 0%, #009ddc 2%, transparent 2%, transparent 100%) 1; border-image-slice: 1;*/
+}
+.majorHeading:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #009ddc;
+  width: 2rem;
+  height: 3px;
+}
+
+.minorHeading {
+  margin-bottom: 1.5rem;
+  font-size: 1.9rem;
+  color: #009ddc;
+}
+
+.subHeading {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #000000;
+}
+
+.paragraph {
+  margin-bottom: 1.7rem;
+  font-size: 1.4rem;
+  color: #878686;
+  list-style: none;
+}
+.paragraph.sub {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: #a0a0a0;
+}
+.notes {
+  font-size: 1.4rem;
+  padding: 1.5rem 3rem;
+  margin-bottom: 2rem;
+  background-color: #eeeff2;
+  color: #878686;
+}
+.notes.blue {
+  color: #369;
+  background-color: #eef8ff;
+}
+.notes .download {
+  padding: 0.6rem 2rem;
+  margin-left: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.source {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: #999999;
+}
+
+.highLight {
+  color: #f15c22;
+}
+
+.download {
+  display: inline;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  color: white;
+  background-color: #005288;
+  cursor: pointer;
+}
+.download:hover {
+  color: white !important;
+}
+
+.shortcut {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  color: white;
+  background-color: #005288;
+}
+.shortcut:hover {
+  color: white !important;
+}
+
+.noMessageData {
+  font-size: 1.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-weight: 800;
+  text-indent: 1rem;
+  color: #333;
+}
+
+/*줄 사이 간격 조절*/
+p + .majorHeading, figure + .majorHeading, div + .majorHeading, table + .majorHeading, ul + .majorHeading, ol + .majorHeading {
+  margin-top: 4rem;
+}
+
+p + .minorHeading, figure + .minorHeading, div + .minorHeading, table + .minorHeading, ul + .minorHeading, ol + .minorHeading {
+  margin-top: 2rem;
+}
+
+p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, ul + .subHeading, ol + .subHeading {
+  margin-top: 2rem;
+}
+
+figure + figure {
+  margin-top: 2rem;
+}
+
+@media (max-width: 991px) {
+  #content {
+    padding: 0 2%;
+    margin-top: 4rem;
+  }
+  #content .contentTitle {
+    margin-top: 1rem;
+  }
+  #content .contentLocation {
+    display: none;
+  }
+}
+/* ---------------------------------------------------
+    TOPMENU NAV STYLE
+----------------------------------------------------- */
+/*[TODO]값수정해야함*/
+@media (max-width: 991.98px) {
+  .gnbMenu {
+    font-size: 1.6rem;
+  }
+  .gnbMenu .dropdown-menu {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 992px) {
+  .gnb {
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 7.5rem;
+    color: #000000;
+    border-top: 0.7rem solid #324251;
+    /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
+    /*GNB MENU DESIGN CUSTOM*/
+  }
+  .gnb .nav-item {
+    color: inherit;
+  }
+  .gnb .nav-item .nav-link {
+    color: inherit;
+  }
+  .gnb .dropdown-menu .dropdown-item {
+    color: transparent;
+  }
+  .gnbMenu {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .gnbMenu:hover .dropdown-item {
+    color: #333333;
+  }
+  .gnbMenu .nav-item {
+    position: relative;
+  }
+  .gnbMenu .nav-item .nav-link {
+    font-weight: 600;
+  }
+  .gnbMenu .nav-item .nav-link:hover {
+    color: #f15c22;
+  }
+  .gnbMenu .nav-item:hover {
+    color: #f15c22;
+    /*[TODO] bottom값 자동으로 맞출수있는 방법 없는지 확인*/
+  }
+  .gnbMenu .nav-item:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    height: 2px;
+    width: 100%;
+    z-index: 1001;
+    background-color: #f15c22;
+  }
+  .gnbMenu .dropdown-menu {
+    /*부트스트랩의 menu 가운데 정렬 트릭*/
+    right: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    border: 0;
+    background-color: transparent;
+    margin-top: 1.3rem;
+    /*dropdown-menu와 mega menu 이미지를 일렬로 나열*/
+    /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
+  }
+  .gnbMenu .dropdown-menu .dropdown-item {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+  .gnbMenu .dropdown-menu .dropdown-item:hover {
+    color: #f15c22;
+    background-color: transparent;
+  }
+  .gnb:not(.navbar-preview) {
+    /*부트스트랩에서 기본적으로 제공하는 화살표 제거*/
+  }
+  .gnb:not(.navbar-preview) .dropdown-toggle:after {
+    content: none;
+  }
+  .gnb .gnbSub {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+  .gnb .gnbSub a {
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .gnb .gnbSub i {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+  }
+  .gnb .gnbSearch #unifiedsearchInputWrap {
+    display: none;
+    position: absolute;
+    top: 9.5rem;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+    text-align: center;
+    background-color: #324251;
+  }
+  .gnb .gnbSearch #unifiedsearchInputWrap input[type=search] {
+    width: 50%;
+    margin: 3rem 0;
+    line-height: 200%;
+    border: 0;
+    color: #fff;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+  }
+  .gnb .gnbSearch #unifiedsearchInputWrap input::placeholder {
+    color: #fff;
+    opacity: 1;
+  }
+  .gnb .gnbSearch #unifiedsearchInputWrap button i {
+    color: #fff;
+    font-size: 2rem;
+  }
+}
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.sidebarCollapseBtn {
+  display: none;
+}
+
+#wrapper {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+#sidebar {
+  width: 30%;
+  color: #333333;
+  /*#sidebar reset*/
+}
+#sidebar a {
+  font-size: inherit;
+  line-height: inherit;
+}
+#sidebar h3 {
+  margin-bottom: 0px;
+  font-size: inherit;
+  line-height: inherit;
+}
+#sidebar ul {
+  padding: 0px;
+  margin: 0px;
+}
+#sidebar a[data-toggle=collapse] {
+  position: relative;
+}
+#sidebar .sidebarHeader {
+  font-size: 2rem;
+  line-height: 8rem;
+  margin-top: -8rem;
+  background: #009ddc;
+  color: white;
+  text-align: center;
+}
+#sidebar ul.sidebarBody {
+  /*부트스트랩 기본 화살표 수정*/
+  /*영문일 경우 글자가 길어지는 경우가 많아서 추가, text-indent, line-height를 padding으로 교체*/
+}
+#sidebar ul.sidebarBody .dropdown-toggle::after {
+  content: "";
+  border: 0;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.1rem;
+  color: #a9acb1;
+  position: absolute;
+  right: 7%;
+}
+#sidebar ul.sidebarBody a {
+  display: block;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  height: 5.2rem;
+  line-height: 100%;
+  white-space: pre-line;
+}
+#sidebar ul.sidebarBody > li {
+  position: relative;
+  font-size: 1.6rem;
+  color: #333333;
+  box-shadow: 1px 0 0 0 #d3d7dd, 0 1px 0 0 #d3d7dd, 1px 1px 0 0 #d3d7dd, 1px 0 0 0 #d3d7dd inset, 0 1px 0 0 #d3d7dd inset;
+  background-color: white;
+}
+#sidebar ul.sidebarBody > li.active {
+  color: #009ddc;
+}
+#sidebar ul.sidebarBody > li.active .dropdown-toggle::after {
+  color: inherit;
+}
+#sidebar ul.sidebarBody > li ul {
+  color: gray;
+  border-top: 1px solid #d3d7dd;
+  border-left: 1px solid #d3d7dd;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background-color: #eeeff2;
+  box-sizing: border-box;
+}
+#sidebar ul.sidebarBody > li ul li {
+  font-size: 1.44rem;
+  border-top: 0;
+  box-sizing: border-box;
+}
+#sidebar ul.sidebarBody > li ul li a {
+  height: 3rem;
+}
+#sidebar ul.sidebarBody > li ul li .active > a, #sidebar ul.sidebarBody > li ul li a[aria-expanded=true] {
+  color: #005288;
+}
+
+/*[TODO]값수정해야함*/
+@media (max-width: 991.98px) {
+  #sidebar {
+    position: absolute;
+    width: 100%;
+    /*li a {
+        display: block;
+        padding: 1em;
+        float: none;
+        width: 100%;
+    }*/
+  }
+  #sidebar .sidebarHeader {
+    cursor: pointer;
+    margin-top: 0;
+    line-height: 4rem;
+    position: relative;
+  }
+  #sidebar .sidebarHeader::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 0.4rem );
+    right: 5%;
+    height: 0.8rem;
+    width: 0.8rem;
+    border-style: solid;
+    border-width: 0.2rem 0.2rem 0 0;
+    transform: rotate(135deg);
+  }
+  #sidebar.open ul {
+    display: block;
+  }
+  #sidebar ul {
+    display: none;
+  }
+
+  #sidebar {
+    z-index: 100;
+  }
+}
+/* ---------------------------------------------------
+  FOOTER
+----------------------------------------------------- */
+footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #333333;
+  background-color: #f0f0f0;
+}
+
+.footerLogo {
+  float: left;
+}
+
+.footerAddress {
+  margin-left: 1rem;
+  float: left;
+}
+
+/* ---------------------------------------------------
+    MAIN&JUMBOTRON STYLE
+----------------------------------------------------- */
+/*.carousel-item {
+  height: 80vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+}
+*/
+.mainCarouselWrap {
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.mainContentsWrap {
+  position: relative;
+}
+
+.carouselOverlay {
+  position: absolute;
+  height: 20vh;
+  top: -20vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.mainContents {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.mainContentTitle {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+.mainContentInfo {
+  display: flex;
+}
+.mainContentInfoAlphabet {
+  position: relative;
+}
+.mainContentInfoAlphabet span {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  font-size: 1.4rem;
+  line-height: 100%;
+  font-weight: 800;
+  color: #fff;
+}
+.mainContentInfoAlphabet ul {
+  display: none;
+  position: absolute;
+  width: 125%;
+  bottom: 6.5rem;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  background-color: #fff;
+}
+.mainContentInfoAlphabet ul li {
+  padding: 0.2rem 0.5rem;
+}
+.mainContentInfoAlphabet:nth-child(2) span {
+  left: 18%;
+}
+.mainContentInfoAlphabet:nth-child(2) ul {
+  border: 1px solid #f5ad19;
+}
+.mainContentInfoAlphabet:nth-child(2) li {
+  border-bottom: 1px solid #f5ad19;
+  color: #f5ad19;
+}
+.mainContentInfoAlphabet:nth-child(3) span {
+  top: 38%;
+  left: 39%;
+  font-size: 1.6rem;
+}
+.mainContentInfoAlphabet:nth-child(3) ul {
+  border: 1px solid #009DDC;
+}
+.mainContentInfoAlphabet:nth-child(3) li {
+  border-bottom: 1px solid #009DDC;
+  color: #009DDC;
+}
+.mainContentInfoBox {
+  position: relative;
+  flex: 1;
+  padding: 0.2rem 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #fff;
+  background-color: #5AA929;
+}
+.mainContentInfoBox ul {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 2.5rem;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  border: 1px solid #818285;
+  color: #818285;
+  background-color: #fff;
+}
+.mainContentInfoBox ul li {
+  padding: 0.2rem 0.5rem;
+  border-bottom: 1px solid #818285;
+}
+.mainContentInfoBox:nth-child(1) {
+  margin-bottom: 1rem;
+  background-color: #818285;
+}
+.mainContentTab {
+  position: relative;
+}
+.mainContentTabHeader {
+  display: flex;
+}
+.mainContentTabHeader li {
+  flex: 1;
+  text-indent: 1rem;
+  border-style: solid;
+  border-width: 0 2px 0 0;
+  border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, white 30%, white 70%, rgba(255, 255, 255, 0) 70%) 1;
+}
+.mainContentTabHeader li:last-child {
+  border: 0px;
+}
+.mainContentTabHeader li a {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+.mainContentTabHeader li.active a {
+  color: #01aef2;
+}
+.mainContentTabHeader li:nth-child(1) a {
+  padding-left: 0;
+}
+.mainContentTabBody ul {
+  padding-left: 1rem;
+  font-size: 1.4rem;
+  line-height: 170%;
+  list-style: none;
+  color: #fff;
+}
+.mainContentTabBody li {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mainContentTabMore {
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  color: #fff;
+  font-size: 2rem;
+}
+.mainContentRelated {
+  display: flex;
+  margin-top: 0.5rem;
+}
+.mainContentRelated select {
+  width: 80%;
+  font-size: 1.4rem;
+  margin-right: 0.4rem;
+}
+.mainContentRelated button {
+  font-size: 1.4rem;
+}
+
+.iconFacebook {
+  color: #305aa3;
+}
+.iconYoutube {
+  color: #ec2f23;
+}
+.iconInstagram {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.iconSearch {
+  padding-right: 0.4rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+.jumbotron {
+  /*부트스트랩에서 기본적으로 제공하는 점보트론 스타일 제거*/
+  height: 19.9rem;
+  border-radius: 0;
+  padding-left: 20%;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 0px;
+  color: white;
+}
+.jumbotronHeading {
+  font-size: 3.6rem;
+  margin-top: 2rem;
+}
+.jumbotronLead {
+  font-size: 2.3rem;
+}
+.jumbotronBg1 {
+  background-image: url("/images/egovframework/cmz/pub/cmn/layout/bgJumbotron1.png");
+}
+@media (max-width: 991px) {
+  .jumbotron {
+    padding-left: 0%;
+  }
+}
+
+@media (max-width: 991px) {
+  .carouselOverlay {
+    position: relative;
+    height: auto;
+    top: 0;
+  }
+
+  .mainContentTabHeader li a {
+    font-size: 1.6rem;
+  }
+}
+/* ---------------------------------------------------
+    DEFAULT STYLE
+----------------------------------------------------- */
+/*image, canvas, diagram 등*/
+.defaultCanvasSource {
+  font-size: 1.3rem;
+  color: #999999;
+}
+.defaultCanvasDesc {
+  font-size: 1.3rem;
+  color: #999999;
+  margin-top: 0.5rem;
+}
+
+.defaultImg {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  /*if문 사용 */
+}
+.defaultImg.center {
+  width: 50%;
+}
+.defaultImgTitle {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333333;
+}
+.defaultImgSource {
+  margin-top: 0rem;
+  font-size: 1.4rem;
+  color: #999999;
+}
+
+.defaultObject {
+  /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
+}
+.defaultObject ul {
+  padding: 0;
+  margin: 0;
+}
+.defaultObject dl, .defaultObject dd {
+  margin-bottom: 0;
+}
+.defaultObject .yellow {
+  --objectColor: #FCB931;
+}
+.defaultObject .orange {
+  --objectColor: #F15C22;
+}
+.defaultObject .blue {
+  --objectColor: #009DDC;
+}
+.defaultObject .green {
+  --objectColor: #7AC142;
+}
+.defaultObject .darkCerulean {
+  --objectColor: #005288;
+}
+.defaultObject .darkBlue {
+  --objectColor: #001687;
+}
+.defaultObject .gray {
+  --objectColor: #818286;
+}
+.defaultObject .lightGray {
+  --objectColor: #EAEAEA;
+}
+.defaultObject .innerTitle {
+  font-size: 1.6rem;
+  color: #666666;
+}
+.defaultObject.diagram {
+  margin-bottom: 1.7rem;
+  position: relative;
+  padding: 1rem 3rem;
+}
+.defaultObject.diagram .object {
+  display: inline-block;
+  width: 24.5rem;
+  border: 1px solid var(--objectColor);
+}
+.defaultObject.diagram .object > .title {
+  padding: 1rem;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  text-align: center;
+  color: white;
+  background-color: var(--objectColor);
+}
+.defaultObject.diagram .object > .content {
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #7B7B7B;
+  background-color: white;
+}
+.defaultObject.diagram .objectCircle {
+  width: 10rem;
+  line-height: 10rem;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #fff;
+  background-color: #818285;
+}
+.defaultObject.hierachy {
+  padding: 0;
+  /*기존 diagram 스타일 제거 */
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.defaultObject.hierachy .object {
+  position: relative;
+  height: 0;
+  width: 0;
+  border-left: 7rem solid transparent;
+  border-right: 7rem solid transparent;
+  border-bottom: 14rem solid var(--objectColor);
+}
+.defaultObject.hierachy .object dt {
+  position: absolute;
+  top: 7rem;
+  left: -7rem;
+  width: 14rem;
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+}
+.defaultObject.hierachy .objectWrap {
+  min-width: 42rem;
+}
+.defaultObject.hierachy .desc {
+  margin-bottom: 1.2rem;
+}
+.defaultObject.hierachy .descWrap {
+  background-color: #eeeff2;
+  color: #878686;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+.defaultObject.network {
+  position: relative;
+  float: right;
+  display: flow-root;
+  /*float 해제*/
+  width: 54%;
+  margin-left: 4rem;
+}
+.defaultObject.network .object {
+  display: inline-block;
+  width: 12rem;
+  border: 1px solid var(--objectColor);
+  background-color: var(--objectColor);
+  text-align: center;
+  color: #fff;
+}
+.defaultObject.network .object dt {
+  background-color: #fff;
+  color: #000;
+}
+.defaultObject.network .object dd {
+  padding: 0.5rem 1rem;
+}
+.defaultObject.network .objectCircle {
+  width: 7rem;
+  line-height: 7rem;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #fff;
+  background-color: #818285;
+}
+.defaultObject.network .source {
+  padding-top: 22rem;
+  /*.network 높이*/
+}
+
+.diagram#dacGuidelineOnPovertyReduction {
+  height: 26rem;
+  background-image: url("/images/egovframework/cmz/pub/kor/diagram/bg_dacGuidelineOnPovertyReduction.png");
+}
+
+/*.diagram#legalAndPolicyFramework {height: 58rem; background-color: $whiteSmoke; background-image: url('/images/egovframework/cmz/pub/kor/diagram/bg_legalAndPolicyFramework.png');}
+.diagram#policyMaking {height: 30rem; margin-top: 2rem; background-color: $whiteSmoke;}*/
+.diagram#cidcOrganization {
+  height: 745px;
+  text-align: center;
+  background-image: url("/images/egovframework/cmz/pub/kor/diagram/bg_cidcOrganization.png");
+}
+
+.diagram#implementationStructure {
+  height: 78rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  background-color: #f8f8f8;
+  background-image: url("/images/egovframework/cmz/pub/kor/diagram/bg_implementationStructure.png");
+}
+
+.diagram#implementationStructure_eng {
+  height: 80rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: #f8f8f8;
+  background-image: url("/images/egovframework/cmz/pub/kor/diagram/bg_implementationStructure.png");
+}
+
+.diagram#controlOrganization {
+  height: 25rem;
+  margin-top: 2rem;
+  background-image: url("/images/egovframework/cmz/pub/kor/diagram/bg_controlOrganization.png");
+}
+
+.diagram#mofaOrganization {
+  height: 36rem;
+  margin-top: 2rem;
+  background-image: url("/images/egovframework/cmz/pub/kor/diagram/bg_mofaOrganization.png");
+}
+.diagram#mofaOrganization dl.object.green {
+  height: 210px;
+}
+
+.diagram#koicaOrganization {
+  height: 104.5rem;
+  background-image: url("/images/egovframework/cmz/pub/kor/diagram/bg_koicaOrganization.png");
+}
+.diagram#koicaOrganization .object {
+  width: 18rem;
+}
+
+.diagram#moefOrganization {
+  height: 10.5rem;
+  background-image: url("/images/egovframework/cmz/pub/kor/diagram/bg_moefOrganization.png");
+}
+
+.diagram#edcfOrganization {
+  height: 15.5rem;
+  background-image: url("/images/egovframework/cmz/pub/kor/diagram/bg_edcfOrganization.png");
+}
+.diagram#edcfOrganization .object {
+  width: 20rem;
+}
+
+.diagramBackground .line {
+  stroke-width: 1px;
+  stroke: #CFCFCF;
+}
+
+.defaultSearchOption {
+  border: 1px solid #e4e4e4;
+  margin-right: 0.5rem;
+}
+.defaultSearchOption select {
+  font-size: 1.4rem;
+  border: 0;
+}
+.defaultSearchKeyword {
+  border: 1px solid #e4e4e4;
+}
+.defaultSearchKeyword input[type=search] {
+  font-size: 1.4rem;
+  border: 0;
+}
+.defaultSearchKeyword i.fa-search {
+  color: #878686;
+}
+
+.defaultPagination {
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  /*부트스트랩에서 기본적으로 제공하는 css 수정*/
+}
+.defaultPagination i {
+  color: #80868B;
+  font-weight: 600;
+}
+.defaultPagination .page-link {
+  color: #666666;
+  border: 0px;
+}
+.defaultPagination .page-item.active .page-link {
+  z-index: 1;
+  background-color: #F7F7F7;
+  color: #666666;
+}
+.defaultPagination .page-link:focus, .defaultPagination .page-link:hover {
+  background-color: #F7F7F7;
+}
+
+.defaultTable {
+  width: 100%;
+  font-size: 1.4rem;
+  color: #666666;
+  background-color: white;
+}
+.defaultTable thead {
+  font-size: inherit;
+  color: #333;
+  background-color: #F8F8F8;
+  text-align: center;
+}
+.defaultTable th, .defaultTable td {
+  border: 1px solid #e4e4e4;
+}
+.defaultTableTitle {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  color: #000000;
+  /*caption-side: top;*/
+}
+.defaultTableSource {
+  font-size: 1.3rem;
+  color: #999999;
+}
+.defaultTable thead th {
+  padding: 1.2rem;
+  border-top: 1px solid #b1b1b1;
+}
+.defaultTable td {
+  padding: 1rem;
+  text-align: center;
+}
+.defaultTable td ul {
+  list-style: circle;
+}
+.defaultTable.vertical th {
+  font-size: inherit;
+  color: #333;
+  background-color: #F8F8F8;
+  text-align: center;
+}
+.defaultTable.vertical td {
+  padding: 1rem;
+  text-align: left;
+}
+.defaultTable.vertical tr:nth-child(1) td, .defaultTable.vertical tr:nth-child(1) th {
+  border-top: 1px solid #b1b1b1;
+}
+.defaultTable.multiDimension thead {
+  background-color: #f8f8f8;
+}
+.defaultTable.multiDimension th {
+  font-weight: 600;
+}
+.defaultTable.multiDimension td {
+  text-align: right;
+}
+.defaultTable.multiDimension .total {
+  background-color: #F2F2F2;
+}
+.defaultTable.multiDimension .total th {
+  font-weight: 700;
+}
+.defaultTable.multiDimension .xAxes {
+  background-color: #D9D9D9;
+}
+.defaultTable.multiDimension .yAxes td {
+  padding-bottom: 0;
+  border-bottom-color: transparent;
+}
+.defaultTable.multiDimension .yAxes + tr td {
+  padding-top: 0;
+  border-top-color: transparent;
+}
+.defaultTable.overColumnCriteria th {
+  padding: 0.7rem;
+}
+.defaultTable.overColumnCriteria td {
+  padding: 0.7rem;
+}
+.defaultTable.book tr:nth-child(even) td {
+  font-size: 1.3rem;
+  padding: 1.5rem 0.5rem;
+}
+.defaultTable.member tr td:last-child {
+  text-align: left;
+}
+.defaultTable.member tbody tr:first-child td:last-child {
+  text-align: center;
+}
+.defaultTable.text-left tr td {
+  text-align: left;
+}
+.defaultTable.firstChildTextLeft tr td:first-child {
+  text-align: left;
+}
+.defaultTable.secondChildTextLeft tr td:nth-child(2) {
+  text-align: left;
+}
+.defaultTable.thirdChildTextLeft tr td:nth-child(3) {
+  text-align: left;
+}
+.defaultTable.lastChildTextLeft tr td:last-child {
+  text-align: left;
+}
+
+.defaultBoard {
+  margin-top: 2rem;
+  width: 100%;
+  font-size: 1.4rem;
+  color: #666666;
+  background-color: white;
+}
+.defaultBoard thead {
+  line-height: 4.8rem;
+  border-top: 1px solid #b1b1b1;
+  border-bottom: 1px solid #e4e4e4;
+}
+.defaultBoard tbody tr {
+  cursor: pointer;
+}
+.defaultBoard td {
+  line-height: 3.4rem;
+  border-bottom: 1px solid #e4e4e4;
+}
+.defaultBoard td {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.defaultBoard td:nth-child(1) {
+  width: 8%;
+}
+.defaultBoard td:nth-child(2) {
+  text-align: left;
+}
+.defaultBoard td:nth-child(3) {
+  width: 13%;
+}
+.defaultBoard td:nth-child(4) {
+  width: 13%;
+}
+.defaultBoard td:nth-child(5) {
+  width: 8%;
+}
+.defaultBoard td:nth-child(6) {
+  width: 8%;
+}
+.defaultBoard thead {
+  font-size: inherit;
+  color: #333;
+  background-color: #F8F8F8;
+  text-align: center;
+}
+.defaultBoardCaution {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #005288;
+}
+.defaultBoardState {
+  margin-left: 0.5rem;
+  font-weight: 600;
+}
+.defaultBoardWrap {
+  overflow: hidden;
+}
+
+.defaultBoardDetail {
+  width: 100%;
+  font-size: 1.4rem;
+  color: #666666;
+  background-color: white;
+}
+.defaultBoardDetail tr {
+  line-height: 4.5rem;
+  border-bottom: 1px solid #e4e4e4;
+  text-align: left;
+  text-indent: 1rem;
+}
+.defaultBoardDetail th:not(.defaultBoardDetailTitle) {
+  color: #666;
+  font-weight: 500;
+  position: relative;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.defaultBoardDetail th:not(.defaultBoardDetailTitle):after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 36%;
+  width: 1px;
+  height: 1.5rem;
+  background-color: #cccccc;
+}
+.defaultBoardDetail .defaultBoardDetailTitle {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1.5rem;
+  text-align: left;
+  line-height: 4.8rem;
+  border-top: 1px solid #b1b1b1;
+  border-bottom: 1px solid #e4e4e4;
+}
+.defaultBoardDetail .defaultBoardDetailContent {
+  min-height: 40rem;
+}
+.defaultBoardDetail .reply {
+  background-color: #fbfbfb;
+}
+.defaultBoardDetail.insert tr:nth-child(1) {
+  border-top: 1px solid #b1b1b1;
+}
+.defaultBoardDetail.insert tr td {
+  height: 100%;
+  min-height: 4.8rem;
+}
+.defaultBoardDetail.insert input, .defaultBoardDetail.insert select, .defaultBoardDetail.insert label {
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+.defaultBoardDetail.insert .defaultBoardInsertTitle {
+  width: 85%;
+}
+.defaultBoardDetail.insert .defaultBoardDetailContent {
+  padding: 2rem;
+}
+.defaultBoardDetail.insert textarea {
+  min-height: 40rem;
+  width: 100%;
+  border: 1px solid #ced4da;
+}
+.defaultBoardDetail thead {
+  font-size: inherit;
+  color: #333;
+  background-color: #F8F8F8;
+  text-align: center;
+}
+
+.defaultBoardPrevAndNext {
+  font-size: 1.4rem;
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  color: #666;
+  font-weight: 500;
+}
+.defaultBoardPrevAndNext dl, .defaultBoardPrevAndNext dt, .defaultBoardPrevAndNext dd {
+  margin-bottom: 0;
+}
+.defaultBoardPrevAndNext dl {
+  display: flex;
+  line-height: 4.8rem;
+}
+.defaultBoardPrevAndNext dl dt {
+  position: relative;
+  width: 15%;
+  text-align: center;
+}
+.defaultBoardPrevAndNext dl dt:after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 36%;
+  width: 1px;
+  height: 1.5rem;
+  background-color: #cccccc;
+}
+.defaultBoardPrevAndNext dl:last-child {
+  border-top: 1px dashed #e4e4e4;
+}
+
+.defaultBoardForm input, .defaultBoardForm select, .defaultBoardForm label {
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+.defaultBoardForm .formDate {
+  width: 70%;
+  display: flex;
+  flex: row wrap;
+  align-items: center;
+}
+.defaultBoardForm .formDate label, .defaultBoardForm .formDate input {
+  margin-right: 0.4rem;
+}
+.defaultBoardForm .formAlarm {
+  display: flex;
+  flex: row wrap;
+  align-items: center;
+}
+.defaultBoardForm .formAlarm label, .defaultBoardForm .formAlarm input {
+  margin-right: 0.4rem;
+}
+.defaultBoardForm .formDateAndAlarm {
+  display: flex;
+  justify-content: space-between;
+}
+.defaultBoardForm .formSource {
+  display: flex;
+  justify-content: space-between;
+}
+.defaultBoardForm .formSource input {
+  width: 49%;
+}
+
+.defaultBoardFile {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.defaultBoardFileName {
+  margin-right: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.defaultBoardFileName.delete {
+  text-decoration: line-through;
+}
+.defaultBoardFileSize {
+  margin-right: 4rem;
+  color: #6C757D;
+}
+.defaultBoardFileDelete {
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.4rem;
+  color: #fff;
+  background-color: #DC3545;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.defaultBoardFileAdd {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  font-size: 1.6rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  color: #fff;
+  background-color: #545b62;
+  cursor: pointer;
+}
+.defaultBoardFileWrap {
+  width: 50%;
+}
+
+.defaultBoardButton {
+  margin-top: 2rem;
+  height: 4rem;
+  width: 12rem;
+  font-size: 1.4rem;
+  background-color: #808080;
+  color: #fff;
+  border: 0;
+}
+.defaultBoardButton.buttonRight {
+  float: right;
+  margin-left: 1rem;
+}
+.defaultBoardButton.buttonLeft {
+  float: left;
+  margin-right: 1rem;
+}
+.defaultBoardButton.buttonCenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.defaultActivity {
+  margin-top: 2rem;
+}
+.defaultActivity thead {
+  display: none;
+}
+.defaultActivity td {
+  vertical-align: middle;
+  border: 1px solid #e4e4e4;
+}
+.defaultActivityDate dl {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.defaultActivityDate dl dt {
+  display: inline-block;
+  padding: 4rem 2rem;
+  font-size: 2.4rem;
+  color: #009ddc;
+  background-color: #eeeff2;
+}
+.defaultActivityDate dl dd {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.defaultActivityResult {
+  padding: 2rem;
+  font-size: 1.3rem;
+  color: #7e7e7e;
+}
+.defaultActivityResultFile a {
+  float: right;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #999999;
+  padding: 0.5rem 2rem;
+}
+.defaultActivityResultFile a ::after {
+  display: flow-root;
+}
+
+.defaultPreview {
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.defaultPreview thead {
+  display: none;
+}
+.defaultPreview tr td {
+  padding: 2rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #e4e4e4;
+}
+.defaultPreview tr:first-child {
+  border-top: 1px solid #e4e4e4;
+}
+.defaultPreview .defaultPreviewImg {
+  width: 34%;
+}
+.defaultPreview .defaultPreviewImg img {
+  width: 100%;
+  height: 17rem;
+}
+.defaultPreview .defaultPreviewInfo dl {
+  text-align: left;
+  margin: 0;
+}
+.defaultPreview .defaultPreviewInfo dl dt {
+  font-size: 2.1rem;
+  margin-bottom: 0.3rem;
+}
+.defaultPreview .defaultPreviewInfo dl dd {
+  margin: 0;
+  height: 11.2rem;
+  font-size: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #666;
+}
+.defaultPreview .defaultPreviewInfo dl dd:last-child {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  height: 2.3rem;
+  font-size: 1.3rem;
+  color: #868e96;
+}
+
+@media (max-width: 991px) {
+  /*가독성을 위하여 게시판은 제목,날짜만 남김*/
+  .defaultBoard th:nth-child(4) {
+    min-width: 74px;
+  }
+
+  .defaultBoard th:not(:nth-child(2)):not(:nth-child(4)) {
+    display: none;
+  }
+
+  .defaultBoard td:not(:nth-child(2)):not(:nth-child(4)) {
+    display: none;
+  }
+
+  /*가독성을 위하여 사이즈 줄임 */
+  .defaultTableGroup {
+    font-size: 1rem;
+  }
+
+  .defaultBoardFileWrap {
+    width: 100%;
+  }
+
+  .defaultBoardForm .formDateAndAlarm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .defaultBoardForm .formDate {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .defaultBoardInsertTitle {
+    width: 100% !important;
+  }
+}
+/* ---------------------------------------------------
+    DETAIL STYLE
+----------------------------------------------------- */
+.accordion {
+  /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
+  border-bottom: 1px solid #e4e4e4;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  color: #7E7E7E;
+}
+.accordion dl, .accordion dt, .accordion dd {
+  margin-bottom: 0;
+}
+.accordion:first-child {
+  border-top: 1px solid #7E7E7E;
+}
+.accordionTitle {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.accordionTitle i {
+  width: 4%;
+  margin-right: 1rem;
+  font-size: 3rem;
+  color: #005288;
+}
+.accordionContent {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.4rem;
+  border-top: 1px solid #e4e4e4;
+  background-color: #F4F4F4;
+}
+.accordionContent i {
+  width: 4%;
+  margin-right: 1rem;
+  font-size: 3rem;
+  color: #005288;
+}
+
+.dicSearch {
+  display: flex;
+  flex-direction: column;
+}
+.dicSearchConsonants {
+  display: flex;
+  justify-content: space-between;
+}
+.dicSearchConsonants span {
+  cursor: pointer;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  width: 3rem;
+  text-align: center;
+  color: white;
+  background-color: #749db8;
+}
+.dicSearchConsonants span.active {
+  color: #005288;
+  background-color: white;
+}
+.dicSearchKeyword {
+  margin-bottom: 2%;
+}
+.dicSearchKeyword input[type=search] {
+  font-size: 1.8rem;
+  border: 0;
+}
+.dicSearchKeyword button {
+  font-size: 1.8rem;
+  border-radius: 0;
+  color: #878686;
+  background-color: #fff;
+}
+.dicSearchWrap {
+  padding: 4% 15%;
+  margin-bottom: 2%;
+  background-color: #005288;
+}
+
+.mdg {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.4rem;
+  color: #878686;
+}
+.mdgTitle {
+  font-size: 1.4rem;
+  line-height: 3rem;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  color: #1668b2;
+  background-color: #ebebeb;
+  flex: 0 0 100%;
+}
+.mdgImg {
+  width: 20%;
+}
+.mdgDesc {
+  width: 80%;
+}
+.mdgWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.dacTimeLine::after, .dacTimeLineContent::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.dacTimeLine {
+  font-family: "NanumSquare";
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  /*구역 나누기(첫줄은 startArrowByCss 공간때문에 삭제)*/
+  /*구역 나누기(둘째줄도 약간 공백이 있음)*/
+  /*색깔 변화를 위한 CSS*/
+}
+.dacTimeLine > li:nth-child(1) {
+  width: 25%;
+  padding-left: 10%;
+  position: relative;
+}
+.dacTimeLine > li:nth-child(1)::before {
+  content: "DAC가입";
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 8px;
+  font-size: 14px;
+  top: 23px;
+  left: 4px;
+  background: #6CC7CF;
+  color: #fff;
+  font-weight: 600;
+}
+.dacTimeLine > li:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 23px;
+  left: 74px;
+  border-left: 15px solid #6cc7cf;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+.dacTimeLine > li:nth-child(n+2):nth-child(-n+5) {
+  width: 18%;
+}
+.dacTimeLine > li:nth-child(6) {
+  width: 23%;
+  padding-left: 5%;
+  position: relative;
+}
+.dacTimeLine > li:nth-child(6)::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  top: 38px;
+  left: 0px;
+  background-color: #CFCFCF;
+}
+.dacTimeLine > li:nth-child(n+7):nth-child(-n+10) {
+  width: 18%;
+}
+.dacTimeLine ul.dacTimeLineContent {
+  padding-left: 19px;
+  padding-top: 10px;
+}
+.dacTimeLine ul.dacTimeLineContent > li {
+  position: relative;
+  margin-bottom: 4px;
+}
+.dacTimeLine ul.dacTimeLineContent > li:last-child {
+  margin-bottom: 0;
+}
+.dacTimeLine ul.dacTimeLineContent > li.dacTimeLineContentTitle {
+  font-weight: 800;
+}
+.dacTimeLine ul.dacTimeLineContent > li.dacTimeLineContentTitle:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  background: #AAA;
+  top: 2px;
+  left: -8px;
+}
+.dacTimeLine .dacTimeLineYear {
+  display: block;
+  position: relative;
+  font-size: 12px;
+  line-height: 320%;
+  border-bottom: 1px solid #CFCFCF;
+  font-weight: 600;
+}
+.dacTimeLine .dacTimeLineYear::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #6cc7cf;
+  transform: rotate(45deg);
+  bottom: -6px;
+  left: 7px;
+}
+.dacTimeLine > li:nth-of-type(odd) .dacTimeLineYear::before {
+  background: #92D050;
+}
+.dacTimeLineWrap .startArrowByCss {
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 30px;
+  background: #6CC7CF;
+  color: #fff;
+  text-indent: 8px;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dacTimeLineWrap .startArrowByCss:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: -15px;
+  bottom: 0;
+  border-left: 15px solid #6cc7cf;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+@media screen and (max-width: 991px) {
+  .dacTimeLine > li {
+    width: 50% !important;
+    padding-left: 0% !important;
+  }
+
+  .dacTimeLine > li:nth-child(1)::before {
+    top: -9999px;
+  }
+  .dacTimeLine > li:nth-child(1)::after {
+    top: -9999px;
+  }
+
+  .dacTimeLine > li:nth-child(6)::before {
+    top: -9999px;
+  }
+}
+dl.act {
+  display: block;
+  background-color: #005288;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+dl.act:last-child {
+  margin-bottom: 0;
+}
+dl.act > a {
+  display: block;
+  padding: 2rem 4rem;
+}
+dl.act dt {
+  font-size: 1.5rem;
+}
+dl.act dd {
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+.actWrap {
+  margin-top: 2rem;
+  padding: 4rem 2rem;
+  border: 1px solid #dddddd;
+}
+
+dl.iati {
+  margin: 0 -1rem;
+  padding: 3rem;
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  min-width: 38rem;
+  position: relative;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+dl.iati dt {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  font-size: 1.5rem;
+  color: #333333;
+}
+dl.iati dd {
+  font-size: 1.5rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+dl.iati .download {
+  padding: 2rem;
+}
+.iatiWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.framework3nd {
+  font-weight: bold;
+}
+.framework3nd tr {
+  border-top: 2rem solid transparent;
+}
+.framework3nd th {
+  width: 15%;
+  padding-right: 28px;
+  position: relative;
+  vertical-align: top;
+  font-size: 2rem;
+  color: #495356;
+}
+.framework3nd th::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 4rem;
+  height: 2px;
+  background: #495356;
+}
+.framework3nd .framework3ndVision {
+  padding: 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  background: #EFEFF7;
+}
+.framework3nd .framework3ndGoal {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.framework3nd .framework3ndGoal > li {
+  font-size: 1.4rem;
+  position: relative;
+  width: 20%;
+  text-align: center;
+  display: inline-block;
+}
+.framework3nd .framework3ndGoal span {
+  display: block;
+  text-align: center;
+  color: #495356;
+}
+.framework3nd .framework3ndTask {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.framework3nd .framework3ndTask > li {
+  font-size: 1.4rem;
+  position: relative;
+  width: 20%;
+  text-align: center;
+  display: inline-block;
+}
+.framework3nd .framework3ndAct {
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+}
+.framework3nd .framework3ndActItem {
+  display: inline-block;
+  width: 30%;
+  font-size: 1.2rem;
+}
+.framework3nd .framework3ndActItem span {
+  display: block;
+  border: 1px solid #3397C7;
+}
+.framework3nd .framework3ndActItem span:nth-child(1) {
+  background-color: #3397C7;
+  color: #fff;
+}
+.framework3nd ul li:nth-child(1) {
+  color: #1E908C;
+}
+.framework3nd ul li:nth-child(2) {
+  color: #1C92CF;
+}
+.framework3nd ul li:nth-child(3) {
+  color: #0C4883;
+}
+.framework3nd ul li:nth-child(4) {
+  color: #595FA9;
+}
+.framework2nd {
+  margin-bottom: 5rem;
+}
+.framework2ndGoal {
+  width: 100%;
+  font-size: 1.4rem;
+  line-height: 5rem;
+  text-align: center;
+  color: #fff;
+  background: #F15C22;
+}
+.framework2ndGoal:nth-child(2) {
+  background: #FDBA31;
+  margin: 2rem 0 4rem 0;
+}
+.framework2ndGoal:last-child {
+  background: #EAEAEA;
+  margin-top: -2rem;
+  color: black;
+}
+.framework2ndDetail {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.framework2ndDetail dl {
+  width: 30%;
+}
+.framework2ndDetail dt {
+  font-size: 1.4rem;
+  line-height: 4rem;
+  text-align: center;
+  color: #fff;
+  background: #7AC142;
+}
+.framework2ndDetail dd {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  text-align: left;
+  color: #fff;
+  background: #009DDC;
+}
+.framework2ndDetail dd:nth-of-type(2) {
+  position: relative;
+  margin-top: 4rem;
+  background: #818286;
+}
+.framework2ndDetail dd:nth-of-type(2):before {
+  content: "";
+  position: absolute;
+  top: -90%;
+  left: 40%;
+  font-size: 8rem;
+  color: #CCC;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+}
+.framework2ndDetail ul {
+  padding: 1.2rem 0;
+  padding-left: 1.8rem;
+}
+.framework3ndWrap {
+  padding: 0 18%;
+}
+
+@media screen and (max-width: 991px) {
+  .framework2ndDetail dl {
+    width: 100%;
+    display: flex;
+  }
+  .framework2ndDetail dt {
+    width: 20%;
+    display: flex;
+    align-items: center;
+  }
+  .framework2ndDetail dd {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+    padding: 0;
+    height: 100%;
+  }
+  .framework2ndDetail dd:nth-of-type(2):before {
+    content: "";
+    top: -9999px;
+  }
+}
+.cps .download {
+  padding: 0.2rem 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.countryTitle {
+  margin-top: 4rem;
+  font-size: 1.9rem;
+  color: #009ddc;
+}
+.countrySearchOption {
+  width: 100%;
+  display: flex;
+  margin: 0 -0.5rem;
+}
+.countrySearchOption select {
+  flex: 1;
+  font-size: 1.4rem;
+  margin: 0 0.5rem;
+}
+.countrySearchList {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin-bottom: 8rem;
+  background: #eeeff2;
+}
+.countrySearchItem {
+  flex-shrink: 1;
+  flex-basis: 25%;
+  min-width: 200px;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.countrySearchItemBox {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  width: 100%;
+}
+.countrySearchItem img {
+  width: 30px;
+  height: 18.8px;
+  outline: solid 1px #999999;
+  margin-right: 1rem;
+}
+.countrySummary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3%;
+  border-top: 1px solid #bfbfbf;
+  background-color: #eeeff2;
+}
+.countrySummaryName {
+  flex: 3;
+  order: 2;
+  font-size: 2.3rem;
+  line-height: 100%;
+  padding-left: 1%;
+}
+.countrySummaryName p span {
+  display: block;
+}
+.countrySummaryName p:last-child, .countrySummaryName span {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.countrySummaryImg {
+  flex: 1;
+  text-align: center;
+  order: 1;
+}
+.countrySummaryImg > img {
+  width: 155px;
+  height: 94px;
+  outline: solid 1px #999999;
+}
+.countrySummaryLink {
+  flex: 1;
+  margin: -0.5rem 0;
+  order: 3;
+}
+.countrySummaryLink > a {
+  display: block;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  line-height: 200%;
+  border: 1px solid #666666;
+  text-align: center;
+  color: #666666;
+  background-color: white;
+}
+.countrySummaryLink > .btnGray {
+  color: #fff;
+  background-color: #747474;
+}
+.countryProfile {
+  font-size: 1.4rem;
+}
+.countryProfile thead {
+  display: none;
+}
+.countryProfile tr {
+  border-bottom: 1px solid #e4e4e4;
+  height: 4rem;
+}
+.countryProfile tr:first-child {
+  border-top: 1px solid #b1b1b1;
+}
+.countryProfile th {
+  text-align: center;
+  background-color: #f8f8f8;
+  color: #333333;
+  border-right: 1px solid #e4e4e4;
+}
+.countryProfile td {
+  padding-left: 1rem;
+  color: #666666;
+}
+.countryProfileChart {
+  margin-top: 4rem;
+}
+.countryProfileChart:first-child {
+  margin-top: 2rem;
+}
+.countryPlan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+  border-top: 1px solid #b1b1b1;
+  border-bottom: 1px solid #e4e4e4;
+}
+.countryPlan .download {
+  float: right;
+  color: #fff;
+}
+.unifiedSearchSearchForm {
+  max-width: 75rem;
+  font-size: 1.8rem;
+}
+.unifiedSearchSearchForm select {
+  font-size: inherit;
+  margin-right: 0.1rem;
+}
+.unifiedSearchSearchForm input[type=search] {
+  font-size: inherit;
+  margin-right: 0.4rem;
+}
+.unifiedSearchSearchForm button {
+  font-size: inherit;
+  color: #fff;
+  background-color: #808080;
+}
+.unifiedSearchResult {
+  margin-top: 6rem;
+}
+.unifiedSearchResultTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+}
+.unifiedSearchResultTitle .more {
+  color: #808080;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.unifiedSearchResultTitle + dl {
+  border-top: 2px solid #808080;
+}
+.unifiedSearchResultThumbnail {
+  font-size: 1.6rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e4e4e4;
+}
+.unifiedSearchResultThumbnail dd {
+  font-size: 1.6rem;
+  color: #808080;
+  cursor: pointer;
+}
+.unifiedSearchResultThumbnail dt {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.unifiedSearchSearchWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 12rem;
+  background-color: #F8F8F8;
+  border-top: 1px solid #b1b1b1;
+  border-bottom: 1px solid #b1b1b1;
+  padding: 2rem 0;
+  font-size: 1.4rem;
+}
+
+.unifiedSearchResultWrap {
+  padding-bottom: 6rem;
+}
+
+.quickMenu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.quickMenu > li > a {
+  padding-bottom: 4rem;
+  font-size: 2rem;
+  line-height: 250%;
+  color: #f15c22;
+  font-weight: 600;
+}
+.quickMenuDepth2 {
+  border-top: 2px solid black;
+}
+.quickMenuDepth2 > li > a {
+  font-size: 2rem;
+  line-height: 220%;
+  font-weight: 600;
+}
+.quickMenuDepth3 > li > a {
+  font-size: 1.8rem;
+  line-height: 140%;
+  padding-left: 1rem;
+}
+.quickMenuWrap ul, .quickMenuWrap li {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 991px) {
+  /*국별현황 RESPONSIVE DESIGN CUSTOM*/
+  .countrySummary {
+    flex-direction: column;
+  }
+  .countrySummaryName {
+    margin-top: 1.2rem;
+  }
+
+  .quickMenu > li {
+    width: 100%;
+  }
+}
+/* ---------------------------------------------------
+    ENG STYLE
+----------------------------------------------------- */
+html:lang(en) .jumbotronHeading {
+  display: none;
+}
+html:lang(en) .jumbotronLead {
+  padding-top: 3rem;
+  font-size: 3.6rem;
+}
+
+html:lang(en) .defaultContact td, html:lang(en) .defaultContact th {
+  vertical-align: middle;
+}
+html:lang(en) .defaultContact td:nth-child(2) {
+  border-right-style: solid;
+}
+
+@media (min-width: 1280px) {
+  html:lang(ko) #background {
+    background: 20% 3rem no-repeat url("/images/egovframework/cmz/pub/cmn/logo/megamenu.png");
+  }
+}
