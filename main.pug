@@ -1,0 +1,85 @@
+extends layout_kor.pug 
+block variables 
+    -var menuType = 'main'
+
+block div
+  div#mainCarousel.carousel.slide(data-ride="carousel")
+    ol.carousel-indicators
+      li.active(data-target="#mainCarousel" data-slide-to="0")
+      li(data-target="#mainCarousel" data-slide-to="1")
+      li(data-target="#mainCarousel" data-slide-to="2")
+    .carousel-inner 
+      a.carousel-item.active(href="../intro.html")
+        img(src="../images/cardButton1.jpeg" alt="")
+        .carousel-caption
+          h2 LacalS
+          p 
+            | 아이가 주도하는
+            br 
+            | 진짜 놀이공간
+      a.carousel-item(href="../intro.html")
+        img(src="../images/cardButton2.jpeg" alt="")
+        .carousel-caption
+          h2 LacalS
+          p 
+            | 아이가 주도하는
+            br 
+            | 진짜 놀이공간
+      a.carousel-item(href="../intro.html")
+        img(src="../images/cardButton3.jpeg" alt="")
+        .carousel-caption
+          h2 LacalS
+          p 
+            | 아이가 주도하는
+            br 
+            | 진짜 놀이공간
+    a.carousel-control-prev(href="#mainCarousel" role="button" data-slide="prev")
+      span.carousel-control-prev-icon(aria-hidden="true")
+      span.sr-only Previous
+    a.carousel-control-next(href="#mainCarousel" role="button" data-slide="next")
+      span.carousel-control-next-icon(aria-hidden="true")
+      span.sr-only Next
+  style.
+    #mainCarousel {height: calc(100vh); display: flex; font-size:4rem;}
+    #mainCarousel .carousel-item img {height: 100%; width: 100%; object-fit: cover;}
+    #mainCarousel .carousel-caption {top: 50%; bottom: 0; transform: translateY(-75%); left: 15%; right: 0; padding:0; text-align: left; color:white; font-weight: bold; text-shadow: 0 0 7px rgb(0 0 0 / 50%);}
+    #mainCarousel .carousel-caption h2 {font-size:2.8rem; font-weight:700; font-style:italic;}
+    #mainCarousel .carousel-caption p {margin-top: 2.8rem; font-size:5.5rem; line-height: 110%; font-weight:500;}
+    #mainCarousel .carousel-control-next, #mainCarousel .carousel-control-prev {width: 8%;}
+    #mainCarousel .carousel-control-next-icon, #mainCarousel .carousel-control-prev-icon {display: inline-block; width: 80px; height: 80px; background-image: url('./images/iconChevron.svg');}
+    #mainCarousel .carousel-control-prev-icon {}
+    #mainCarousel .carousel-control-next-icon {transform: rotate(180deg);}
+    /*애니메이션 효과*/
+    #mainCarousel .carousel-item img {
+      transition: transform 2s ease-out; /* 2초 동안 부드럽게 줌인 */
+      transform: scale(1); /* 초기 크기 */
+      animation: zoomIn 3s ease-out 1s forwards; /* 대기 시간 없이 2초 동안 줌인 애니메이션 실행 */
+    }
+    #mainCarousel .carousel-item h2 {
+      opacity: 0; /* 처음엔 보이지 않도록 설정 */
+      transform: translateY(20px); /* 처음 위치를 아래로 이동 */
+      animation: slideUp 1s ease-out 2s forwards; /* 2초 대기 후 1초 동안 애니메이션 실행 */
+    }
+    #mainCarousel .carousel-item p {
+      opacity: 0; /* 처음엔 보이지 않도록 설정 */
+      transform: translateY(20px); /* 처음 위치를 아래로 이동 */
+      animation: slideUp 1s ease-out 3s forwards; /* 2초 대기 후 1초 동안 애니메이션 실행 */
+    }
+
+    /* 애니메이션 정의 */
+    @keyframes slideUp {
+        to {
+            opacity: 1; /* 투명도 100% */
+            transform: translateY(0); /* 원래 위치로 이동 */
+        }
+    }
+    @keyframes zoomIn {
+        to {
+            transform: scale(1.1); /* 약간 줌인 (10%) */
+        }
+    }
+
+  script. 
+    $('#mainCarousel').carousel({
+      interval: 4000
+    })

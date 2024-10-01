@@ -1,0 +1,79 @@
+//-http://www.freelybebe.com/main
+  https://www.lespace.co.kr/ 
+  LaCalS 글자가 로고고 위로 올라가면서 (주황색/청록배경) 그다음 all kids~ 
+  https://codepen.io/sulee79/pen/EBKbqE
+  https://codepen.io/KACTOPKA/pen/qBMeKeQ
+  https://codepen.io/squrler/pen/WbXxjx
+extends layout_kor.pug 
+block variables 
+  -var menuType = "intro"
+
+block div
+  //script(src='', type='text/javascript')
+  //link(href='', rel='stylesheet')
+  a(href="intro2.html").introWrap
+    p#logo LaCalS
+    p#message
+  style.
+      @import url('https://fonts.cdnfonts.com/css/for-the-love-of-hate');
+      body * {font-family: 'For the love of hate'!important;}
+      .introWrap { 
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #43564A; 
+        cursor: pointer;
+      }
+
+      #logo {
+          font-size: 64px;
+          color: #ed751c;
+          font-weight: bold;
+          position: absolute;
+          transition: top 3s ease-out, opacity 3s ease-out;
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 1;
+      }
+   
+      #logo.fade-up {
+          top: -25%; /* 화면 위쪽으로 더 멀리 이동 */
+          opacity: 0;
+      }
+
+      #message {
+        font-size: 44px;
+        color: white;
+        font-weight: bold;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transition: opacity 1s;
+      }
+
+      #message.show-message {
+        opacity: 1;
+      }
+     @keyframes fadeUpAnimation {
+        0% {opacity: 1;}
+        100% {opacity: 0;}
+      }
+  script.
+    function showText(target, message, index, interval) {
+        if (index < message.length) {
+            document.querySelector(target).textContent += message[index++];
+            setTimeout(function() { showText(target, message, index, interval); }, interval);
+        }
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('#logo').classList.add('fade-up');
+        setTimeout(() => {
+          document.querySelector('#message').classList.add('show-message');
+          showText("#message", "All kids have their own stage to PLAY!", 0, 100);
+        }, 1000);
+      }, 1000);
+    });

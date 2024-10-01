@@ -1,0 +1,34 @@
+extends layout_kor.pug 
+block variables 
+    -var menuType = 1
+
+block div
+    section.jumbotron.jumbotronBg1 
+        div.container
+            p.jumbotronLead LaCalS
+    section 
+        div#wrapper(style={'max-width':''})
+            div#content
+                div.location
+                    div.locationTitle
+                        |Location
+                        span 
+                            |9 Seolleung-ro 8-gil, Gangnam District, Seoul
+                    div.locationContent
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.054821341751!2d127.0589398765892!3d37.483032672060304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca710a5426d83%3A0x26563573626f9974!2sLAMA%20GLOCAL%20STAGE(LaCalS)!5e0!3m2!1sen!2skr!4v1727326365991!5m2!1sen!2skr" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                div.getInTouch 
+                    div.getInTouchTitle
+                        |Get in Touch
+                        span 
+                            |If you have any questions or need further information, we’re here to help!
+                            br 
+                            |Feel free to reach out through your preferred platform, and we'll be happy to assist!
+                    div.getInTouchContent
+                        a(href="https://www.instagram.com/" target="_blank")
+                            i.iconYoutube.fa.fa-comment
+                        a(href="https://www.instagram.com/" target="_blank")
+                            i.iconInstagram.fab.fa-instagram-square
+                        a(href="https://www.facebook.com/" target="_blank")
+                            i.iconYoutube.fab.fa-youtube-square
+    style.
+    //-

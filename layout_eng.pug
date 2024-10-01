@@ -1,0 +1,181 @@
+block variables
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title ODA 홈페이지 
+    // Bootstrap core CSS
+    link(href='../vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // fontawesome
+    link(href='../vendor/fontawesome/css/all.css', rel='stylesheet')
+    // Custom layout styles for this template
+    link(href='../css/layout.css', rel='stylesheet')
+    // Custom layout styles for this template
+    link(href='../css/style.css', rel='stylesheet')
+    // Bootstrap core JavaScript
+    script(src='../vendor/jquery/jquery.min.js', type='text/javascript')
+    script(src='../vendor/bootstrap/js/bootstrap.bundle.min.js', type='text/javascript')
+    // Chart.js
+    script(src='../js/chart/Chart.js', type='text/javascript')
+    script(src='../js/chart/chartjs-plugin-datalabels.js', type='text/javascript')
+    script(src='../js/chart/chartjs-plugin-piechart-outlabels.js', type='text/javascript')
+    script(src='../js/chart/chartjs-plugin-annotation.js', type='text/javascript')
+    script(src='../js/chart/defaultChart.js', type='text/javascript')
+    // Custom script for this template
+    script(src='../js/ui.js', type='text/javascript')
+    script(src='../js/responsiveCSS.js', type='text/javascript')
+  body
+    a#skipAccesibility.sr-only.sr-only-focusable(href="#content") 본문 바로가기
+    // Navigation
+    nav.gnb.navbar.navbar-light.navbar-expand-lg
+      div.container-fluid 
+        a.gnbLogo(href="메인.html")
+          img(src="../images/logo_eng.png", alt="로고")
+        div.gnbCollapseBtn
+          button(type="button", data-toggle="collapse", data-target="#gnbInner", aria-controls="gnbInner" aria-expanded="false" aria-label="menu toggle navigation").navbar-toggler
+            span.navbar-toggler-icon
+        div#gnbInner.collapse.navbar-collapse
+          form.gnbSearch.form-inline.form-navbar.d-none.d-lg-flex.order-2
+            a#unifiedsearch(href="#")
+                i.iconSearch.fas.fa-search
+            div#unifiedsearchInputWrap.input-group
+              input(type="search" placeholder="검색어를 입력하세요" aria-label="Search" aria-describedby="search-addon")
+              button#search-addon.btn(type="button") 
+                i.fas.fa-search
+          ul#gnbMenu.gnbMenu.navbar-nav.order-1 
+            li.nav-item.dropdown 
+              a#dropDown1.nav-link(href="#", data-toggle="dropdown", aria-expanded="false") What is ODA
+              div.dropdown-menu(aria-labelledby="dropDown1")
+                a.dropdown-item(href="12011000.html") Definition of ODA
+                a.dropdown-item(href="12012000.html") History of ODA
+                a.dropdown-item(href="12013000.html") Actors in Development 
+                a.dropdown-item(href="12014000.html") Development Agenda
+            li.nav-item.dropdown 
+              a#dropDown2.nav-link.dropdown-toggle(href="#", data-toggle="dropdown", aria-expanded="false") What We Do
+              div.dropdown-menu(aria-labelledby="dropDown2")
+                a.dropdown-item(href="12021100.html") Korea's ODA
+                a.dropdown-item(href="12022100.html") ODA Policy & Structure
+                a.dropdown-item(href="12023000.html") CIDC
+                a.dropdown-item(href="12024100.html") Korea's ODA Flows
+            li.nav-item.dropdown 
+              a#dropDown3.nav-link.dropdown-toggle(href="#", data-toggle="dropdown", aria-expanded="false") Knowledge
+              div.dropdown-menu(aria-labelledby="dropDown3")
+                a.dropdown-item(href="게시판예시.html") News
+                a.dropdown-item(href="게시판예시.html") Publications
+            li.nav-item.dropdown 
+              a#dropDown4.nav-link.dropdown-toggle(href="#", data-toggle="dropdown", aria-expanded="false") Contact Us
+              div.dropdown-menu(aria-labelledby="dropDown4")
+                a.dropdown-item(href="게시판예시.html") Q&A
+                a.dropdown-item(href="12044000.html") Contact Info
+          ul.gnbSub.navbar-nav.d-none.d-lg-flex.order-3
+            li.nav-item 
+              a.nav-link(href="https://www.facebook.com/odakorea" target="_blank")
+                i.iconFacebook.fab.fa-facebook-square
+            li.nav-item 
+              a.nav-link(href="https://www.youtube.com/channel/UC6lGMj6gP3llJowh8RD25Kw" target="_blank")
+                i.iconYoutube.fab.fa-youtube
+            li.nav-item 
+              a.nav-link(href="https://www.instagram.com/oda_rok/" target="_blank")
+                i.iconInstagram.fab.fa-instagram-square
+            li.nav-item 
+              a.nav-link(href="http://www.odakorea.go.kr" target="_blank") ENG
+            li.nav-item 
+              a#gnbSubQuick.nav-link(href="퀵메뉴.html")
+                i.iconMenu.fas.fa-align-justify
+    unless menuType == 0
+      section.jumbotron.jumbotronBg1 
+        div.container 
+          h1.jumbotronHeading 대한민국의 기적, 이제는 나눔으로
+          p.jumbotronLead Beautiful Sharing, Wonderful Growing
+      section 
+        div#wrapper 
+          nav#sidebar 
+            div#sidebarCollapse.sidebarHeader What is ODA
+            ul.sidebarBody
+              case menuType
+                when 1
+                  li
+                    a(href="12011000.html") Definition of ODA
+                  li 
+                    a(href="12012000.html") History of ODA
+                  li 
+                    a(href="12013000.html") Actors in Development 
+                  li 
+                    a(href="12014000.html") Development Agenda
+                when 2
+                  li 
+                    a(href="#L1" data-toggle="collapse" aria-expanded="dropdown-toggle") Korea's ODA
+                    ul#L1.collapse.list-unstyled
+                      li
+                        a(href="12021100.html") History of Korea’s ODA
+                      li
+                        a(href="12021200.html") 10th Anniversary of Korea’s Accession to the OECD DAC
+                  li 
+                    a(href="#L2" data-toggle="collapse" aria-expanded="dropdown-toggle") ODA Policy & Structure
+                    ul#L2.collapse.list-unstyled
+                      li
+                        a(href="12022100.html") Policy
+                      li
+                        a(href="12022200.html") Organizational Structure
+                  li 
+                    a(href="12023000.html") CIDC
+                  li 
+                    a(href="#L4" data-toggle="collapse" aria-expanded="dropdown-toggle") Korea's ODA Flows
+                    ul#L4.collapse.list-unstyled
+                      li
+                        a(href="12024100.html") Latest Trends
+                      li
+                        a(href="12024200.html") By Sector
+                      li
+                        a(href="12024300.html") By Income Group
+                      li
+                        a(href="12024400.html") By Region
+                      li
+                        a(href="12024500.html") By Channel
+                when 3
+                  li 
+                    a(href="게시판예시.html") News
+                  li 
+                    a(href="#L2" data-toggle="collapse" aria-expanded="dropdown-toggle") Publications
+                    ul#L2.collapse.list-unstyled
+                      li
+                        a(href="게시판예시.html") Policy Documents
+                      li
+                        a(href="게시판예시.html") Research
+                when 4
+                  li 
+                    a(href="게시판예시.html") Q&A
+                  li 
+                    a(href="12044000.html") Contact Info
+                default
+                  script. 
+                    $(document).ready(function(){
+                      $('#wrapper').removeAttr('id');
+                      $("#sidebar").remove();
+                      $(".jumbotron").css('padding-left','0%');
+                    });
+          div#content 
+            button.sidebarCollapseBtn(type="button")
+              i.fas.fa-align-left 
+            div.contentLocation
+              i.fa.fa-home(aria-hidden="true") &gt;
+              i.icon-home ODA 개요 
+              div.contentLocationUtil 
+                i.fa.fa-print 
+                i.fa.fa-font
+            // contentTitle+contentMenu+contentMain
+            block div
+    else
+      block div
+    footer.footer 
+      .container 
+        .footerLogo 
+          img(src="../images/logo_footer_eng.png", alt="국무조정실 로고")
+        .footerAddress 
+          p 
+            |Copyright&copy; ODA Korea. All rights reserved.
+            br
+            |세종특별자치시 다솜로 261 정부세종청사 426호 국무조정실 국제개발협력본부
