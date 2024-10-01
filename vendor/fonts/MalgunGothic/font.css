@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'MalgunGothic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('MalgunGothic'),
-        url('MalgunGothic.eot?#iefix') format('embedded-opentype'),
-        url('MalgunGothic.ttf') format('truetype'),
-        url('MalgunGothic.woff') format('woff');
-}
