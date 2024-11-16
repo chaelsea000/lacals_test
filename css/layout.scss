@@ -1,0 +1,386 @@
+/* Start Bootstrap - Modern Business (https://startbootstrap.com/templates/modern-business)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+/* ---------------------------------------------------
+    DEFAULT VALUE
+----------------------------------------------------- */
+/* 가급적 extend대신 mixin을 사용 권장 */
+@mixin layoutMaxWidth(){max-width: 1200px;}
+/*max-width 기본값 0은 트릭*/
+@mixin textEllipsis($width : 0 ){max-width: $width; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+@mixin chevronCss($size, $rotate){
+  position:relative;
+  &::after{
+        content: '';
+        position: absolute;
+        top: calc(50% - #{$size/2} );
+        right: 5%;
+        height: $size;
+        width: $size;
+        border-style: solid;
+        border-width: #{$size/4} #{$size/4} 0 0;
+        transform: rotate($rotate);
+  }
+}
+/*부트스트랩 sr-only와 동일*/
+.blind {position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: polygon(0 0, 0 0, 0 0);}
+%tableBorderOnlyInside {border-collapse: collapse; border-left-style: hidden; border-right-style: hidden;}
+
+$generalMotorsDarkGray : #292929;
+$darkCharcoal : #333333; 
+$genericGray : #878686;
+$veryLightShadeOfGray: #dddddd;
+$solitudeGray : #eeeff2;
+$nobelColor : #999999;
+$cyanBluishGray: #a9acb1;
+$platinum: #e4e4e4;
+$lightCyanBluishGray:#d3d7dd;
+$aliceBlue: #eef8ff;
+$whiteSmoke : #f8f8f8;
+$shadeOfCyan : #009ddc;
+$darkCerulean : #005288;
+$mediumDarkShadeCyanBlue : #369;
+$outrageousOrange : #f15c22;
+
+$sidebarHeaderLineheight: 8rem;
+$sidebarHeaderLineheightWidth768 : 4rem;
+$sidebarBodyLineheight: 4rem;
+$sidebarWidth : 320px;
+/* ---------------------------------------------------
+    COMMON STYLE
+----------------------------------------------------- */
+@import url(./vendor/fonts/NanumGothic/font.css);
+@import url(./vendor/fonts/NotoSans/font.css);
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+@import url('//cdn.jsdelivr.net/gh/snz-hayden/toolo/fonts/nanum_squareround/nanum_squareround.css');
+@font-face {
+  font-family: 'SDMiSaeng';
+  src: url('https://cdn.jsdelivr.net/gh/fontbee/font@main/Misaengfont/SDMiSaeng.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'RixXladywatermelonR';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-4@1.0/RixXladywatermelonR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/*rem 작업을 위한 10px로 조정*/
+html {font-size: 12px; font-family:'Montserrat',"Noto Sans","Nanum Gothic","Malgun Gothic",sans-serif; font-weight: 400; color: #333333; word-break: keep-all;} 
+ul {list-style: none; margin: 0; padding: 0;}
+a {color: inherit;}
+a:hover {color: inherit; text-decoration: none;}
+table {width:100%; margin-bottom:0; caption {position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: polygon(0 0, 0 0, 0 0);}}
+/* ---------------------------------------------------
+    LAYOUT STYLE
+----------------------------------------------------- */
+#skipAccesibility{display:block; width:100%; padding:1rem 0; font-size:1.5rem; text-align:center; background:#292929; color: #fff;}
+.container-fluid {max-width: 1400px;}
+
+/*FOR SIDEBAR
+#wrapper {max-width: 1400px; margin: 0 auto;}
+#content {display: block; flex-wrap: wrap; align-items: stretch; width: 100%; min-height: 58rem; padding: 8rem 0; color: #333;}*/
+
+/*FOR LAYOUT*/
+.title {font-size: 3.8rem; line-height: 120%; font-weight: 300; color: #222; text-align: center; margin-bottom: 6rem;
+  b {font-weight: 800;}
+}
+.detail {font-size: 2.1rem; font-weight: 400; color: #222;}
+#content{
+
+
+.contentTitle{font-size: 2.8rem; font-weight: 700; color: black;}
+.contentIntro{font-size: 2.1rem; font-weight: 400; color:#222; font-family: 'Nanum Square Round'; word-break: keep-all;}
+.contentMain {margin-top: 2rem;}
+  /*.contentMenu {
+    $contentMenufontSize: 1.6rem;
+    display:flex; font-size: 1.6rem; line-height:110%; text-align:center; margin-bottom:3rem;
+    a {padding:$contentMenufontSize 0; font-size: $contentMenufontSize; border:1px solid #dee2e6; flex:1 1 0; display: flex; justify-content:center; align-items: center;}
+    .active{background-color: #384958; color: #fff;}
+  }
+  .contentLocation{margin-top:1rem; font-size: 1.3rem; text-align: right; color: #8b8b8b; 
+    &Util {display:inline-block; padding-left: 2rem;
+    i {
+      width:2.5rem;
+      height:2.5rem;
+      padding:0.5rem;
+      border-radius: 50%;
+      border: 1px solid $cyanBluishGray;
+      cursor: pointer;
+      color: grey;
+    }}
+  }*/
+}
+.majorHeading {}
+.minorHeading {
+  position: relative; font-size: 2.6rem; line-height: 4rem; color: black; margin-bottom:2rem; padding-left: 0.8rem;
+  /*border-top: 3px solid #009ddc; border-image: linear-gradient(to right, #009ddc 0%, #009ddc 2%, transparent 2%, transparent 100%) 1; border-image-slice: 1;*/
+    &:after {content: ''; display: block; position: absolute; left: 0; top: 0; background-color: $outrageousOrange; width: 2rem; height: 2rem; border-radius: 50%; z-index: -1;}
+}
+.subHeading {margin-bottom: 1rem; font-size: 1.6rem; color: #000000;}
+.paragraph{margin-bottom:1.7rem; font-weight: 400; font-size: 2.2rem; list-style: none;
+  &.sub {margin-bottom:1.5rem; font-size: 1.2rem; color: lighten($genericGray,10%);}
+}
+.notes {font-size: 1.4rem; padding: 1.5rem 3rem; margin-bottom: 2rem; background-color: $solitudeGray; color: $genericGray;}
+.highlight {display: inline-block; background: linear-gradient(transparent 50%, rgba(255, 142, 66, 0.3) 50%);}
+
+.imageOverText {display: flex; justify-content: space-between;
+  li {flex-basis: 30%; position: relative;
+    img {width: 100%; height: 45rem; object-fit: cover; border-radius: 4rem; filter: brightness(50%); transition: filter 0.3s ease;}
+    p {position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); color: white; font-size:2.2rem; font-weight: 600; text-align: center;
+      b {display: block; font-weight: 600;}
+    }
+  }
+  li:hover {
+    img {filter: brightness(90%);}
+  }
+}
+
+/*줄 사이 간격 조절*/
+p + .majorHeading, figure + .majorHeading, div + .majorHeading, table + .majorHeading, ul + .majorHeading, ol + .majorHeading {margin-top: 4rem;}
+p + .minorHeading, figure + .minorHeading, div + .minorHeading, table + .minorHeading, ul + .minorHeading, ol + .minorHeading {margin-top: 2rem;}
+p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul + .subHeading, ol + .subHeading {margin-top: 2rem;}
+
+@media (max-width: 991px) {    
+  #content { 
+    padding: 0 2%;
+    margin-top: $sidebarHeaderLineheightWidth768;
+    .contentTitle {margin-top:1rem;}
+    .contentLocation {display:none;}
+  }
+}
+/* ---------------------------------------------------
+    TOPMENU NAV STYLE
+----------------------------------------------------- */
+@media (min-width: 992px) {
+  .gnb {padding:0 2.5rem; font-size: 1.9rem; font-weight: 600; color: #333;
+    /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
+    .nav-item {font-size:inherit; color:inherit; .nav-link {font-size:inherit; color:inherit; &:hover{color:inherit;}}} 
+    .navbar-nav:not(.navbar-preview) {.dropdown-toggle:after {content: none;}}/*부트스트랩에서 기본적으로 제공하는 화살표 제거*/
+    .dropdown:hover > .dropdown-menu {display: block;}/*부트스크랩 메뉴 우버시 보이도록*/
+    .dropdown-menu {margin:0; padding:0; background-color: transparent;}
+    .dropdown-item:hover {background-color:transparent;}
+    /*GNB MENU DESIGN CUSTOM*/
+    &Menu {
+      justify-content: space-around;
+      .nav-item {
+        &:after {content:''; display: block; width: 100%; height: 3px; background-color: $outrageousOrange;transform: scaleX(0); transition: transform 300ms ease-in-out;}//li에 선 효과 필요
+        &:hover:after {transform: scaleX(1);}
+        &:hover {color:$outrageousOrange;}
+        .nav-link {padding:2.2rem 2.75rem;}
+      }
+      .dropdown-menu {
+        right: auto; left: 50%; transform: translate(-50%, 0);/*부트스트랩의 menu 가운데 정렬 트릭*/
+        width: 100%; border: 0; border-radius: 0;
+        border-top:0.6rem solid rgba(0,0,0,0);
+        padding: 1.4rem 0;
+        background-color: rgba(255,255,255,0.8); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        .dropdown-item {font-size: 1.5rem; padding:0.5rem; text-align:center; width: 100%;
+          &:hover {color:rgba(0, 0, 0, 0.4);}
+        }
+      }
+    }
+    &Logo{margin: 0; padding: 0; width: 6.5rem;
+      img {width: 100%;}
+    }
+    &Inner {justify-content: center;
+    }
+    &Sub {font-size: 2.8rem;
+      a,i {font-size:inherit; line-height:inherit;}
+    }
+  }
+  .gnb.scrolled{
+    background-color: rgba(255,255,255,0.8); transition: background-color 300ms linear;
+    .dropdown-menu {}
+  }
+}
+
+@media (max-width: 991.98px) {
+  .gnb {
+    &Menu{
+      font-size: 1.6rem;
+      .dropdown-menu {font-size:1.4rem;}
+    }
+    &Logo {width: 5rem;
+      img {width: 100%;}
+    }
+    &Sub {
+    }
+  }
+}
+/* ---------------------------------------------------
+    SIDEBAR STYLE(사용X)
+----------------------------------------------------- */
+#sidebarCollapse button{padding:0;}
+.sidebarCollapseBtn {display: none; }
+.sidebarLogo {display:inline-block; width:80px;
+  img {width:100%;}
+}
+#sidebar {
+  position: absolute;
+  width: 100%;
+  max-width: 1400px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  /*#sidebar reset*/
+  a {font-size: inherit; line-height:inherit;}
+  h3 {margin-bottom:0px; font-size: inherit; line-height:inherit;}
+  ul {padding:0px; margin:0px;}
+  a[data-toggle="collapse"] {
+    position: relative;
+    }
+  .sidebarHeader {
+  }
+  #sidebarBodyWrap {position:absolute; right:-10px; top:2px;}
+  ul.sidebarBody {
+    position: absolute;
+    width: $sidebarWidth;
+    right: 1.2rem;
+    top: 60px;
+    $sidebarBodyCommonFontSize : 1.6rem;        
+    /*부트스트랩 기본 화살표 수정*/
+    .dropdown-toggle::after {
+      content: "\f105";
+      border:0;
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free";
+      font-size: 1.1rem;
+      color: #a9acb1;
+      position: absolute;
+      right: 7%;
+    }
+    /*영문일 경우 글자가 길어지는 경우가 많아서 추가, text-indent, line-height를 padding으로 교체*/
+    a {display:block; display: flex; align-items: center; padding-left: 2rem; height: 5.2rem; line-height:100%; white-space:pre-line;}
+    > li{ position: relative; font-size: $sidebarBodyCommonFontSize; color: $darkCharcoal;
+      box-shadow: 1px 0 0 0 $lightCyanBluishGray, 0 1px 0 0 $lightCyanBluishGray, 1px 1px 0 0 $lightCyanBluishGray,1px 0 0 0 $lightCyanBluishGray inset, 0 1px 0 0 $lightCyanBluishGray inset;
+      background-color: white;
+      &.active {color:$shadeOfCyan;
+        .dropdown-toggle::after {color: inherit;}
+      }
+      ul{
+        color: gray;
+        border-top: 1px solid #d3d7dd;
+        border-left: 1px solid #d3d7dd;
+        padding-top: 0.8rem;
+        padding-bottom:0.8rem;
+        background-color: $solitudeGray;
+        box-sizing: border-box;
+        li{
+          font-size: $sidebarBodyCommonFontSize*0.9;
+          border-top: 0;
+          box-sizing: border-box;
+          a{height: 3rem;}
+          .active>a, a[aria-expanded="true"] {color: $darkCerulean;}
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  #sidebar {
+    position: absolute;
+    width:100%;
+    .sidebarHeader {
+      cursor:pointer; margin-top: 0; line-height: $sidebarHeaderLineheightWidth768;
+      @include chevronCss(0.8rem,135deg);
+    }
+    &.open {
+      ul {display:block;}
+    }
+    ul { display: none; }
+    /*li a {
+        display: block;
+        padding: 1em;
+        float: none;
+        width: 100%;
+    }*/
+  }
+  #sidebar {z-index:100;} 
+}
+/* ---------------------------------------------------
+  FOOTER
+----------------------------------------------------- */
+.footer {padding:4rem 0; font-size: 1.8rem; line-height: 120%; color: white; background-color: rgba(67, 86, 74, 1);
+  &Logo {}
+  &Address {margin-bottom: 1.8rem;}
+  &Right {font-size: 1.6rem; color:#888;}
+}
+/* ---------------------------------------------------
+    MAIN&JUMBOTRON STYLE
+----------------------------------------------------- */
+#mainCarousel {/*main.html에서 수정*/}
+
+.mainCarouselWrap {max-height: 80vh; overflow: hidden;}
+.mainContentsWrap {position: relative;}
+.carouselOverlay{position: absolute; height:20vh; top: -20vh; background: rgba(0, 0, 0, 0.7)}
+.mainContent {
+  &Title {font-size: 1.8rem; margin-bottom:2rem; font-weight: 600; color:#fff;}
+  &Info{
+    display:flex; 
+    &Alphabet {position: relative; span {position: absolute; top:30%; left: 30%; font-size: 1.4rem; line-height:100%; font-weight: 800; color:#fff;} }
+    &Alphabet ul {display:none; position: absolute; width:125%; bottom:6.5rem; padding:0; margin:0; font-size:1.2rem; background-color:#fff; li {padding:0.2rem 0.5rem;}}
+    &Alphabet:nth-child(2) {span {left:18%;} ul {border:1px solid #f5ad19;} li {border-bottom:1px solid #f5ad19; color:#f5ad19;} }
+    &Alphabet:nth-child(3) { span {top:38%; left:39%; font-size: 1.6rem;} ul {border:1px solid #009DDC;} li {border-bottom:1px solid #009DDC; color:#009DDC;} }
+    &Box {position: relative; flex:1; padding:0.2rem 1rem; font-size: 1.4rem; text-align:center; color:#fff; background-color:#5AA929;}
+    &Box ul {display:none; position:absolute; width:100%; left:0; bottom: 2.5rem; padding:0; margin:0; font-size:1.2rem; border:1px solid #818285; color: #818285; background-color:#fff; li {padding:0.2rem 0.5rem; border-bottom:1px solid #818285;}}
+    &Box:nth-child(1) {margin-bottom:1rem; background-color:#818285}
+  }
+  &Tab {
+    position:relative;
+    &Header {display:flex;}
+    &Header li {
+      flex:1; text-indent:1rem;
+      border-style: solid; border-width: 0 2px 0 0; 
+      border-image: linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(255,255,255,0) 70%) 1;
+      &:last-child {border:0px;}
+      a{font-size: 1.8rem; font-weight: 600; color:#fff;}
+    }
+    &Header li.active a {color: #01aef2;}
+    &Header li:nth-child(1) a{padding-left:0;}
+    &Body ul {padding-left:1rem; font-size: 1.4rem; line-height: 170%; list-style: none; color: #fff;}
+    &Body li {overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+    &More {position:absolute; top:0; right: 1.5rem; color:#fff; font-size:2rem;}
+  }
+  &Related {display:flex; margin-top:0.5rem;
+    select {width:80%; font-size:1.4rem; margin-right:0.4rem;}
+    button {font-size: 1.4rem;}
+  }
+  
+}
+
+.icon{
+  &Facebook{color:#305aa3;}
+  &Youtube{color:#ec2f23;}
+  &Instagram {color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;}
+  &Search{padding-right: 0.4rem; color: rgba(0,0,0,0.8);}
+  &Menu{cursor: pointer; font-size:2rem; padding:2rem; background:#43564A; color:white;}
+}
+.jumbotron {
+  /*부트스트랩에서 기본적으로 제공하는 점보트론 스타일 제거*/
+  margin: 0; height: 40rem; display: flex; align-items: center; text-align:center; color: white;
+  &Heading {font-size: 7rem;}
+  &Lead {font-size: 5rem; line-height: 7rem; font-weight: 500; text-shadow: 0 0 5px rgb(0 0 0 / 50%);}
+  &Bg1{background-image: url('../images/jumbotron.png'); background-size: cover; background-position: 0% 45%;}
+}
+
+@media (max-width: 991px) {    
+  .carouselOverlay {position: relative; height: auto; top: 0; }
+  .mainContentTabHeader li a {font-size: 1.6rem;}
+}
+
+/* ---------------------------------------------------
+    ENG STYLE
+----------------------------------------------------- */
+html:lang(en) {
+}
