@@ -6,33 +6,55 @@ block div
     section.jumbotron.jumbotronBg1 
         div.container
             p.jumbotronLead Signatures
-    section 
-        div#wrapper 
-            div#content.lesson
-                h4.lessonTitle 정규 레슨
-                p.lessonIntro 사고의 유연성을 길러 세계 어디서든 품격을 갖춘 글로벌 인재 육성을 목표로 합니다.
-                div.lessonContent
-                    img(src="../images/lessonImage1.png")
-                    ul
-                        li
-                            span 01
-                            h5 자연스러운 습득
-                            p 
-                                |만 49개월 미만의 아이들은 언어를 그 언어 자체로 인지합니다.
-                                |아이의 특성을 고려하여 다양한 영역에서 균형있는 발달과 사고의 유연성을 돕습니다.
-                        li
-                            span 02
-                            h5 맞춤 설계
-                            p
-                                |현재뿐만 아니라 앞으로 다가올 미래에 대한 사회문화적 맥락을 고려하고 유대인 교육철학인 하브루타 교육방식을 접목한 융합 프로그램으로 맞춤 설계합니다.
-                        li
-                            span 03
-                            h5 초석 다지기
-                            p 
-                                |아이가 흥미를 느끼고 온전히 몰입하여 다채로운 놀이를 통해 자기표현을 할 수 있도록 초석을 다집니다.
-                        li
-                            span 04
-                            h5 대상
-                            p 
-                                |분리가 가능하고 앉을 수 있는 월령 ~ 만 48개월 1:1 혹은 1:2로 진행합니다. 
+    section#content
+        div.lesson.container-fluid
+            h4.title 정규 레슨
+            p.detail 사고의 유연성을 길러 세계 어디서든 품격을 갖춘 글로벌 인재 육성을 목표로 합니다.
+            div.lessonContent
+                img(src="./images/lessonImage1.png")
+                ul
+                    li
+                        span 01
+                        h5 자연스러운 습득
+                        p 
+                            |만 49개월 미만의 아이들은 언어를 그 언어 자체로 인지합니다.
+                            br
+                            |아이의 특성을 고려하여 다양한 영역에서 균형있는 발달과 사고의 유연성을 돕습니다.
+                    li
+                        span 02
+                        h5 맞춤 설계
+                        p
+                            |현재뿐만 아니라 앞으로 다가올 미래에 대한 사회문화적 맥락을 고려하고 유대인 교육철학인 하브루타 교육방식을 접목한 융합 프로그램으로 맞춤 설계합니다.
+                    li
+                        span 03
+                        h5 초석 다지기
+                        p 
+                            |아이가 흥미를 느끼고 온전히 몰입하여 다채로운 놀이를 통해 자기표현을 할 수 있도록 초석을 다집니다.
+                    li
+                        span 04
+                        h5 대상
+                        p 
+                            |분리가 가능하고 앉을 수 있는 월령 ~ 만 48개월 1:1 혹은 1:2로 진행합니다. 
     style.
+        .lesson {padding:4rem 0; padding-bottom:8rem;}
+        .lesson .title {font-weight: 800; margin-bottom: 2.2rem; text-align: left;}
+        .lesson .detail {font-size: 2.1rem; font-weight: 400; color: #1d1d1f; font-family: "Nanum Square Round"; margin-bottom: 3.4rem;}
+        
+        .lessonContent {display: flex; justify-content: space-between; align-items: center;}
+        .lessonContent img {width: 25rem; height: 100%; object-fit: cover; border-radius: 25px; margin-right:4rem;}
+        .lessonContent ul {}
+        .lessonContent ul li {display: flex; align-items: top; padding:1.8rem 0; font-size: 2.1rem; word-break: keep-all; border-top: 1px solid #999;}
+        .lessonContent ul li:last-child {border-bottom: 1px solid #999;}
+        .lessonContent ul li span {font-size: 2.4rem; font-weight: 500; color: #f16c22; margin-right:2rem;}
+        .lessonContent ul li h5 {width:16rem; margin:0.4rem 2.8rem 0 0; font-size: 2.4rem; font-weight: 500; color: #6e6e73;}
+        .lessonContent ul li p {margin:0; padding:0; width: calc(100% - 20rem); font-size: 2.2rem;}
+       
+       @media (max-width: 1199.98px) {
+            .lessonContent {display: flex; flex-direction: column;}
+            .lessonContent img {margin:0; margin-bottom: 4rem; border-radius: 25px; width: 100%; height: 38rem; object-position: top 20% right 0;}
+
+        }
+        @media (max-width: 991.98px) {
+            .lessonContent ul li {flex-wrap: wrap;}
+            .lessonContent ul li p {width: 100%; margin-top: 0.8rem;}
+        }

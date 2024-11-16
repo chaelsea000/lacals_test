@@ -5,30 +5,45 @@ block variables
 block div
     section.jumbotron.jumbotronBg1 
         div.container
-            p.jumbotronLead LaCalS
-    section 
-        div#wrapper(style={'max-width':''})
-            div#content
-                div.location
-                    div.locationTitle
-                        |Location
-                        span 
-                            |9 Seolleung-ro 8-gil, Gangnam District, Seoul
-                    div.locationContent
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.054821341751!2d127.0589398765892!3d37.483032672060304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca710a5426d83%3A0x26563573626f9974!2sLAMA%20GLOCAL%20STAGE(LaCalS)!5e0!3m2!1sen!2skr!4v1727326365991!5m2!1sen!2skr" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                div.getInTouch 
-                    div.getInTouchTitle
-                        |Get in Touch
-                        span 
-                            |If you have any questions or need further information, we’re here to help!
-                            br 
-                            |Feel free to reach out through your preferred platform, and we'll be happy to assist!
-                    div.getInTouchContent
-                        a(href="https://www.instagram.com/" target="_blank")
-                            i.iconYoutube.fa.fa-comment
-                        a(href="https://www.instagram.com/" target="_blank")
-                            i.iconInstagram.fab.fa-instagram-square
-                        a(href="https://www.facebook.com/" target="_blank")
-                            i.iconYoutube.fab.fa-youtube-square
-    style.
-    //-
+            p.jumbotronLead Contact Us
+    section#content.container-fluid
+        div.location
+            div.title
+                |Location
+                span 
+                    |서울특별시 강남구 선릉로 8길 9, 1층
+                    br
+                    |1st FL, 9 Seolleung-ro 8-gil, Gangnam District, Seoul
+                div.locationImg
+                    img(src="./images/location.png")
+            div.detail
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.054821341751!2d127.0589398765892!3d37.483032672060304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca710a5426d83%3A0x26563573626f9974!2sLAMA%20GLOCAL%20STAGE(LaCalS)!5e0!3m2!1sen!2skr!4v1727326365991!5m2!1sen!2skr" width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        div.contactInfo
+            div.title
+                |Contact Info
+                span 
+                    |If you have any questions or need further information, we’re here to help!
+                    br 
+                    |Feel free to reach out through your preferred platform, and we'll be happy to assist!
+            div.detail
+                a(href="https://pf.kakao.com/_dIcGG/chat" target="_blank")
+                    i.iconKakao.fa.fa-comment
+                a(href="https://www.instagram.com/lamaglocalstage/" target="_blank")
+                    i.iconInstagram.fab.fa-instagram-square
+                a(href="https://www.youtube.com/" target="_blank")
+                    i.iconYoutube.fab.fa-youtube-square
+        style.
+            .location {padding:6rem 0 6rem 0; display: flex; margin-bottom: 4.8rem;}
+            .location .title {width: 45%; font-size: 4rem; font-weight: 800; color: #333; text-align: left; margin-bottom:0;}
+            .location .title span {margin-top: 0.8rem; display: block; font-size: 1.8rem; font-weight: 300; line-height: 125%; color :#6e6e73;}
+            .location .detail {width: 55%; text-align: right;}
+            .locationImg {max-width:480px; margin-top: 48px; width: 100%; border-radius:25px; overflow: hidden;}
+            .locationImg img {vertical-align: top; max-width: 100%; transform:scale(1.1);}
+
+            .contactInfo {padding:0 0 4rem 0; display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 4.8rem;}
+            .contactInfo .title {width: 65%; position: relative; font-size: 4rem; font-weight: 800; color:#333; text-align: left; margin: 0;}
+            .contactInfo .title span {margin-top: 0.8rem; display: block; font-size: 1.8rem; font-weight: 300; line-height: 125%; color: #6e6e73;}
+            .contactInfo .title:after {content:''; position: absolute; width:1px; height:calc(100%); right:0; top:0; background-color: #6e6e73; }
+            .contactInfo .detail {width: 35%; min-width: 300px; display: flex; justify-content: center; align-items: center; gap: 2rem;}
+            .contactInfo .detail a {display: flex; justify-content: center; align-items: center; width: 8rem; height: 8rem; border-radius: 50%; background-color:#f5f5f7;}
+            .contactInfo .detail i {font-size: 4rem; color:#333;}

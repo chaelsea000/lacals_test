@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <title>LaCalS</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="favicon2.png">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <!-- Bootstrap core CSS-->
     <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- fontawesome-->
@@ -19,78 +19,40 @@
     <!-- Bootstrap core JavaScript-->
     <script src="./vendor/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-    <!-- Chart.js-->
-    <script src="./js/chart/Chart.js" type="text/javascript"></script>
-    <script src="./js/chart/chartjs-plugin-datalabels.js" type="text/javascript"></script>
-    <script src="./js/chart/chartjs-plugin-piechart-outlabels.js" type="text/javascript"></script>
-    <script src="./js/chart/chartjs-plugin-annotation.js" type="text/javascript"></script>
-    <script src="./js/chart/defaultChart.js" type="text/javascript"></script>
     <!-- Custom script for this template-->
     <script src="./js/ui.js" type="text/javascript"></script>
     <script src="./js/responsiveCSS.js" type="text/javascript"></script>
   </head>
-  <body><a class="blind" href="#content">본문 바로가기</a>
-    <!-- Navigation Q. https://mpyc.kr/kr/ 및 메뉴명-->
+  <body><a class="sr-only sr-only-focusable" id="skipAccesibility" href="#content">본문 바로가기</a>
+    <!-- Navigation-->
     <nav class="gnb navbar navbar-light navbar-expand-md fixed-top" id="gnb">
-      <div class="container-fluid"><a class="gnbLogo navbar-brand" href="#"><img src="./images/logo.png" alt="로고"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gnbInner" aria-controls="gnbInner" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="container-fluid"><a class="gnbLogo navbar-brand" href="main.html"><img src="./images/logo.png" alt="로고"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gnbInner" aria-controls="gnbInner" aria-expanded="false" aria-label="menu toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="gnbInner collapse navbar-collapse" id="gnbInner">
           <ul class="gnbMenu navbar-nav" id="gnbMenu">
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown1" href="whatwedo.html" data-toggle="dropdown" aria-expanded="false">LaCals</a>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown1" href="#" data-toggle="dropdown" aria-expanded="false">LaCalS</a>
               <div class="dropdown-menu" aria-labelledby="dropdown1"><a class="dropdown-item" href="whatwedo.html">What We Do</a><a class="dropdown-item" href="whoweare.html">Who We Are</a></div>
             </li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown2" href="regular.html" data-toggle="dropdown" aria-expanded="false">Signatures</a>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown2" href="#" data-toggle="dropdown" aria-expanded="false">Signatures</a>
               <div class="dropdown-menu" aria-labelledby="dropdown2"><a class="dropdown-item" href="regular.html">Regular</a><a class="dropdown-item" href="theme.html">Theme</a></div>
             </li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown3" href="moreinformation.html" data-toggle="dropdown" aria-expanded="false">Contact Us</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown3"><a class="dropdown-item" href="moreinformation.html">More Information</a><a class="dropdown-item" href="location.html">Location</a></div>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown3" href="#" data-toggle="dropdown" aria-expanded="false">Contact Us</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown3"><a class="dropdown-item" href="location.html">Location</a></div>
             </li>
           </ul>
         </div>
-        <ul class="gnbSub navbar-nav" id="gnbSub">
-          <li class="nav-item"> <a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="iconFacebook fab fa-facebook-square"></i></a></li>
+        <ul class="gnbSub navbar-nav d-none d-md-flex" id="gnbSub">
+          <li class="nav-item"> <a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="iconYoutube fab fa-youtube-square"></i></a></li>
           <li class="nav-item"> <a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="iconInstagram fab fa-instagram-square"></i></a></li>
         </ul>
       </div>
     </nav>
     <footer class="footer"> 
       <div class="container-fluid footerInner"> 
-        <p class="footerLogo">LacalS</p>
+        <p class="footerLogo">LaCalS</p>
         <p class="footerAddress">서울특별시 강남구 선릉로8길 9 1층</p>
         <p class="footerRight">Copyright&copy; LaCalS. All rights reserved.</p>
       </div>
     </footer>
   </body>
 </html>
-<style>
-  .navbar {
-  font-size: 22px;
-  color:#333;
-  transition: background-color 0.3s ease;
-  }
-  
-  .navbar-nav .nav-item {
-      margin-right: 20px; /* Adjust the right margin */
-      margin-left: 20px; /* Adjust the left margin */
-  }
-  .navbar-nav .nav-link {color:#333;}
-  .navbar-nav .nav-link i {font-size:33px; margin-left: 10px;}
-  #navbarNav .navbar-nav a {font-size:24px; color:#333;}
-  .dropdown-menu {font-size:22px;}
-  .navbar.scrolled {
-  background-color: rgba(256, 256, 256, 0.9) !important;
-  }
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-  var navbar = document.querySelector('.navbar');
-  
-  window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-      } else {
-      navbar.classList.remove('scrolled');
-      }
-  });
-  });
-</script>

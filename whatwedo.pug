@@ -6,110 +6,133 @@ block div
     section.jumbotron.jumbotronBg1 
         div.container
             p.jumbotronLead LaCalS
-    section 
-        div#wrapper 
-            div#content
-                h2.contentTitle What We do
-                p.contentIntro
-                    |LAMA 히브리어로 why?라는 의미이며 질문은 아이들의 풍부한 상상력과  창의력의 시작입니다.
+    section#content
+        div.focusBg
+            div.focus.container-fluid
+                h2.title What We do
+                ul.detail
+                    li 
+                        span LAMA 
+                        p 히브리어로 'why?'라는 의미이며 질문은 아이들의 풍부한 상상력과 창의력의 시작입니다.
+                    li
+                        span GLOCAL
+                        p ‘Local’과 ‘Global’의 합성어로, 로컬에서 글로벌로 뻗어나가는 시각과, 글로벌 관점을 로컬에
+                            br
+                            |적용하는 역량을 함께 키웁니다.
+                    li
+                        span STAGE
+                        p 모든 아이가 자신의 색깔을 찾아 각자의 무대에서 그 색깔을 마음껏 선보이길 바라는 마음을 담았습니다. 
+                //-p.detail
+                    |LAMA 
+                    |히브리어로 why?라는 의미이며 질문은 아이들의 풍부한 상상력과 창의력의 시작입니다.
                     br
-                    |GLOCAL ‘Local’과 ‘Global’의 합성어로 로컬에서 글로벌로 뻗어나가기도, 또 글로벌의 기준과 사고를 로컬로 가져와 적용할 수 있는 태도를 가르칩니다.
+                    |GLOCAL ‘Local’과 ‘Global’의 합성어로 로컬에서 글로벌로 뻗어나가기도, 또 글로벌의 기준과 사고를
+                    br
+                    |로컬로 가져와 적용할 수 있는 태도를 가르칩니다.
                     br
                     |STAGE 모든 아이가 자신의 색깔을 찾아 각자의 무대에서 그 색깔을 마음껏 선보이길 바라는 마음을 담았습니다. 
-                div.contentMain
-                    h4.bigHeading(style={'margin-bottom':'4.8rem'}) LaCalS 
-                        b 교육 주요 키워드
-                    ul.keywords.cross(style={'margin-bottom':'25rem'})
-                        li 
-                            img(src="../images/tempImage3.png")
-                            p 글로벌 시민
-                        li 
-                            img(src="../images/tempImage4.png")
-                            p 정서지능
-                        li 
-                            img(src="../images/tempImage5.png")
-                            p 메타인지(자기표현)
-                        li 
-                            img(src="../images/tempImage2.png")
-                            p 사고의 유연성
-                        li 
-                            img(src="../images/tempImage6.png")
-                            p 창의적 사고
-                    h4.bigHeading(style={'margin-bottom':'4.8rem'}) LaCalS 
-                        b 교육 프로그램 근거 이론
-                    ul.imageOverText(style={'margin-bottom':'25rem'})
-                        li 
-                            img(src="../images/keywordsImage1.png")
-                            p 비고츠키 
-                                b 근접발달영역(ZPD) 
-                        li 
-                            img(src="../images/keywordsImage2.png")
-                            p 하워드 가드너
-                                b 다중지능이론
-                        li
-                            img(src="../images/keywordsImage4.png")
-                            p CASEL&SSES(OECD)
-                                b 사회정서역량
-                    h4.bigHeading(style={'margin-bottom':'6rem'}) LaCalS
-                        b 교육 목표
-                    .introductBackground
-                    .introduce(style={'margin-bottom':'7.4rem'})
-                        |모든 아이는 
-                        b 특별
-                        |합니다.
-                        br
-                        |그 특별함에 날개를 달고 아이가 더 높이 더 멀리, 무엇보다
-                        br
-                        |'무사히' '잘' 날아가기를 바라는 마음에서 
-                        b 시작된 LaCalS
-                        | 입니다.
-                        br
-                        |LaCalS에서는 사고의 유연성을 길러 세계 어디서든
-                        br
-                        |품격을 갖춘 
-                        b 글로벌 인재 육성
-                        |을 목표로 합니다.
-                    //-h4.bigHeading(style={'margin-bottom':'6rem', 'margin-top':'24rem'}) LaCalS 
-                        b 교육 목표
-                    //-.introduce2(style={'padding-bottom':'5rem', 'display':'flex'})
-                        img(src="../images/cardButton1.jpeg")
-                        p
-                            |모든 아이는 
-                            b 특별
-                            |합니다.
-                            br
-                            |그 특별함에 날개를 달고 아이가 더 높이 더 멀리, 무엇보다
-                            br
-                            |'무사히' '잘' 날아가기를 바라는 마음에서 
-                            b 시작된 LaCalS
-                            | 입니다.
-                            br
-                            |LaCalS에서는 사고의 유연성을 길러 세계 어디서든
-                            br
-                            |품격을 갖춘 
-                            b 글로벌 인재 육성
-                            |을 목표로 합니다.
+        div.keywords.container-fluid
+            h4.title LaCalS 
+                b 주요 키워드
+            ul.detail.cross
+                li 
+                    img(src="./images/keywordsImage1.png")
+                    p 글로벌 시민
+                li 
+                    img(src="./images/keywordsImage3.png")
+                    p 자기표현(메타인지)
+                li 
+                    img(src="./images/keywordsImage2.png")
+                    p 정서지능
+                li 
+                    img(src="./images/keywordsImage4.png")
+                    p 사고의 유연성
+                li 
+                    img(src="./images/keywordsImage5.png")
+                    p 창의적 사고
+        div.theory.container-fluid
+            h4.title LaCalS 
+                b 교육 프로그램 근거 이론
+            ul.imageOverText
+                li
+                    img(src="./images/theoryImage3.png")
+                    p CASEL&SSES(OECD)
+                        b 사회정서역량
+                li
+                    img(src="./images/theoryImage2.png")
+                    p 하워드 가드너
+                        b 다중지능이론
+                li
+                    img(src="./images/theoryImage1.png")
+                    p 비고츠키 
+                        b 근접발달영역(ZPD) 
+        div.introduceBg 
+            div.introduce.container-fluid
+                h4.title LaCalS
+                    b  목표
+                div.detail
+                    |모든 아이는 
+                    |특별합니다.
+                    br
+                    |그 특별함에 날개를 달고 아이가
+                    br
+                    |더 높이 더 멀리, 무엇보다 '무사히' '잘'
+                    br
+                    |날아가기를 바라는 마음에서 시작된 LaCalS 입니다.
+                    br
+                    |LaCalS에서는 사고의 유연성을 길러 세계 어디서든
+                    br
+                    b 품격을 갖춘 글로벌 인재 육성
+                    |을 목표로 합니다.
     style.
-        /*임시로 contentTitle&Intro디자인을 위한 CSS*/
-        .jumbotron{position: relative;}
-        .jumbotron::before {content: ''; position: absolute; bottom: -400px; left: 0; background-color:rgba(253,251,248,1); width: 100%; height: 100vh;  z-index: -1;}
-        #content {display: flex;}
-        .contentTitle{flex-basis: 20%;}
-        .contentIntro{flex-basis: 80%; margin-bottom: 18rem;}
+        .focusBg {background-color:rgba(253,251,248,1);}
+        .focus {display:flex; padding:4.5rem 0;}
+        .focus .title {flex-basis: 20%; font-size: 2.8rem; font-weight: 700; color: black;}
+        .focus .detail {flex-basis: 80%; font-size: 2.1rem; font-weight: 400; word-break: keep-all;}
 
-        .keywords {display: flex; flex-wrap: nowrap; justify-content: space-between; padding: 0; color: #222;}
-        .keywords li {display: flex; flex-direction: column; width: calc(20% - 1.4rem);}
+        /*각 키워드별 설명 추가*/
+        .focus .detail li {display: flex;}
+        .focus .detail li span {width: 180px; font-weight: 600;}
+        .focus .detail li p {width: 100%; margin:0; padding:0;}
+
+        .keywords {padding:5.8rem 0; padding-bottom:18rem; color: #222;}
+        .keywords ul {display: flex; justify-content: space-between; gap: 2.4rem;}
+        .keywords ul.cross li:nth-child(2n) {flex-direction: column-reverse; padding-top: 8rem;/*transform: translateY(30%);*/}
+        .keywords li {display: flex; flex-direction: column;}
         .keywords li img {width: 100%; height: 32rem; object-fit: cover; background-color: #fff7ea; border-radius: 2.5rem;}
         .keywords li p {margin: 0; padding:1rem 0; font-size: 2.4rem; font-weight: 600; text-align: center;}
-        .keywords.cross li:nth-child(2n) {flex-direction: column-reverse; padding-top: 8rem;/*transform: translateY(30%);*/}
         
-        /*현재 화면에서만 해당하는 CSS*/
-        #wrapper {position: relative;}
-        .introductBackground {position: absolute; left: 0; right: 0; width: calc(100vw - 10px); margin-left: calc(-50vw + 50%); box-sizing: border-box; height: 52rem; background: rgba(254,251,248,1) url("../images/mothersLove.png") no-repeat right bottom; z-index:-1;}
-        .introduce {padding-top: 6rem; padding-right: 40rem; font-size:2.4rem; line-height: 220%; text-align:center;}
-        .introduce b {font-weight: inherit; background: linear-gradient(transparent 50%, rgba(255, 165, 0, 0.5) 50%);}
+        .theory {padding-bottom: 18rem;}
+        .theory .title {margin-bottom: 4.8rem;}
 
-        .introduce2 {display: flex; align-items: center;}
-        .introduce2 img {width:35%; height: 55rem; object-fit: cover; border-radius: 4rem;}
-        .introduce2 p {padding-left: 8rem; font-size:2.4rem; line-height: 220%; ;text-align: center;}
-        .introduce2 p b {font-weight: inherit; background: linear-gradient(transparent 50%, rgba(255, 165, 0, 0.5) 50%);}
+        .introduceBg {background: rgba(254,251,248,1) url("./images/mothersLove.png") no-repeat right bottom; background-size: 780px auto;}
+        .introduce {padding: 6rem 0;}
+        .introduce .title {margin-bottom:2.5rem;}
+        .introduce .detail {margin-right:30%; font-size:2.4rem; line-height: 220%; text-align:center;}
+        .introduce .detail b {font-weight: inherit; background: linear-gradient(transparent 50%, rgba(255, 165, 0, 0.5) 50%);}
+        
+        @media (max-width: 1199.98px) {
+            .focus {flex-direction: column;}
+            .focus .detail {flex-basis: auto; padding:0 2rem;}
+
+            .keywords ul {flex-wrap: wrap; gap: 0;}
+            .keywords ul li:nth-child(-n+2) {flex-basis: 49%;}
+            .keywords ul li:nth-child(n+3) {flex-basis: 30%;}
+            .keywords ul.cross li:nth-child(2n) {flex-direction: column; padding-top: 0;}
+
+            .theory ul {flex-wrap: wrap; gap: 15px;}
+            .theory ul li {flex-basis:49%;}
+            .theory ul li:last-child {flex-basis: 99%;}
+
+            .introduceBg {background-position: right -100% bottom;}
+        }
+        
+        @media (max-width: 991.98px) {
+            .keywords ul.cross li {flex-basis: 49%;}
+            .keywords ul.cross li:last-child {flex-basis: 99%;}
+            
+            .theory ul li {flex-basis: 100%;}
+
+            .introduceBg {background-image:none;}
+            .introduce .detail {margin-right: 0;}
+        }

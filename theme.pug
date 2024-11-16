@@ -6,26 +6,64 @@ block div
     section.jumbotron.jumbotronBg1 
         div.container
             p.jumbotronLead Signatures
-    section 
-        div#wrapper 
-            div#content.lesson
-                h4.lessonTitle 테마 레슨
-                p.lessonIntro 만 49개월 이상의 아이들을 대상으로 다양한 직간접 경험을 시켜주기 위하여 고안된 소규모 레슨입니다.
-                div.lessonThemeContent
-                    img(src="../images/lessonImage2.png")
-                    ul
-                        li
-                            span 01
-                            h5 Class Harpatka
-                            p 
-                                |하르팟카 클래스는 영어와 한국어로 진행되며 하브루타식 글로벌 사고확장을 도모합니다.
-                                |추후 문해력 향상, 사고력 확장, 사고 유연성 등 전반적으로 긍정적인 영향을 끼칩니다.
-                div.lessonThemeContent
-                    img(src="../images/lessonImage3.png")
-                    ul    
-                        li
-                            span 02
-                            h5 Class Bitahon
-                            p
-                                |비타혼 클래스는 영국 연극연출가와 함께하는 자기주도 연극 프로그램입니다.
-                                |아이들은 직접 영어로 캐릭터 선정, 대사 작성, 소품 제작 등 나만의 연극을 완성합니다.
+    section#content.container-fluid
+        div.lesson
+            h4.title 테마 레슨
+            p.detail 만 49개월 이상의 아이들을 대상으로 다양한 직간접 경험을 시켜주기 위하여 고안된 소규모 레슨입니다.
+            div.lineNumber 
+                span 01
+            div.lessonThemeContent
+                ul 
+                    li
+                        h5 Class Harpatka
+                        img(src="./images/lessonImage2.png")
+                p
+                    |하르팟카 클래스는 영어와 한국어로 진행되며 하브루타식 글로벌 사고확장을 도모합니다.
+                    |추후 문해력 향상, 사고력 확장, 사고 유연성 등 전반적으로 긍정적인 영향을 끼칩니다.
+            div.lineNumber 
+                span 02
+            div.lessonThemeContent
+                ul    
+                    li
+                        h5 Class Bitahon
+                        img(src="./images/lessonImage3.png")
+                p(style="display: block;")
+                    |영국 정통 연극연출가와 함께하는 
+                    span.highlight
+                        |자기주도 연극 프로그램
+                    |으로,
+                    br
+                    |그림책부터 클래식 문학까지 다양한 장르를 다각도로 해석하고 아이의 색깔로 무대에서 표현합니다.
+                    br
+                    |아이는 캐릭터 선정, 대본 작성, 소품 및 무대 제작 등 모든 과정을 단계별로 직접 참여하며 연극을 완성해 나갑니다.
+    style. 
+        .lesson {padding:4rem 0; padding-bottom:8rem;}
+        .lesson .title {font-weight: 800; margin-bottom: 2.2rem; text-align: left;}
+        .lesson .detail {font-size: 2.1rem; font-weight: 400; color: #1d1d1f; font-family: "Nanum Square Round"; margin-bottom: 0rem;}
+
+        .lineNumber {display: flex; justify-content: center; padding-top: 14rem; padding-bottom: 4rem;}
+        .lineNumber span{display:flex; position: relative; justify-content: center; align-items: center; font-size:2rem;/*width: 5rem; height: 5rem; border-radius:50%;*/}
+        .lineNumber span:before{position: absolute; content:''; width: 1px; height: 6rem; transform:translateY(-100%); background-color:#222;}
+                     
+        .lessonThemeContent {display: flex; gap: 4rem;}
+        .lessonThemeContent h5{font-size: 3.8rem; margin-bottom: 3.5rem;}
+        .lessonThemeContent img {width: 40rem; height: 25rem; object-fit: cover; border-radius: 20px;}
+        .lessonThemeContent p {display: flex; align-items: center; font-size: 2.5rem; color:#222; margin-top: 5rem;}
+        .lessonThemeContent:last-child {flex-direction: row-reverse;}
+        .lessonThemeContent:last-child h5 {text-align:right;}
+        .lessonThemeContent:last-child p {margin-left:0; margin-right:4rem;}
+
+        @media (max-width: 1199.98px) {
+            .lessonThemeContent:last-child {flex-direction: row;}
+            .lessonThemeContent:last-child h5 {text-align: left;}
+            .lessonThemeContent:last-child p {margin:0;}
+        }
+        @media (max-width: 991.98px) {
+            .lineNumber {justify-content: left; padding-top: 6rem; padding-bottom: 1rem;}
+            .lineNumber span {font-size: 3.8rem; font-weight: 800;}
+            .lineNumber span:before {display:none;}
+            .lessonThemeContent {gap: 1rem;}
+            .lessonThemeContent p {margin-top:0;}
+            .lessonThemeContent:nth-child(n+1) {flex-direction: column;}
+            .lessonThemeContent img {width:100%;}
+        }
