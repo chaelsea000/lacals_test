@@ -47,7 +47,7 @@ block div
                                 li 국제보건 관련 공공기관 근무
                                 li 국제보건의료 교육사업 6년
                                     br
-                                    |–사업발굴, 기획, 운영관리, 평가 등
+                                    |- 사업발굴, 기획, 운영관리, 평가 등
                     h5.profileContentTitle 자격증 등 기타사항
                     ul.profileContentList 
                         li 보유 자격
@@ -127,7 +127,7 @@ block div
                     li 
                         img(src="https://img.youtube.com/vi/RGv-l0tMMx8/maxresdefault.jpg")
     style.
-        .container-fluid {margin-top: 4rem;}
+        #content.container-fluid {margin-top: 4rem;}
         .profile {display: flex; gap: 10rem; justify-content: space-between; margin-bottom:15rem;}
         .profileImage {width: 20%; min-width: 34rem; max-width: 38rem;}
         .profileImage img {width: 100%; border-radius: 2rem;}
@@ -142,7 +142,7 @@ block div
         .profileContentTitle {font-size:2.4rem; font-weight: 600; color: #333; margin-bottom: 1rem;}
         .profileContentList {font-size: 2.2rem; margin-bottom: 2.4rem;}
         .profileContentList > li {padding-left: 2rem;}
-        .profileContentList > li > li {padding-left: 1.2rem; font-size: 1.8rem; color: #333;}
+        .profileContentList > li > ul > li {padding-left: 2rem; font-size: 1.8rem; color: #333;}
 
         .profileTheme1 .profileIntro {font-size: 4.2rem; margin-top: 4rem; font-family: 'SDMisaeng'; font-style: italic;}
         .profileTheme2 .profileIntro {font-size: 2.6rem;}
@@ -150,14 +150,18 @@ block div
         /*불렛 효과*/
         .profileContentTitle {position: relative; padding-left: 0rem;}
         .profileContentTitle:after {position: absolute; content:''; width: 1.2rem; height: 1.2rem; border-radius: 50%; background-color:#f15c22; left: -2.3rem; top: 0.7rem;}
-       /*.profileContentList {position: relative; padding-left: 4rem;}
+        .profileTheme1 .profileContentList > li {position: relative;}
+        .profileTheme1 .profileContentList > li:after {content: '\2713'; position: absolute; color:#f15c22; opacity: 0.5; left: -0.2rem; top: 0.1rem; font-size: 1.8rem;}
+        
+       /*선 효과
+        .profileContentList {position: relative; padding-left: 4rem;}
         .profileContentList:after {position:absolute; content:''; width:0.2rem; height:calc(100% + 6rem); top: -2rem; left: -1.8rem; background-color:#f15c22;}
         .profileContentList:last-child:after {height: calc(100% + 2rem);}*/
         /*사용안함
         .profileTheme2 {flex-direction: column; align-items: center; justify-content: center; gap: 0;}
         .profileTheme2 .profileIntro {font-size:2.6rem; text-align: center;}*/
         
-        /*
+        /*추후 사ㅇㅖ정
         .profileGallery {width: 100%;
             &Title {font-size: 2.4rem; font-weight: 600; color:#333; margin-bottom: 1rem;}
             &Content {
