@@ -9,6 +9,9 @@
 /* 가급적 extend대신 mixin을 사용 권장 */
 /*max-width 기본값 0은 트릭*/
 /*부트스트랩 sr-only와 동일*/
+@import url("https://fonts.cdnfonts.com/css/poppins");
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT.css");
+@import url("https://rsms.me/inter/inter.css");
 @import url(./vendor/fonts/NanumGothic/font.css);
 @import url(./vendor/fonts/NotoSans/font.css);
 @import url("https://fonts.cdnfonts.com/css/montserrat");
@@ -22,6 +25,7 @@
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
+/*#ff733d*/
 /* ---------------------------------------------------
     COMMON STYLE
 ----------------------------------------------------- */
@@ -31,19 +35,24 @@
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "RixXladywatermelonR";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-4@1.0/RixXladywatermelonR.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
 /*rem 작업을 위한 10px로 조정*/
 html {
-  font-size: 12px;
-  font-family: "Montserrat", "Noto Sans", "Nanum Gothic", "Malgun Gothic", sans-serif;
+  font-size: 10px;
+  font-family: "SUIT", "Montserrat", "Noto Sans", "Nanum Gothic", "Malgun Gothic", sans-serif;
   font-weight: 400;
-  color: #333333;
+  color: #383838;
   word-break: keep-all;
+}
+
+body {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.majorTitle, .minorTitle, .jumbotron, .jumbotronFooter {
+  font-family: "Poppins";
 }
 
 ul {
@@ -74,6 +83,36 @@ table caption {
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
+.onlyLg, .onlyMd {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 9px;
+  }
+
+  .onlyLg {
+    display: block;
+  }
+
+  .onlyLgHide {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+
+  .onlyMd {
+    display: block;
+  }
+
+  .onlyMdHide {
+    display: none;
+  }
+}
 /* ---------------------------------------------------
     LAYOUT STYLE
 ----------------------------------------------------- */
@@ -95,22 +134,30 @@ table caption {
 #wrapper {max-width: 1400px; margin: 0 auto;}
 #content {display: block; flex-wrap: wrap; align-items: stretch; width: 100%; min-height: 58rem; padding: 8rem 0; color: #333;}*/
 /*FOR LAYOUT*/
-.title {
-  font-size: 3.8rem;
-  line-height: 120%;
-  font-weight: 300;
-  color: #222;
-  text-align: center;
-  margin-bottom: 6rem;
+.tabMenu {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
-.title b {
-  font-weight: 800;
+.tabMenu a {
+  display: flex;
+  padding: 1.8rem 4rem;
+  font-size: 1.6rem;
+  color: #878686;
 }
-
-.detail {
-  font-size: 2.1rem;
-  font-weight: 400;
-  color: #222;
+.tabMenu a.active {
+  position: relative;
+  color: black;
+}
+.tabMenu a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-50%);
+  width: calc( 100% - 8rem);
+  height: 0.5rem;
+  background-color: #ff5e00;
 }
 
 #content {
@@ -133,17 +180,49 @@ table caption {
     }}
   }*/
 }
-#content .contentTitle {
+#content .majorTitle {
+  margin-top: 8.4rem;
+  margin-bottom: 3.5rem;
   font-size: 2.8rem;
   font-weight: 700;
-  color: black;
+  text-align: left;
+  color: #ff5e00;
+}
+#content .minorTitle {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #006c67;
+}
+#content .subTitle {
+  font-size: 1.9rem;
+  font-weight: normal;
+  font-family: "Inter";
+  color: #006c67;
+}
+#content .titleIntro {
+  margin-bottom: 7rem;
+  font-size: 1.6rem;
+  font-family: "Inter";
+  color: #383838;
+}
+#content .contentTitleWrap {
+  background-color: #d9d5cb;
+}
+#content .contentTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #006c67;
+  padding: 3rem 0 2.5rem 0;
+}
+#content .contentIntroWrap {
+  background-color: #006c67;
 }
 #content .contentIntro {
-  font-size: 2.1rem;
-  font-weight: 400;
-  color: #222;
-  font-family: "Nanum Square Round";
-  word-break: keep-all;
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
 }
 #content .contentMain {
   margin-top: 2rem;
@@ -164,7 +243,7 @@ table caption {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: #f15c22;
+  background-color: #ff5e00;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -189,6 +268,10 @@ table caption {
   color: #a0a0a0;
 }
 
+.textOrange {
+  color: #ff5e00;
+}
+
 .notes {
   font-size: 1.4rem;
   padding: 1.5rem 3rem;
@@ -200,6 +283,7 @@ table caption {
 .highlight {
   display: inline-block;
   background: linear-gradient(transparent 50%, rgba(255, 142, 66, 0.3) 50%);
+  line-height: 100%;
 }
 
 .imageOverText {
@@ -249,18 +333,6 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   margin-top: 2rem;
 }
 
-@media (max-width: 991px) {
-  #content {
-    padding: 0 2%;
-    margin-top: 4rem;
-  }
-  #content .contentTitle {
-    margin-top: 1rem;
-  }
-  #content .contentLocation {
-    display: none;
-  }
-}
 /* ---------------------------------------------------
     TOPMENU NAV STYLE
 ----------------------------------------------------- */
@@ -270,10 +342,35 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     font-size: 1.9rem;
     font-weight: 600;
     color: #333;
+    /*.fixed-top과 동일*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    /*.navbar-expand- 동일*/
+    flex-flow: row nowrap;
+    justify-content: flex-start;
     /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
     /*부트스트랩에서 기본적으로 제공하는 화살표 제거*/
     /*부트스크랩 메뉴 우버시 보이도록*/
     /*GNB MENU DESIGN CUSTOM*/
+  }
+  .gnb .navbar-nav {
+    flex-direction: row;
+  }
+  .gnb .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .gnb .navbar-nav-scroll {
+    overflow: visible;
+  }
+  .gnb .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .gnb .navbar-toggler {
+    display: none;
   }
   .gnb .nav-item {
     font-size: inherit;
@@ -308,7 +405,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #f15c22;
+    background-color: #ff5e00;
     transform: scaleX(0);
     transition: transform 300ms ease-in-out;
   }
@@ -316,7 +413,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     transform: scaleX(1);
   }
   .gnbMenu .nav-item:hover {
-    color: #f15c22;
+    color: #ff5e00;
   }
   .gnbMenu .nav-item .nav-link {
     padding: 2.2rem 2.75rem;
@@ -355,7 +452,12 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     justify-content: center;
   }
   .gnbSub {
+    display: flex;
     font-size: 2.8rem;
+  }
+  .gnbSub .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
   .gnbSub a, .gnbSub i {
     font-size: inherit;
@@ -368,6 +470,75 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   }
 }
 @media (max-width: 991.98px) {
+  .gnb {
+    /*.fixed-top과 동일*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
+    /*부트스트랩에서 기본적으로 제공하는 스타일 커스텀*/
+  }
+  .gnb.navbar {
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .gnb .container-fluid {
+    padding: 0;
+  }
+  .gnb .navbar-toggler {
+    padding: 1.4rem 1.4rem;
+    background-color: #ff5e00;
+    border: 0;
+    border-radius: 0;
+  }
+  .gnb .navbar-toggler .navbar-toggler-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    transition: transform 0.45s ease;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+  }
+  .gnb .navbar-toggler[aria-expanded=true] .navbar-toggler-icon {
+    transform: rotate(90deg);
+    transition: transform 0.45s ease;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='30' height='30'><path d='M5 5L19 19M19 5L5 19' stroke='white' stroke-width='2' stroke-linecap='round'/></svg>");
+  }
+  .gnb .dropdown-toggle::after {
+    display: none;
+  }
+  .gnb .navbar-nav .nav-link:hover {
+    color: inherit;
+  }
+  .gnb .navbar-nav .nav-link {
+    padding: 16px 20px;
+    font-size: 18px;
+    color: black;
+    background-color: #fff;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .gnb .navbar-nav .show > .nav-link {
+    color: white;
+    background-color: #ff5e00;
+  }
+  .gnb .navbar-nav .nav-item.dropdown {
+    border-bottom: 1px solid #eee;
+  }
+  .gnb .dropdown-menu {
+    transition: all 0.3s ease-in-out;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  .gnb .dropdown-item {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #666;
+    white-space: nowrap;
+    background-color: #f7f7f7;
+    border: 0;
+  }
   .gnbMenu {
     font-size: 1.6rem;
   }
@@ -376,9 +547,13 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   }
   .gnbLogo {
     width: 5rem;
+    margin-left: 0.8rem;
   }
   .gnbLogo img {
     width: 100%;
+  }
+  .gnbSub {
+    display: none;
   }
 }
 /* ---------------------------------------------------
@@ -497,12 +672,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   #sidebar {
     position: absolute;
     width: 100%;
-    /*li a {
-        display: block;
-        padding: 1em;
-        float: none;
-        width: 100%;
-    }*/
+    z-index: 100;
   }
   #sidebar .sidebarHeader {
     cursor: pointer;
@@ -528,9 +698,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     display: none;
   }
 
-  #sidebar {
-    z-index: 100;
-  }
+  /*#content {margin-top: $sidebarHeaderLineheightWidth768;}*/
 }
 /* ---------------------------------------------------
   FOOTER
@@ -544,6 +712,14 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
 }
 .footerAddress {
   margin-bottom: 1.8rem;
+}
+.footerLangLink {
+  display: block;
+  font-size: 1.6rem;
+  color: #888;
+}
+.footerLangLink:hover {
+  color: #888;
 }
 .footerRight {
   font-size: 1.6rem;
@@ -767,6 +943,16 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   background-position: 0% 45%;
 }
 
+.jumbotronFooter {
+  padding: 5rem 0;
+  font-size: 4.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  background: #ff5e00;
+  border-bottom: 3rem solid #006c67;
+}
+
 @media (max-width: 991px) {
   .carouselOverlay {
     position: relative;
@@ -776,6 +962,10 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
 
   .mainContentTabHeader li a {
     font-size: 1.6rem;
+  }
+
+  .jumbotron {
+    height: 28rem;
   }
 }
 /* ---------------------------------------------------
