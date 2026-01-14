@@ -71,7 +71,6 @@ $sidebarWidth : 320px;
 /*rem 작업을 위한 10px로 조정*/
 html {font-size: 10px; font-family:'SUIT', 'Montserrat',"Noto Sans","Nanum Gothic","Malgun Gothic",sans-serif; font-weight: 400; color: $duskGray; word-break: keep-all;} 
 body {font-size: inherit; font-family: inherit; font-weight: inherit; color: inherit;}
-.majorTitle, .minorTitle, .jumbotron, .jumbotronFooter {font-family: 'Poppins';}
 ul {list-style: none; margin: 0; padding: 0;}
 a {color: inherit;}
 a:hover {color: inherit; text-decoration: none;}
@@ -107,14 +106,10 @@ table {width:100%; margin-bottom:0; caption {position: absolute; width: 1px; hei
   a.active::after {content:''; position: absolute; bottom: 0; transform: translateY(-50%); width: calc( 100% - 8rem); height: 0.5rem; background-color: $outrageousOrange;}
 }
 #content{
-.majorTitle {margin-top: 8.4rem; margin-bottom: 3.5rem; font-size: 2.8rem; font-weight: 700; text-align: left; color: $outrageousOrange;}
-.minorTitle {margin-top: 8rem; margin-bottom: 2rem; font-size: 3.2rem; font-weight: bold; color: $deepTeal;}
-.subTitle {font-size: 1.9rem; font-weight: normal; font-family: 'Inter'; color: $deepTeal;}
-.titleIntro {margin-bottom: 7rem; font-size: 1.6rem; font-family: 'Inter'; color:$duskGray;}
 .contentTitleWrap {background-color: $alabasterCream;}
 .contentTitle{font-size: 3.5rem; font-weight: 800; color: $deepTeal; padding: 3rem 0 2.5rem 0;}
 .contentIntroWrap{background-color: $deepTeal;}
-.contentIntro{padding: 2rem 0; text-align: center; color: white;}
+.contentIntro{padding: 3.4rem 0; font-size: 1.6rem; text-align: center; color: white;}
 .contentMain {margin-top: 2rem;}
   /*.contentMenu {
     $contentMenufontSize: 1.6rem;
@@ -135,16 +130,23 @@ table {width:100%; margin-bottom:0; caption {position: absolute; width: 1px; hei
     }}
   }*/
 }
+.majorTitle {margin-top: 8rem; margin-bottom: 1rem; font-size: 2.8rem; font-weight: 700; font-family: 'Poppins'; text-align: left; color: $outrageousOrange;}
+.minorTitle {margin-top: 8rem; margin-bottom: 2rem; font-size: 3.2rem; font-weight: bold; font-family: 'Poppins'; color: $deepTeal;}
+.subTitle {margin-bottom: 3rem; font-size: 2.2rem; font-weight: 600; font-family: 'Poppins'; color: $duskGray;}
+.detailTitle {font-size: 1.9rem; font-weight: normal; font-family: 'Inter'; color: $deepTeal;}
+.overviewTitle {margin-bottom: 7rem; font-size: 1.6rem; font-family: 'Inter'; color:$duskGray;}
+.introTitle {margin-bottom: 7rem; font-size: 1.6rem; font-family: 'SUIT'; color:$duskGray;}
+
+.introduceWrap {background-color: $deepTeal;}
+.introduce {margin:0 auto; padding:3.5rem 0; font-size: 1.7rem; line-height: 180%; font-weight: 600; text-align: center; color: white;}
+.intro {}
 .majorHeading {}
-.minorHeading {
-  position: relative; font-size: 2.6rem; line-height: 4rem; color: black; margin-bottom:2rem; padding-left: 0.8rem;
-  /*border-top: 3px solid #009ddc; border-image: linear-gradient(to right, #009ddc 0%, #009ddc 2%, transparent 2%, transparent 100%) 1; border-image-slice: 1;*/
-    &:after {content: ''; display: block; position: absolute; left: 0; top: 0; background-color: $outrageousOrange; width: 2rem; height: 2rem; border-radius: 50%; z-index: -1;}
+.minorHeading {}
+.subHeading {}
+.paragraph{ 
+  &.sub {}
 }
-.subHeading {margin-bottom: 1rem; font-size: 1.6rem; color: #000000;}
-.paragraph{margin-bottom:1.7rem; font-weight: 400; font-size: 2.2rem; list-style: none;
-  &.sub {margin-bottom:1.5rem; font-size: 1.2rem; color: lighten($genericGray,10%);}
-}
+
 .textOrange {color:$outrageousOrange;}
 .notes {font-size: 1.4rem; padding: 1.5rem 3rem; margin-bottom: 2rem; background-color: $solitudeGray; color: $genericGray;}
 .highlight {display: inline-block; background: linear-gradient(transparent 50%, rgba(255, 142, 66, 0.3) 50%); line-height: 100%;}
@@ -351,13 +353,11 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
 /* ---------------------------------------------------
   FOOTER
 ----------------------------------------------------- */
-.footer {padding:4rem 0; font-size: 1.8rem; line-height: 120%; color: white; background-color: rgba(67, 86, 74, 1);
+.footerWrap {background-color: $deepTeal;}
+.footer {padding:6.9rem 0 7rem 0; font-size: 1.6rem; text-align: center; color: white;
   &Logo {}
-  &Address {margin-bottom: 1.8rem;}
-  &LangLink {display:block; font-size: 1.6rem; color:#888;
-    &:hover {color:#888;}
-  }
-  &Right {font-size: 1.6rem; color:#888;}
+  &Location {margin-bottom: 1rem;}
+  &Location b {margin-right: 1rem; font-weight: bold;}
 }
 /* ---------------------------------------------------
     MAIN&JUMBOTRON STYLE
@@ -415,13 +415,13 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
 }
 .jumbotron {
   /*부트스트랩에서 기본적으로 제공하는 점보트론 스타일 제거*/
-  margin: 0; height: 40rem; display: flex; align-items: center; text-align:center; color: white;
+  margin: 0; height: 40rem; display: flex; align-items: center; text-align:center; font-family: 'Poppins'; color: white;
   &Heading {font-size: 7rem;}
   &Lead {font-size: 5rem; line-height: 7rem; font-weight: 500; text-shadow: 0 0 5px rgb(0 0 0 / 50%);}
   &Bg1{background-image: url('../images/jumbotron.png'); background-size: cover; background-position: 0% 45%;}
 }
 .jumbotronFooter {
-  padding: 5rem 0; font-size: 4.4rem; font-weight: 700; text-align: center; color: white; background: $outrageousOrange; border-bottom: 3rem solid $deepTeal;
+  padding: 5rem 0; font-size: 4.4rem; font-weight: 700; font-family: 'Poppins'; text-align: center; color: white; background: $outrageousOrange; border-bottom: 3rem solid $deepTeal;
 }
 
 @media (max-width: 991px) {    
