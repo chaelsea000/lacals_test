@@ -52,45 +52,43 @@ block div
                 br
                 |STAGE 모든 아이가 자신의 색깔을 찾아 각자의 무대에서 그 색깔을 마음껏 선보이길 바라는 마음을 담았습니다. 
         div.brandStatement.container-fluid
-            h4.subTitle Stage-Based Multilingual Creative Learning Center
+            h4.detailTitle Stage-Based Multilingual Creative Learning Center
             p.detail
             |LaCalS는 아이가 무대 위에서 언어와 감정을 표현하며 성장하는 무대기반 창의융합교육센터입니다. 
             br
             |기초 무대에서 시작해서, 세계와 연결되고, 탐구하며, 자신감을 키우는 성장 여정을 제공합니다.
         div.philosophy.container-fluid
             h4.minorTitle LaCalS의 교육철학
-            p.titleIntro
+            p.overviewTitle
                 |All kids have their own stage to PLAY!
-        style.
-            .philosophy .philosophyList {max-width: 1200px; margin:0 auto; display: flex; justify-content: space-between;}
         div.philosophy.container-fluid
             ul.philosophyList
                 li
-                    div
+                    div.imgWrap
                         img(src="./images/philosophyImage1.png")
-                    h4 무대 기반 표현력
-                    ul
+                    h4.title 무대 기반 표현력
+                    ul.detail
                         li
                             b 정규클래스:
-                            |자기 생각 표현하기, 자기주도 창작물
+                            | 자기 생각 표현하기, 자기주도 창작물
                         li
                             b 테마클래스: 
                             |실 공연, 직접만든 대사, 무대 영상, 과정 사진
                 li
-                    div
+                    div.imgWrap
                         img(src="./images/philosophyImage2.png")
-                    h4 언어 감각, 사고 유연성
-                    div
-                        p 내생각을 언어로 풀어내고 다양한 언어로 사고 전환
+                    h4.title 언어 감각, 사고 유연성
+                    div.detail
+                        p.intro 내생각을 언어로 풀어내고 다양한 언어로 사고 전환
                         ul 
                             li 다중언어 집중환경 Translanguaging
                             li 스캐폴딩 접근, 수업 피드백 노트 작성 시 아이의 생각과 성장 기록
                 li
-                    div
+                    div.imgWrap
                         img(src="./images/philosophyImage3.png")
-                    h4 정서 지능, 자기 조절력
-                    div
-                        p 감정을 인식하고 공감하며, 언어로 감정을 표현
+                    h4.title 정서 지능, 자기 조절력
+                    div.detail
+                        p.intro 감정을 인식하고 공감하며, 언어로 감정을 표현
                         ul
                             li - 기질/자기조절력 검사(TCI/SRRS)
                                 br 
@@ -100,71 +98,119 @@ block div
         div.contentIntroWrap
             div.contentIntro.container-fluid
                 |"LaCalS는 아이가 자신의 색깔로 자신만의 무대를 만들어가는 과정을 응원합니다."
-        div.keyword.container-fluid
-            h4.titleSub Lama · Harpatka · Bitahon
-            p.detail '호기심·도전·자신감'을 상징하는 히브리어이며, 각 프로그램에 하브루타 교육 접근법이 녹아있습니다. 아이가 세계 속 다양한 언어와 문화적 맥락을 자연스럽게 접하도록 돕습니다.
-        div.keyword.keywordWrap
-            ul.keywordList.container-fluid
-                li
-                    div.keywordListTitle
-                        h4 01 정규레슨
-                        a 자세히 보기 &gt;
-                    a
-                        img(src="./images/keywordImage1.png")
-                    p.keywordListClassTitle Lama / Harpatka
-                    ul.keywordListClassList
-                        li 
-                            b 형태
-                            | 1:1~1:4
-                        li 
-                            b 수업시간
-                            | 60분
-                        li 
-                            b 주요언어
-                            | 다중언어
-                li
-                    div.keywordListTitle
-                        h4 02 테마레슨
-                        a 자세히 보기 &gt;
-                    a
-                        img(src="./images/keywordImage2.png")
-                    p.keywordListClassTitle Bitahon / Rhetoric
-                    ul.keywordListClassList
-                        li 
-                            b 형태
-                            | 1:2~1:6
-                        li 
-                            b 수업시간
-                            | 60~100분
-                        li 
-                            b 주요언어
-                            | 모국어 기반 언어
-                li
-                    div.keywordListTitle
-                        h4 03 확장클래스
-                        a 자세히 보기 &gt;
-                    a
-                        img(src="./images/keywordImage3.png")
-                    p.keywordListClassTitle World Story Atlas
-                    ul.keywordListClassList
-                        li 
-                            b 형태
-                            | 1:2~1:6
-                        li 
-                            b 수업시간
-                            | 50분
-                        li 
-                            b 주요언어
-                            | 글로벌 문화기반 영어
+        div.container-fluid
+            h4.minorTitle Lama · Harpatka · Bitahon
+            p.introTitle '호기심·도전·자신감'을 상징하는 히브리어이며, 각 프로그램에 하브루타 교육 접근법이 녹아있습니다. 아이가 세계 속 다양한 언어와 문화적 맥락을 자연스럽게 접하도록 돕습니다.            
+        div.keywordWrap
+            div.keyword.container-fluid
+                ul.keywordList
+                    li
+                        div.keywordListTitle
+                            h4 01 정규레슨
+                            a 자세히 보기 &gt;
+                        a
+                            img(src="./images/keywordImage1.png")
+                        p.keywordListClassTitle Lama / Harpatka
+                        ul.keywordListClassList
+                            li 
+                                b 형태
+                                | 1:1~1:4
+                            li 
+                                b 수업시간
+                                | 60분
+                            li 
+                                b 주요언어
+                                | 다중언어
+                    li
+                        div.keywordListTitle
+                            h4 02 테마레슨
+                            a 자세히 보기 &gt;
+                        a
+                            img(src="./images/keywordImage2.png")
+                        p.keywordListClassTitle Bitahon / Rhetoric
+                        ul.keywordListClassList
+                            li 
+                                b 형태
+                                | 1:2~1:6
+                            li 
+                                b 수업시간
+                                | 60~100분
+                            li 
+                                b 주요언어
+                                | 모국어 기반 언어
+                    li
+                        div.keywordListTitle
+                            h4 03 확장클래스
+                            a 자세히 보기 &gt;
+                        a
+                            img(src="./images/keywordImage3.png")
+                        p.keywordListClassTitle World Story Atlas
+                        ul.keywordListClassList
+                            li 
+                                b 형태
+                                | 1:2~1:6
+                            li 
+                                b 수업시간
+                                | 50분
+                            li 
+                                b 주요언어
+                                | 글로벌 문화기반 영어
         div.byWhom.container-fluid
-            h4.title By whom
-            p.titleDetail 라칼스는 ‘무대(Stage)’를 통해 아이의 감정, 언어, 사고가 자라난다고 믿습니다. 
+            h4.majorTitle By whom
+            p.introTitle 라칼스는 ‘무대(Stage)’를 통해 아이의 감정, 언어, 사고가 자라난다고 믿습니다. 
                 br
                 |LaCalS Crew는 각자의 전문성과 글로벌 무대 경험을 바탕으로, 아이들이 자신만의 언어로 세상과 소통할 수 있도록 함께합니다.
         div.crew.container-fluid
-            h4.title Lacals Crew
-            ul.detail   
+            h4.subTitle Lacals Crew
+            ul.crewList
                 li
+                    img(src="./images/crewImage1.png")
+                    ul.crewListDetail
+                        li.crewListName JAMIE 센터장 
+                        li.crewListRole 라칼스 교육·운영 총괄 /
+                            br
+                            |IB 커리큘럼 및 열린 질문 특화
+                        li.crewListStatement “아이의 호기심을 탐구로, 탐구를 성장으로 이끌어갑니다.”
+                li
+                    img(src="./images/crewImage2.png")
+                    ul.crewListDetail
+                        li.crewListName STELLA 원장
+                        li.crewListRole 라칼스 콘텐츠·감정교육 총괄 / 
+                            br
+                            |SEL·아동발달 전문가
+                        li.crewListStatement “감정이 자연스레 표현될 때, 사고와 언어는 유연하게 자랍니다.”
+                li
+                    img(src="./images/crewImage3.png")
+                    ul.crewListDetail
+                        li.crewListName JULIE 원장 
+                        li.crewListRole Harpatka & World Story Atlas 
+                            br
+                            |담당 / 창의·탐구 중심 교육
+                        li.crewListStatement “모든 아이는 자신만의 스토리를 이미 품고 있습니다. 저는 그 이야기가 무대 위에서 피어나도록 돕습니다.”
+                li
+                    img(src="./images/crewImage4.png")
+                    ul.crewListDetail
+                        li.crewListName DURY
+                        li.crewListRole Bitahon – SEL·Chavruta 
+                            br
+                            |Theatre 담당 / 연극 연출가
+                        li.crewListStatement “무대 위에서 아이가 스스로를 연출하는 순간 빛이 납니다.”
+                li
+                    img(src="./images/crewImage5.png")
+                    ul.crewListDetail
+                        li.crewListName MARIA
+                        li.crewListRole Lama & Bitahon 담당 
+                            br
+                            |/ 아동·청소년 연극 전문가
+                        li.crewListStatement “무대는 아이가 자신의 감정을 탐색하고 표현하는 공간입니다.”
+                li
+                    img(src="./images/crewImage6.png")
+                    ul.crewListDetail
+                        li.crewListName JENNY
+                        li.crewListRole Bitahon – Drama & Speech 
+                            br
+                            |담당 / 연기·발성 특화
+                        li.crewListStatement “아이의 목소리가 무대를 만나는 순간, 자신감은 자연스럽게 자랍니다.”
         div.introduceWrap
             div.introduce.container-fluid LaCalS는 학습을 위한 학원이 아닙니다.
                 br
@@ -177,11 +223,11 @@ block div
                 br
                 |Where every child learns to express their emotions and ideas on their own stage.
         div.bici.container-fluid
-            h4.title BI/CI
+            h4.majorTitle BI/CI
             div.detail
-                p 
+                div.biciIcon
                     img(src="./images/bici.png")
-                div 
+                div.biciPalette
                     h5 Color Palette
                     img(src="./images/colorPalette.png")
                     p #FF5E00 Lama Orange: 감정과 에너지(아이의 표현 중심, 포인트 컬러)
@@ -190,13 +236,16 @@ block div
                         br
                         |#595757 Neutral Charcoal: 내적 통합(배경·브랜드 프레임)
         div.atWhere.container-fluid
-            h4.title At where
+            h4.majorTitle At where
+            div.detail
+                p 서울특별시 강남구 선정릉132길 17(청담동 38-18), 4층
+                img(src="./images/atWhere.png")
         div.contentTitleWrap
             div.contentTitle.container-fluid
                 |Signatures
-        div.registration
-            h4.title Registration
-            p.detail
+        div.registration.container-fluid
+            h4.majorTitle Registration
+            div.detail
                 img(src="./images/registration.png")
                 div
                     b + 테마레슨의 경우 스테이지 아카이브(영상 포트폴리오) 제공
@@ -206,214 +255,88 @@ block div
                         li √ 매 클래스 활동 사진 및 1page 분량 클래스 노트 제공
                         li √ 클래스 정기 발달 컨설팅 리포트(레슨별 상이) 제공
                         li √ Theatre 클래스 정기 쇼케이스로 ‘무대 위 성취 경험’ 제공
-        div.contentTitleDetailWrap
-            div.contentTitleDetail.container-fluid
+        div.introduceWrap
+            div.introduce.container-fluid
                 |"LaCalS에서 아이는 배우는 존재를 넘어, 스스로 이야기하고 표현하는 주인공이 됩니다."
-        div.stages
-            h4.title Stages
+        div.stages.container-fluid
+            h4.majorTitle Stages
             p.detail
                 img(src="./images/stages.png")
+        style.
+            .majorTitle {margin-bottom: 3.5rem;}
+            .introTitle {margin-bottom: 7rem;}
+            .philosophy .philosophyList {margin:0 auto; margin-bottom: 8.5rem; max-width: 1200px; display: flex; justify-content: space-between;}
+            .philosophy .philosophyList .imgWrap {margin-bottom: 3.5rem;}
+            .philosophy .philosophyList .title {margin-bottom: 1.2rem; font-size: 2rem;}
+            .philosophy .philosophyList .intro {margin-bottom: 1.2rem; line-height: 100%; color: #006c67;}
+            .philosophy .philosophyList .detail {font-size: 1.6rem;}
+            .philosophy .philosophyList .detail b {font-weight: 600; color: #006c67;}
+            
+            .keywordWrap {background-color: #ff5e00;}
+            .keyword {margin:0 auto; padding:3rem 0; max-width: 1200px;}
+            .keyword .keywordList {display: flex; justify-content: space-between;}
+            .keyword .keywordList > li {padding: 2.4rem 2rem; border-radius: 1.4rem; background-color: white;}
+            .keyword .keywordList > li .keywordListTitle {display: flex; justify-content: space-between;}
+            .keyword .keywordList > li .keywordListTitle h4 {color:#006c67;}
+            .keyword .keywordList > li .keywordListTitle a {color:#ff5e00;}
+
+            .crew .crewList {display: flex; flex-wrap: wrap;}
+            .crew .crewList > li {width: 50%; display: flex; margin-bottom: 2.5rem;}
+            .crew .crewList > li img {}
+            .crew .crewList > li .crewListDetail {padding-left: 2.5rem; display: flex; flex-direction: column; justify-content: flex-end;}
+            .crew .crewList > li .crewListName {font-size: 3rem; margin-bottom: 2.5rem; font-weight: 600; color:#383838;}
+            .crew .crewList > li .crewListRole {font-size: 1.5rem; margin-bottom: 5rem; color:#006c67;}
+            .crew .crewList > li .crewListStatement {font-size: 1.5rem; margin-bottom: 0; color:#383838;}
+            
+            .bici .detail {display: flex;}
+            .bici .detail .biciIcon {width: 40%;}
+            .bici .detail .biciPalette {display: flex; flex-direction: column; justify-content: flex-end;}
+            .bici .detail .biciPalette h5 {margin-bottom: 6.5rem; font-size:2.2rem; font-weight: 700; font-family: 'Poppins'}
+            .bici .detail .biciPalette img {margin-bottom: 5rem;}
+            .bici .detail .biciPalette p {font-size: 1.6rem; color: #383838;}
+
+            .atWhere {margin-bottom: 9rem;}
+            .atWhere .detail {display: flex; flex-direction: column; align-items: center; justify-content: center;}
+            .atWhere .detail p{font-size: 1.8rem; text-align: center; color: #383838;}
+
+            .registration {margin-bottom: 8.4rem;}
+            .registration .detail {display: flex; flex-direction: column; align-items: center; font-size: 1.7rem;}
+            .registration .detail img {margin-bottom: 5.5rem; max-width: 780px;}
+            .registration .detail b {margin-bottom: 3.5rem; display: block; color: #006c67;}
+        
+            .stages {margin-bottom: 8.5rem;}
+            .stages .detail {display: flex; flex-direction: column; align-items: center;}
+            .stages .detail img {max-width: 780px;}
+
+            .contact .intro {margin-top: 6.6rem; margin-bottom: 4rem; font-size: 1.7rem; font-family: 'Poppins'; font-weight: 700;}
+            .contact .detail {margin-bottom: 6.3rem;}
+            .contact .detail li {font-size: 1.7rem; font-weight: normal; font-family: 'Poppins';}
+            .contact .detail li b {display: inline-block; font-weight: bold; min-width: 20rem;}
+            .contact .detail li a {}
+
+            .contact .contactList {margin:0 auto; max-width: 40rem; margin-bottom: 19rem; display: flex; justify-content: space-between;}
+            .contact .contactList li a {background-color: #ff5e00;}
         div.contentTitleWrap
             div.contentTitle.container-fluid
                 |Contact
         div.contact.container-fluid
             p.intro If you have any questions or need further information, we’re here to help!
             ul.detail
-                li 체험 수업 및 상담 문의
+                li 
+                    b 체험 수업 및 상담 문의
                     a @lacals
-                li 외부 강의 및 기관 협업 문의
+                li 
+                    b 외부 강의 및 기관 협업 문의
                     a postmaster@lacals.com
-            ul.list
-                li
-                    a(href)
-                li 
-                    a(href)
-                li 
-                    a(href)
-                li 
-                    a(href)
-        div.profile.profileTheme1
-            div.profileImage
-                img(src="./images/profileImage1.png")
-            div.profileText
-                div.profileName 
-                    b Chief
-                    |Jamie
-                div.profileIntro 
-                    |"
-                    b.highlight 글로벌 인재
-                    |를 키우는 대표 Jamie입니다"
-                div.profileTags 
-                    span #글로벌 인재 
-                    span #다중언어
-                    span #창의융합교육설계
-                    span #자기표현
-                div.profileContent
-                    h5.profileContentTitle 학력 및 연구활동
-                    ul.profileContentList
-                        li Cotter Schools(MN, USA) 졸업
-                        li The University of Iowa(IA, USA) 학사 졸업
-                            ul
-                                li Pre-medicine Track, Global Health 세부전공
-                        li 서울대학교 보건대학원 석사 졸업
-                            ul 
-                                li 국내·외 아동 대상 논문, 국내·외 연구 발표 및 수상 다수
-                                    span *질적연구 특화
-                                //-li 연구 발표, 논문 수상 다수 
-                                //-li 국내아동 신체활동 주제 졸업논문•국제보건 연구활동
-                    h5.profileContentTitle 커리어 이력
-                    ul.profileContentList 
-                        //-li 국내·외 아동 대상 논문, 국내·외 연구 발표 및 수상 다수 
-                            span *질적연구 특화
-                        li 미국 아동기관 보건전문가 근무
-                            //-ul 
-                                li Daycare 담임교사 겸직
-                        li 외교부 주니어/인턴 파견 근무
-                            ul
-                                li 볼리비아 PAHO/WHO
-                                    br
-                                    |- 국제아동기구 아동보건 프로젝트
-                        li 국제보건 공공기관 근무
-                            ul
-                                li 국제보건의료 전문 교육사업
-                                    br
-                                    |- 사업발굴, 기획, 운영관리, 평가 등
-                    h5.profileContentTitle 기타사항
-                    ul.profileContentList 
-                        li 보유 자격
-                            ul 
-                                li TESOL, 하브루타지도사1급, 영어 스토리텔링지도사
-                        li 한국어, 영어, 스페인어 구사
-                        li 32개국 글로벌 리더 및 기관과 협력 경험 多
-        div.profile.profileTheme2
-            div.profileImage
-                img(src="./images/profileImage2.png")
-            div.profileText
-                div.profileName 
-                    b Co-Chief
-                    |Stella
-                div.profileIntro 
-                    |"
-                    b.highlight 아동발달 
-                    |전문가 Stella입니다"
-                div.profileTags 
-                    span #정서지능 
-                    span #자기조절력
-                    span #인지발달
-                    span #비인지능력
-                //-div.profileIntro
-                    |아동병원과 정신건강의학과에서 간호사로 일하며 아동의 건강한 삶을 연구하고자 보건학을 전공하고 연구원으로 근무했어요. 
-                    br
-                    |아동 발달 전문가이자, 아이의 엄마로 늘 어린이의 발달과 성장을 지켜봐왔답니다. 
-                    br
-                    |LaCalS에서 아이들의 건강한 발달과 정서 지능을 함양시켜주는 선생님으로 아이들의 호기심과 창의성을 이끌고 싶어요!
-                div.profileContent
-                    h5.profileContentTitle 학력사항
-                    ul.profileContentList
-                        li 가톨릭대학교 간호대학 학사 졸업
-                        li 서울대학교 보건대학원 석사 졸업
-                            br
-                            |아동, 여성 관련 연구 다수
-                    h5.profileContentTitle 커리어 이력
-                    ul.profileContentList
-                        li 아동병원 간호사
-                        li 정신건강의학과 간호사
-                        li 연구원 출신 엄마
-                        li 신생아돌봄, 하브루타 인기 강사
-                    h5.profileContentTitle 기타사항
-                    ul.profileContentList
-                        li 아동발달지도사
-                        li 하브루타지도사 1급
-                        li 영유아 몬테소리 교육과정 수료
-        div.profile.profileTheme3
-            div.profileImage
-                img(src="./images/profileImage3.png")
-            div.profileText
-                div.profileName 
-                    b Theatre Lead
-                    |Dury
-                div.profileIntro 
-                    |"영국에서 온 
-                    b.highlight 연극 연출가
-                    |&nbsp;Dury입니다"
-                div.profileTags 
-                    span #독창성
-                    span #스토리텔링
-                    span #고전문학
-                    span #예술교육
-                div.profileContent
-                    h5.profileContentTitle 학력사항
-                    ul.profileContentList
-                        li Cambridge School of Visual and performing Arts, Cambrige,UK Foundation Degree
-                        li Goldsmiths, University of London Fondation Degree & Undergraduate Degree in Art
-                    h5.profileContentTitle 커리어 이력
-                    ul.profileContentList 
-                        li '또 다른' 대표/연출
-                        li '학전' 어린이무대 기획
-                        li 창조학당 '키즈 런던 캠프' 기획 및 운영
-                        li 영어영극 대표강사
-                        li 프리랜서 통•번역가
-                        li 유명 공연기획사 & 극단 (조)연출
-            //-div.profileGallery
-                h5.profileGalleryTitle 포트폴리오
-                ul.profileGalleryContent
-                    li 
-                        img(src="https://img.youtube.com/vi/pQTXVXTtZ8E/maxresdefault.jpg")
-                    li 
-                        img(src="https://img.youtube.com/vi/gPtNGd24RNo/maxresdefault.jpg")
-                    li 
-                        img(src="https://img.youtube.com/vi/YWqSqLstpuM/maxresdefault.jpg")
-                    li 
-                        img(src="https://img.youtube.com/vi/4GQ3quyeFc8/maxresdefault.jpg")
-                    li 
-                        img(src="https://img.youtube.com/vi/MgjthjKS1j0/maxresdefault.jpg")
-                    li 
-                        img(src="https://img.youtube.com/vi/hQj9A9gkN2M/maxresdefault.jpg")
-                    li 
-                        img(src="https://img.youtube.com/vi/JrRZwHmEh9o/maxresdefault.jpg")
-                    li 
-                        img(src="https://img.youtube.com/vi/RGv-l0tMMx8/maxresdefault.jpg")
-        div.profile.profileTheme4
-            div.profileImage
-                img(src="./images/profileImage4.png")
-            div.profileText
-                div.profileName 
-                    b Teaching Lead
-                    |Julie
-                div.profileIntro 
-                    |"
-                    b.highlight 아이의 눈높이 
-                    |에서 소통하는 선생님 Julie입니다"
-                div.profileTags 
-                    span #탐구학습
-                    span #글쓰기
-                    span #세계문학
-                    span #내적중심성
-                div.profileContent
-                    h5.profileContentTitle 학력사항
-                    ul.profileContentList
-                        li University of Sydney 학사 졸업
-                            ul
-                                li Accounting 전공
-                    h5.profileContentTitle 커리어 이력
-                    ul.profileContentList
-                        li 호주 회계사무소 근무
-                        li 컨설팅 다국적기업 근무
-                        li 영유아 영어 클래스 운영
-                            ul 
-                                li 창의놀이, 스토리텔링, 파닉스
-                        li 초중등 대형브랜드 어학원 전담 강사
-                            ul 
-                                li 100% 영어 4대 영역(읽기/듣기/말하기/쓰기) 수업
-                                li 영어 문학/비문학 수업
-                        li 국제학교 및 리터니 대상 영어 강사
-                            ul 
-                                li 주제별 문학/비문학 분석, 글쓰기 수업
-                    h5.profileContentTitle 기타사항
-                    ul.profileContentList
-                        li 하브루타지도사 1급
-                        li 영어스토리텔링지도사
-                        li 영어동화구연지도사 1급
+            div.contactList
+                a(href)
+                        img(src="./images/contactList1.png")
+                a(href)
+                        img(src="./images/contactList2.png")
+                a(href)
+                        img(src="./images/contactList3.png")
+                a(href)
+                        img(src="./images/contactList4.png")
     style.
         #content.container-fluid {}
 
@@ -439,79 +362,5 @@ block div
             .focus .detail_mobile {display: block;}
         }
 
-        .profile {display: flex; gap: 10rem; justify-content: space-between; margin-bottom: 7rem;}
-        .profileImage {width: 20%; min-width: 34rem; max-width: 38rem; text-align: right;}
-        .profileImage img {width: 100%; max-width:74rem; border-radius: 2rem;}
-        .profileText {width: 80%;}
-        .profileName {font-size: 2.8rem; color: #1d1d1f; margin-bottom: 4rem;}
-        .profileName b {margin-right: 1rem;}
-        .profileIntro {line-height: 110%; font-size: 4.2rem; font-family: 'SDMisaeng'; font-style: italic; margin-bottom: 1.8rem;}
-        .profileTags {display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 6rem;}
-        .profileTags > span {padding: 0.5rem 1rem; font-size: 1.4rem; border-radius: 2rem; box-sizing: border-box; background-color: #1d1d1f; color:#fff;}
-
-        .profileContent {}
-        .profileContentTitle {font-size:2.4rem; font-weight: 600; color: #333; margin-bottom: 1rem;}
-        .profileContentList {font-size: 2.2rem; margin-bottom: 2.4rem;}
-        .profileContentList > li {padding-left: 2rem;}
-        .profileContentList > li > ul > li {padding-left: 2rem; font-size: 1.8rem; color: #333;}
-
-        /*불렛 효과*/
-        .profileContentTitle {position: relative; padding-left: 0rem;}
-        .profileContentTitle:after {position: absolute; content:''; width: 1.2rem; height: 1.2rem; border-radius: 50%; background-color:#f15c22; left: -2.3rem; top: 0.7rem;}
-
-        /*profile별 특이사항 */
-        .profileTheme3 .profileImage img {max-width:26rem;}
-        .profileTheme4 .profileImage img {max-width:24rem;}
-        .profileTheme1 .profileContentList > li {position: relative;}
-        .profileTheme1 .profileContentList > li:after {content: '\2713'; position: absolute; color:#f15c22; opacity: 0.5; left: -0.2rem; top: 0.1rem; font-size: 1.8rem;}
-        .profileTheme1 .profileContentList > li span {font-style: italic; font-weight: 300; font-size: 1.6rem; margin-left: 0.2rem;}
-       /*선 효과
-        .profileContentList {position: relative; padding-left: 4rem;}
-        .profileContentList:after {position:absolute; content:''; width:0.2rem; height:calc(100% + 6rem); top: -2rem; left: -1.8rem; background-color:#f15c22;}
-        .profileContentList:last-child:after {height: calc(100% + 2rem);}*/
-        /*사용안함
-        .profileTheme2 {flex-direction: column; align-items: center; justify-content: center; gap: 0;}
-        .profileTheme2 .profileIntro {font-size:2.6rem; text-align: center;}*/
-        
-        /*추후 사용예정
-        .profileGallery {width: 100%;
-            &Title {font-size: 2.4rem; font-weight: 600; color:#333; margin-bottom: 1rem;}
-            &Content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 10vw);
-            grid-gap: 15px;
-            li {
-                img {width: 100%; height: 100%; object-fit: cover;}
-            }
-            li:nth-child(1) {
-                grid-column-start: 1;
-                grid-column-end: 3;
-                grid-row-start: 1;
-                grid-row-end: 3;
-            }
-            li:nth-child(2) {
-                grid-column-start: 3;
-                grid-column-end: 4;
-                grid-row-start: 1;
-                grid-row-end: 2;
-            }
-            li:nth-child(3) {
-                grid-column-start: 4;
-                grid-column-end: 5;
-                grid-row-start: 1;
-                grid-row-end: 3;
-            }
-            }
-        }
-        }
-        */
-
         @media (max-width: 1199.98px) {
-            .profile {flex-direction: column; gap: 0; text-align: center;}
-            .profileName {margin-top: 1.8rem;}
-            .profileTags {justify-content: center;}
-            .profileImage {width: 100%; padding:0; margin: 0 auto; text-align: center;}
-            .profileText {width: 100%;}
-            .profileContent {padding-left: 4rem; text-align: left;}
         }
