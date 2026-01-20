@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-027JKGTJCV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-027JKGTJCV');   
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
     <title>LaCalS</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -13,7 +23,7 @@
     <!-- fontawesome-->
     <link href="./vendor/fontawesome/css/all.css" rel="stylesheet">
     <!-- Custom layout styles for this template-->
-    <link href="./css/layout.css" rel="stylesheet">
+    <link href="./css/layout.css?v=20260120" rel="stylesheet">
     <!-- Custom layout styles for this template-->
     <link href="./css/style.css" rel="stylesheet">
     <!-- Bootstrap core JavaScript-->
@@ -25,32 +35,30 @@
   </head>
   <body><a class="sr-only sr-only-focusable" id="skipAccesibility" href="#content">본문 바로가기</a>
     <!-- Navigation-->
-    <nav class="gnb navbar navbar-light navbar-expand-md fixed-top" id="gnb">
-      <div class="container-fluid"><a class="gnbLogo navbar-brand" href="main.html"><img src="./images/logo.png" alt="로고"></a>
+    <nav class="gnb navbar navbar-light" id="gnb">
+      <div class="container-fluid"><a class="gnbLogoText navbar-brand" href="aboutLacals.html">LaCalS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gnbInner" aria-controls="gnbInner" aria-expanded="false" aria-label="menu toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="gnbInner collapse navbar-collapse" id="gnbInner">
           <ul class="gnbMenu navbar-nav" id="gnbMenu">
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown1" href="#" data-toggle="dropdown" aria-expanded="false">LaCalS</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown1"><a class="dropdown-item" href="whatwedo.html">What We Do</a><a class="dropdown-item" href="whoweare.html">Who We Are</a></div>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown1" href="#" data-toggle="dropdown" aria-expanded="false">About LaCalS<span class="mobNavlinkBar"></span></a>
+              <div class="dropdown-menu" aria-labelledby="dropdown1"><a class="dropdown-item" href="aboutLacals.html">For what</a><a class="dropdown-item" href="aboutLacals.html">By whom</a><a class="dropdown-item" href="aboutLacals.html">BI/CI</a><a class="dropdown-item" href="aboutLacals.html">At where</a></div>
             </li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown2" href="#" data-toggle="dropdown" aria-expanded="false">Signatures</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown2"><a class="dropdown-item" href="regular.html">Regular</a><a class="dropdown-item" href="theme.html">Theme</a></div>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown2" href="#" data-toggle="dropdown" aria-expanded="false">Signatures<span class="mobNavlinkBar"></span></a>
+              <div class="dropdown-menu" aria-labelledby="dropdown2"><a class="dropdown-item" href="signatures.html">Regular</a><a class="dropdown-item" href="signatures.html">Theme</a><a class="dropdown-item" href="signatures.html">Special</a></div>
             </li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown3" href="#" data-toggle="dropdown" aria-expanded="false">Contact Us</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown3"><a class="dropdown-item" href="location.html">Location</a></div>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="dropdown3" href="#" data-toggle="dropdown" aria-expanded="false">Contact<span class="mobNavlinkBar"></span></a>
+              <div class="dropdown-menu" aria-labelledby="dropdown3"><a class="dropdown-item" href="information.html">Contact</a></div>
             </li>
           </ul>
         </div>
-        <ul class="gnbSub navbar-nav d-none d-md-flex" id="gnbSub">
-          <li class="nav-item"> <a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="iconYoutube fab fa-youtube-square"></i></a></li>
-          <li class="nav-item"> <a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="iconInstagram fab fa-instagram-square"></i></a></li>
+        <ul class="gnbSub navbar-nav" id="gnbSub">
+          <li class="nav-item"> <a class="nav-link" href="https://www.youtube.com/@lacals-c9w" target="_blank"><i class="fab fa-light fa-solid fa-globe"></i></a></li>
         </ul>
       </div>
     </nav>
-    <footer class="footer"> 
-      <div class="container-fluid footerInner"> 
-        <p class="footerLogo">LaCalS</p>
-        <p class="footerAddress">서울특별시 강남구 선릉로8길 9 1층</p>
+    <footer class="footerWrap">
+      <div class="footer container-fluid"> 
+        <p class="footerLocation"><b>LAMA GLOCAL STAGE</b>서울특별시 강남구 선정릉132길 17 (청담동 38-18), 4층</p>
         <p class="footerRight">Copyright&copy; LaCalS. All rights reserved.</p>
       </div>
     </footer>

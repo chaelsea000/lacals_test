@@ -2,10 +2,20 @@ block variables
 doctype html
 html(lang='ko')
   head
+    //-<!-- Google tag (gtag.js) -->
+    script(async src="https://www.googletagmanager.com/gtag/js?id=G-027JKGTJCV")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-027JKGTJCV');   
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     meta(name='description', content='')
     meta(name='author', content='')
+    meta(http-equiv='Pragma', content='no-cache')
+    meta(http-equiv='Cache-Control', content='no-cache')
+    meta(http-equiv='Expires', content='-1')
     title LaCalS
     // Favicon
     link(rel='icon', type='image/x-icon', href='favicon.png')
@@ -14,7 +24,7 @@ html(lang='ko')
     // fontawesome
     link(href='./vendor/fontawesome/css/all.css', rel='stylesheet')
     // Custom layout styles for this template
-    link(href='./css/layout.css', rel='stylesheet')
+    link(href='./css/layout.css?v=20260120', rel='stylesheet')
     // Custom layout styles for this template
     link(href='./css/style.css', rel='stylesheet')
     // Bootstrap core JavaScript
@@ -30,41 +40,55 @@ html(lang='ko')
       block div
     else
       // Navigation
-      nav#gnb.gnb.navbar.navbar-light.navbar-expand-md.fixed-top
+      nav#gnb.gnb.navbar.navbar-light
         div.container-fluid
-          a.gnbLogo.navbar-brand(href="main.html")
-            img(src="./images/logo.png", alt="로고")
+          a.gnbLogoText.navbar-brand(href="aboutLacals.html") LaCalS
           button.navbar-toggler(type="button", data-toggle="collapse", data-target="#gnbInner", aria-controls="gnbInner", aria-expanded="false", aria-label="menu toggle navigation")
             span.navbar-toggler-icon
           div#gnbInner.gnbInner.collapse.navbar-collapse
             ul#gnbMenu.gnbMenu.navbar-nav
               li.nav-item.dropdown
-                a#dropdown1.nav-link.dropdown-toggle(href="#", data-toggle="dropdown", aria-expanded="false") LaCalS
+                a#dropdown1.nav-link.dropdown-toggle(href="#", data-toggle="dropdown", aria-expanded="false") About LaCalS
+                  span.mobNavlinkBar
                 div.dropdown-menu(aria-labelledby="dropdown1")
-                  a.dropdown-item(href="whatwedo.html") What We Do
-                  a.dropdown-item(href="whoweare.html") Who We Are
+                  a.dropdown-item(href="aboutLacals.html") For what
+                  a.dropdown-item(href="aboutLacals.html") By whom
+                  a.dropdown-item(href="aboutLacals.html") BI/CI
+                  a.dropdown-item(href="aboutLacals.html") At where
               li.nav-item.dropdown
                 a#dropdown2.nav-link.dropdown-toggle(href="#", data-toggle="dropdown", aria-expanded="false") Signatures
+                  span.mobNavlinkBar
                 div.dropdown-menu(aria-labelledby="dropdown2")
-                  a.dropdown-item(href="regular.html") Regular
-                  a.dropdown-item(href="theme.html") Theme
+                  a.dropdown-item(href="signatures.html") Regular
+                  a.dropdown-item(href="signatures.html") Theme
+                  a.dropdown-item(href="signatures.html") Special
               li.nav-item.dropdown
-                a#dropdown3.nav-link.dropdown-toggle(href="#", data-toggle="dropdown", aria-expanded="false") Contact Us
+                a#dropdown3.nav-link.dropdown-toggle(href="#", data-toggle="dropdown", aria-expanded="false") Contact
+                  span.mobNavlinkBar
                 div.dropdown-menu(aria-labelledby="dropdown3")
-                  a.dropdown-item(href="location.html") Location
-          ul#gnbSub.gnbSub.navbar-nav.d-none.d-md-flex
+                  a.dropdown-item(href="information.html") Contact
+          ul#gnbSub.gnbSub.navbar-nav
             li.nav-item 
-              a.nav-link(href="https://www.facebook.com/" target="_blank")
+              a.nav-link(href="https://www.youtube.com/@lacals-c9w" target="_blank")
+                i.fab.fa-light.fa-solid.fa-globe
+            //-li.nav-item 
+              a.nav-link.langLink(href="/eng") ENG
+            //-li.nav-item 
+              a.nav-link(href="https://www.youtube.com/@lacals-c9w" target="_blank")
                 i.iconYoutube.fab.fa-youtube-square
-            li.nav-item 
-              a.nav-link(href="https://www.instagram.com/" target="_blank")
+            //-li.nav-item 
+              a.nav-link(href="https://www.youtube.com/@lacals-c9w" target="_blank")
+                i.iconYoutube.fab.fa-youtube-square
+            //-li.nav-item 
+              a.nav-link(href="https://www.instagram.com/lamaglocalstage/" target="_blank")
                 i.iconInstagram.fab.fa-instagram-square
       if menuType == 'main'
         block div
       else
         block div
-      footer.footer 
-        .container-fluid.footerInner 
-          p.footerLogo LaCalS
-          p.footerAddress 서울특별시 강남구 선릉로8길 9 1층
+      footer.footerWrap
+        div.footer.container-fluid 
+          p.footerLocation
+            b LAMA GLOCAL STAGE
+            |서울특별시 강남구 선정릉132길 17 (청담동 38-18), 4층
           p.footerRight Copyright&copy; LaCalS. All rights reserved.
