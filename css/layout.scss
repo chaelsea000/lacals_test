@@ -172,9 +172,8 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
     TOPMENU NAV STYLE
 ----------------------------------------------------- */
 @media (min-width: 992px) {
-  .gnb {padding:0 2.5rem; font-size: 1.9rem; font-weight: 600; color: #333;
-    /*.fixed-top과 동일*/
-    position: fixed; top: 0; right: 0; left: 0; z-index: 1030;
+  .gnb {padding:0 2.5rem; font-size: 1.9rem; font-weight: 600; background-color: $outrageousOrange;
+    /*.fixed-top과 동일 position: fixed; top: 0; right: 0; left: 0; z-index: 1030;*/
     /*.navbar-expand- 동일*/
     flex-flow: row nowrap; justify-content: flex-start;
     .navbar-nav {flex-direction: row;
@@ -183,37 +182,55 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
     .navbar-nav-scroll {overflow: visible;}
     .navbar-collapse {display: flex !important; flex-basis: auto;}
     .navbar-toggler {display: none;}
-
     /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
     .nav-item {font-size:inherit; color:inherit; .nav-link {font-size:inherit; color:inherit; &:hover{color:inherit;}}} 
     .navbar-nav:not(.navbar-preview) {.dropdown-toggle:after {content: none;}}/*부트스트랩에서 기본적으로 제공하는 화살표 제거*/
-    .dropdown:hover > .dropdown-menu {display: block;}/*부트스크랩 메뉴 우버시 보이도록*/
+    .dropdown:hover > .dropdown-menu {display: flex;/* 한줄 정렬을 위해 수정 block;*/}/*부트스크랩 메뉴 우버시 보이도록*/
     .dropdown-menu {margin:0; padding:0; background-color: transparent;}
     .dropdown-item:hover {background-color:transparent;}
+    .navbar-nav .show > .nav-link {color: inherit;}
+    /* 메뉴명 뒤 초록색 배경바 시작 */
+    position: relative;
+    &::after {content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 5.6rem; 
+      opacity: 0; z-index: 1; background-color: $deepTeal; pointer-events: none; transition: opacity 150ms ease;}
+    &:has(.dropdown:hover) { &::after { opacity: 1; } }
+    &:has(.dropdown .dropdown-menu.show) { &::after { opacity: 1; } }
+    /* 메뉴명 뒤 초록색 배경바 끝 */
+
     /*GNB MENU DESIGN CUSTOM*/
     &Menu {
       justify-content: space-around;
       .nav-item {
-        &:after {content:''; display: block; width: 100%; height: 3px; background-color: $outrageousOrange;transform: scaleX(0); transition: transform 300ms ease-in-out;}//li에 선 효과 필요
-        &:hover:after {transform: scaleX(1);}
-        &:hover {color:$outrageousOrange;}
-        .nav-link {padding:2.2rem 2.75rem;}
+        /*&:after {content:''; display: block; width: 100%; height: 3px; background-color: $outrageousOrange;transform: scaleX(0); transition: transform 300ms ease-in-out;}
+        &:hover:after {transform: scaleX(1);}*/
+        &:hover {color:white;}
       }
+      .nav-link {padding:2.2rem 2.75rem;}
+      .nav-link .mobNavlinkBar {display:none;} //모바일 전용
+      .dropdown {position: relative;}
+      .dropdown-menu.show { display: flex; border: 0;} 
       .dropdown-menu {
-        right: auto; left: 50%; transform: translate(-50%, 0);/*부트스트랩의 menu 가운데 정렬 트릭*/
-        width: 100%; border: 0; border-radius: 0;
-        border-top:0.6rem solid rgba(0,0,0,0);
-        padding: 1.4rem 0;
-        background-color: rgba(255,255,255,0.8); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        .dropdown-item {font-size: 1.5rem; padding:0.5rem; text-align:center; width: 100%;
-          &:hover {color:rgba(0, 0, 0, 0.4);}
+        /*기존 right: auto; left: 50%; transform: translate(-50%, 0);//부트스트랩의 menu 가운데 정렬 트릭
+        width: 100%; border: 0; border-radius: 0;*/      
+        position: absolute; left: 50%; transform: translateX(-50%); top: 100%;
+        //position: absolute; left: 0; right: 0; top: 100%; 윗줄과 차이를 모르겠음
+        /* 가로 한 줄 */
+        display: none; flex-direction: row; justify-content: center; align-items: center;
+        /* 그 외 */
+        border: 0; color: white;
+        .dropdown-item {/*기존 width: 100%; padding:0.5rem; font-size: 1.5rem; text-align:center;*/
+          width: auto; padding: 2rem; font-size: 1.5rem; text-align: center;
+          display: inline-flex; align-items: center; justify-content: center;
+          color: inherit;
+          &:hover {color: $duskGray;}
         }
       }
     }
-    &Logo{margin: 0; padding: 0; width: 6.5rem;
+    &LogoText{margin: 0; margin-right: 5%; padding: 0; font-size: 2.2rem; font-family: 'Poppins'; color: $deepTeal!important;}
+    &LogoImg{margin: 0; padding: 0; width: 6.5rem;
       img {width: 100%;}
     }
-    &Inner {justify-content: center;
+    &Inner {justify-content: flex-start;/*center;*/ color: white;
     }
     &Sub {display: flex; font-size: 2.8rem;
       .nav-link {padding-right: .5rem; padding-left: .5rem;}
@@ -231,32 +248,44 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
     /*.fixed-top과 동일*/
     position: fixed; top: 0; right: 0; left: 0; z-index: 1030;
     /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
-    &.navbar {padding:0; background-color: rgba(255,255,255,0.8);}
+    &.navbar {padding:0; background-color: $outrageousOrange;}
     /*부트스트랩에서 기본적으로 제공하는 스타일 커스텀*/
     .container-fluid {padding:0;}
     .navbar-toggler {padding: 1.4rem 1.4rem; background-color:$outrageousOrange; border:0; border-radius:0;}
     .navbar-toggler .navbar-toggler-icon {width: 3.2rem; height: 3.2rem; transition: transform 0.45s ease;
-      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");}
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgba(0, 128, 128, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");}
     .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {transform: rotate(90deg); transition: transform 0.45s ease; 
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='30' height='30'><path d='M5 5L19 19M19 5L5 19' stroke='white' stroke-width='2' stroke-linecap='round'/></svg>");
     }
     .dropdown-toggle::after {display:none;}
 
-    .navbar-nav .nav-link:hover {color: inherit;}
-    .navbar-nav .nav-link {padding: 16px 20px; font-size: 18px; color: black; background-color: #fff; border-bottom: 1px solid #eeeeee;}
-    .navbar-nav .show>.nav-link {color: white; background-color: $outrageousOrange;}
-    .navbar-nav .nav-item.dropdown {border-bottom: 1px solid #eee;}
-
+    .navbar-nav .nav-link:hover {color: $deepTeal;}
+    .navbar-nav .nav-link {display: inline-flex; align-items: center; justify-content: center; padding: 1.6rem; font-size: 3.6rem; font-weight: 800; color: $deepTeal; background-color: $outrageousOrange;}
+    .navbar-nav .nav-link .mobNavlinkBar {display:inline-block; margin-left: 0.5rem; width: 3rem; height: 0.5rem; background-color: $deepTeal; transform: translateY(.1rem);} //모바일 전용
+    //.navbar-nav .show>.nav-link {}
     .dropdown-menu {transition: all .3s ease-in-out; padding: 0; margin: 0; border: 0; border-radius: 0;}
-    .dropdown-item {padding: 10px 20px; font-size: 16px; color: #666; white-space: nowrap; background-color: #f7f7f7; border: 0;}
+    .dropdown-item {padding: 10px 20px; font-size: 16px; white-space: nowrap; border: 0; color: $deepTeal; background-color: $outrageousOrange;}
+    
+    /*메뉴 모두 펼치기*/
+    .dropdown-menu {display: block!important; position: static!important; transform: none!important; float: none!important; text-align: center;}
 
+    /*메뉴 오버레이 위에 보이도록 수정*/
+    .gnbLogoText, .navbar-toggler {z-index: 1060;}
+
+    /*메뉴 오버레이*/
+    &Inner {
+      display: block!important; padding-top: 9rem;/*상단로고 자리*/
+      position: fixed; inset: 0; z-index: 1050;
+      opacity: 0; background: $outrageousOrange; pointer-events: none; transition: opacity .25s ease;
+      justify-content: center; align-items: center; text-align: center;
+      &.show {opacity: 1; pointer-events: auto;/*열렸을때만 보임*/}
+    }
     &Menu{
       font-size: 1.6rem;
       .dropdown-menu {font-size:1.4rem;}
     }
-    &Logo {width: 5rem; margin-left: 0.8rem;
-      img {width: 100%;}
-    }
+    &Logo {img {width: 100%;}}
+    &LogoText{margin: 0; margin-right: 5%; padding: 0; font-size: 2.2rem; font-family: 'Poppins'; color: $deepTeal!important;}
     &Sub {
       display: none;
     }

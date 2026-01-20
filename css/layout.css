@@ -333,19 +333,17 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     padding: 0 2.5rem;
     font-size: 1.9rem;
     font-weight: 600;
-    color: #333;
-    /*.fixed-top과 동일*/
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
+    background-color: #ff5e00;
+    /*.fixed-top과 동일 position: fixed; top: 0; right: 0; left: 0; z-index: 1030;*/
     /*.navbar-expand- 동일*/
     flex-flow: row nowrap;
     justify-content: flex-start;
     /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
     /*부트스트랩에서 기본적으로 제공하는 화살표 제거*/
     /*부트스크랩 메뉴 우버시 보이도록*/
+    /* 메뉴명 뒤 초록색 배경바 시작 */
+    position: relative;
+    /* 메뉴명 뒤 초록색 배경바 끝 */
     /*GNB MENU DESIGN CUSTOM*/
   }
   .gnb .navbar-nav {
@@ -379,7 +377,8 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     content: none;
   }
   .gnb .dropdown:hover > .dropdown-menu {
-    display: block;
+    display: flex;
+    /* 한줄 정렬을 위해 수정 block;*/
   }
   .gnb .dropdown-menu {
     margin: 0;
@@ -389,59 +388,101 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   .gnb .dropdown-item:hover {
     background-color: transparent;
   }
+  .gnb .navbar-nav .show > .nav-link {
+    color: inherit;
+  }
+  .gnb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 5.6rem;
+    opacity: 0;
+    z-index: 1;
+    background-color: #006c67;
+    pointer-events: none;
+    transition: opacity 150ms ease;
+  }
+  .gnb:has(.dropdown:hover)::after {
+    opacity: 1;
+  }
+  .gnb:has(.dropdown .dropdown-menu.show)::after {
+    opacity: 1;
+  }
   .gnbMenu {
     justify-content: space-around;
   }
-  .gnbMenu .nav-item:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #ff5e00;
-    transform: scaleX(0);
-    transition: transform 300ms ease-in-out;
-  }
-  .gnbMenu .nav-item:hover:after {
-    transform: scaleX(1);
+  .gnbMenu .nav-item {
+    /*&:after {content:''; display: block; width: 100%; height: 3px; background-color: $outrageousOrange;transform: scaleX(0); transition: transform 300ms ease-in-out;}
+    &:hover:after {transform: scaleX(1);}*/
   }
   .gnbMenu .nav-item:hover {
-    color: #ff5e00;
+    color: white;
   }
-  .gnbMenu .nav-item .nav-link {
+  .gnbMenu .nav-link {
     padding: 2.2rem 2.75rem;
   }
-  .gnbMenu .dropdown-menu {
-    right: auto;
-    left: 50%;
-    transform: translate(-50%, 0);
-    /*부트스트랩의 menu 가운데 정렬 트릭*/
-    width: 100%;
+  .gnbMenu .nav-link .mobNavlinkBar {
+    display: none;
+  }
+  .gnbMenu .dropdown {
+    position: relative;
+  }
+  .gnbMenu .dropdown-menu.show {
+    display: flex;
     border: 0;
-    border-radius: 0;
-    border-top: 0.6rem solid rgba(0, 0, 0, 0);
-    padding: 1.4rem 0;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  .gnbMenu .dropdown-menu {
+    /*기존 right: auto; left: 50%; transform: translate(-50%, 0);//부트스트랩의 menu 가운데 정렬 트릭
+    width: 100%; border: 0; border-radius: 0;*/
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    /* 가로 한 줄 */
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* 그 외 */
+    border: 0;
+    color: white;
   }
   .gnbMenu .dropdown-menu .dropdown-item {
+    /*기존 width: 100%; padding:0.5rem; font-size: 1.5rem; text-align:center;*/
+    width: auto;
+    padding: 2rem;
     font-size: 1.5rem;
-    padding: 0.5rem;
     text-align: center;
-    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
   }
   .gnbMenu .dropdown-menu .dropdown-item:hover {
-    color: rgba(0, 0, 0, 0.4);
+    color: #383838;
   }
-  .gnbLogo {
+  .gnbLogoText {
+    margin: 0;
+    margin-right: 5%;
+    padding: 0;
+    font-size: 2.2rem;
+    font-family: "Poppins";
+    color: #006c67 !important;
+  }
+  .gnbLogoImg {
     margin: 0;
     padding: 0;
     width: 6.5rem;
   }
-  .gnbLogo img {
+  .gnbLogoImg img {
     width: 100%;
   }
   .gnbInner {
-    justify-content: center;
+    justify-content: flex-start;
+    /*center;*/
+    color: white;
   }
   .gnbSub {
     display: flex;
@@ -471,10 +512,13 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     z-index: 1030;
     /*부트스트랩에서 기본적으로 제공하는 스타일 제거*/
     /*부트스트랩에서 기본적으로 제공하는 스타일 커스텀*/
+    /*메뉴 모두 펼치기*/
+    /*메뉴 오버레이 위에 보이도록 수정*/
+    /*메뉴 오버레이*/
   }
   .gnb.navbar {
     padding: 0;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #ff5e00;
   }
   .gnb .container-fluid {
     padding: 0;
@@ -489,7 +533,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     width: 3.2rem;
     height: 3.2rem;
     transition: transform 0.45s ease;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgba(0, 128, 128, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
   }
   .gnb .navbar-toggler[aria-expanded=true] .navbar-toggler-icon {
     transform: rotate(90deg);
@@ -500,21 +544,25 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     display: none;
   }
   .gnb .navbar-nav .nav-link:hover {
-    color: inherit;
+    color: #006c67;
   }
   .gnb .navbar-nav .nav-link {
-    padding: 16px 20px;
-    font-size: 18px;
-    color: black;
-    background-color: #fff;
-    border-bottom: 1px solid #eeeeee;
-  }
-  .gnb .navbar-nav .show > .nav-link {
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem;
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: #006c67;
     background-color: #ff5e00;
   }
-  .gnb .navbar-nav .nav-item.dropdown {
-    border-bottom: 1px solid #eee;
+  .gnb .navbar-nav .nav-link .mobNavlinkBar {
+    display: inline-block;
+    margin-left: 0.5rem;
+    width: 3rem;
+    height: 0.5rem;
+    background-color: #006c67;
+    transform: translateY(0.1rem);
   }
   .gnb .dropdown-menu {
     transition: all 0.3s ease-in-out;
@@ -526,10 +574,40 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   .gnb .dropdown-item {
     padding: 10px 20px;
     font-size: 16px;
-    color: #666;
     white-space: nowrap;
-    background-color: #f7f7f7;
     border: 0;
+    color: #006c67;
+    background-color: #ff5e00;
+  }
+  .gnb .dropdown-menu {
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    float: none !important;
+    text-align: center;
+  }
+  .gnb .gnbLogoText, .gnb .navbar-toggler {
+    z-index: 1060;
+  }
+  .gnbInner {
+    display: block !important;
+    padding-top: 9rem;
+    /*상단로고 자리*/
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    opacity: 0;
+    background: #ff5e00;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .gnbInner.show {
+    opacity: 1;
+    pointer-events: auto;
+    /*열렸을때만 보임*/
   }
   .gnbMenu {
     font-size: 1.6rem;
@@ -537,12 +615,16 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   .gnbMenu .dropdown-menu {
     font-size: 1.4rem;
   }
-  .gnbLogo {
-    width: 5rem;
-    margin-left: 0.8rem;
-  }
   .gnbLogo img {
     width: 100%;
+  }
+  .gnbLogoText {
+    margin: 0;
+    margin-right: 5%;
+    padding: 0;
+    font-size: 2.2rem;
+    font-family: "Poppins";
+    color: #006c67 !important;
   }
   .gnbSub {
     display: none;
