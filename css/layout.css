@@ -79,13 +79,21 @@ table caption {
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-.onlyLg, .onlyMd {
-  display: none;
+.mob, .onlyLg, .onlyMd {
+  display: none !important;
+}
+
+.mobHide {
+  display: block !important;
 }
 
 @media (max-width: 1200px) {
-  html {
-    font-size: 9px;
+  .mob {
+    display: block !important;
+  }
+
+  .mobHide {
+    display: none !important;
   }
 
   .onlyLg {
@@ -97,10 +105,6 @@ table caption {
   }
 }
 @media (max-width: 768px) {
-  html {
-    font-size: 9px;
-  }
-
   .onlyMd {
     display: block;
   }
@@ -181,9 +185,10 @@ table caption {
 }
 #content .contentTitle {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 700;
+  font-family: "Poppins";
   color: #006c67;
-  padding: 3rem 0 2.5rem 0;
+  padding: 3rem 0 2.5rem 1.5rem;
 }
 #content .contentIntroWrap {
   background-color: #006c67;
@@ -191,6 +196,7 @@ table caption {
 #content .contentIntro {
   padding: 3.4rem 0;
   font-size: 1.6rem;
+  font-family: "SUIT";
   text-align: center;
   color: white;
 }
@@ -202,7 +208,7 @@ table caption {
   margin-top: 8rem;
   margin-bottom: 1rem;
   font-size: 2.8rem;
-  font-weight: 700;
+  font-weight: 600;
   font-family: "Poppins";
   text-align: left;
   color: #ff5e00;
@@ -226,7 +232,7 @@ table caption {
 }
 
 .detailTitle {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   font-weight: normal;
   font-family: "Inter";
   color: #006c67;
@@ -1016,6 +1022,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
 .jumbotronFooter {
   padding: 5rem 0;
   font-size: 4.4rem;
+  line-height: 120%;
   font-weight: 700;
   font-family: "Poppins";
   text-align: center;
@@ -1024,7 +1031,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   border-bottom: 3rem solid #006c67;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199.98px) {
   .carouselOverlay {
     position: relative;
     height: auto;
@@ -1036,7 +1043,55 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   }
 
   .jumbotron {
-    height: 28rem;
+    height: 42rem;
+  }
+  .jumbotronBg1 {
+    background-position: center;
+  }
+
+  .jumbotronFooter {
+    font-size: 3rem;
+    border-bottom-width: 2rem;
+  }
+
+  #content .contentTitle {
+    font-size: 2.5rem;
+  }
+  #content .contentIntro {
+    padding: 3rem 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  .majorTitle {
+    font-size: 2.6rem;
+    margin-top: 3.5rem;
+  }
+
+  .minorTitle {
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: "POPPINS";
+  }
+
+  .introTitle {
+    margin-bottom: 3rem;
+    font-size: 1.3rem;
+    line-height: 120%;
+    font-family: "SUIT";
+  }
+
+  .footer {
+    padding: 3.2rem 0;
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+
+  .footerLocation {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
   }
 }
 /* ---------------------------------------------------
