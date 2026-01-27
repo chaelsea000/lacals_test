@@ -3,6 +3,7 @@
 - crew에서 tag 설정
 - registraction 부분에서 글자가 정확하게 어떤게 맞는건지?
 - 선생님 자세히 보기에서는 학력 및 연구활동 ? 어떤건 학력?
+- 클래스 자세히 보기 버튼 어떤걸 누르면 되지?
 */
 /* Start Bootstrap - Modern Business (https://startbootstrap.com/templates/modern-business)
  * Copyright 2013-2020 Start Bootstrap
@@ -96,12 +97,15 @@ table caption {
   .mob {
     display: block !important;
   }
+
   .mobHide {
     display: none !important;
   }
+
   .onlyLg {
     display: block;
   }
+
   .onlyLgHide {
     display: none;
   }
@@ -110,6 +114,7 @@ table caption {
   .onlyMd {
     display: block;
   }
+
   .onlyMdHide {
     display: none;
   }
@@ -157,7 +162,7 @@ table caption {
   position: absolute;
   bottom: 0;
   transform: translateY(-50%);
-  width: calc(100% - 8rem);
+  width: calc( 100% - 8rem);
   height: 0.5rem;
   background-color: #ff5e00;
 }
@@ -261,16 +266,23 @@ table caption {
 
 .introduce {
   margin: 0 auto;
-  padding: 3.5rem 0;
+  padding: 2.9rem 0;
   font-size: 1.7rem;
   line-height: 180%;
   font-weight: 600;
+  font-family: "SUIT";
   text-align: center;
   color: white;
 }
 
-.textOrange {
-  color: #ff5e00;
+.intro {
+  margin-top: 6.6rem;
+  margin-bottom: 4rem;
+  font-size: 1.7rem;
+  line-height: 120%;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #383838;
 }
 
 .notes {
@@ -279,6 +291,10 @@ table caption {
   margin-bottom: 2rem;
   background-color: #eeeff2;
   color: #878686;
+}
+
+.textOrange {
+  color: #ff5e00;
 }
 
 .highlight {
@@ -298,8 +314,7 @@ table caption {
 .imageOverText li img {
   width: 100%;
   height: 45rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 4rem;
   filter: brightness(50%);
   transition: filter 0.3s ease;
@@ -387,7 +402,8 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     content: none;
   }
   .gnb .dropdown:hover > .dropdown-menu {
-    display: flex; /* 한줄 정렬을 위해 수정 block;*/
+    display: flex;
+    /* 한줄 정렬을 위해 수정 block;*/
   }
   .gnb .dropdown-menu {
     margin: 0;
@@ -458,7 +474,8 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     border: 0;
     color: white;
   }
-  .gnbMenu .dropdown-menu .dropdown-item { /*기존 width: 100%; padding:0.5rem; font-size: 1.5rem; text-align:center;*/
+  .gnbMenu .dropdown-menu .dropdown-item {
+    /*기존 width: 100%; padding:0.5rem; font-size: 1.5rem; text-align:center;*/
     width: auto;
     padding: 2rem;
     font-size: 1.5rem;
@@ -488,7 +505,8 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     width: 100%;
   }
   .gnbInner {
-    justify-content: flex-start; /*center;*/
+    justify-content: flex-start;
+    /*center;*/
     color: white;
   }
   .gnbSub {
@@ -503,6 +521,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     font-size: inherit;
     line-height: inherit;
   }
+
   .gnb.scrolled {
     background-color: rgba(255, 255, 255, 0.8);
     transition: background-color 300ms linear;
@@ -597,7 +616,8 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   }
   .gnbInner {
     display: block !important;
-    padding-top: 9rem; /*상단로고 자리*/
+    padding-top: 9rem;
+    /*상단로고 자리*/
     position: fixed;
     inset: 0;
     z-index: 1050;
@@ -611,7 +631,8 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   }
   .gnbInner.show {
     opacity: 1;
-    pointer-events: auto; /*열렸을때만 보임*/
+    pointer-events: auto;
+    /*열렸을때만 보임*/
   }
   .gnbMenu {
     font-size: 1.6rem;
@@ -694,7 +715,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   /*영문일 경우 글자가 길어지는 경우가 많아서 추가, text-indent, line-height를 padding으로 교체*/
 }
 #sidebar ul.sidebarBody .dropdown-toggle::after {
-  content: "\f105";
+  content: "";
   border: 0;
   font-weight: 900;
   font-family: "Font Awesome 5 Free";
@@ -761,7 +782,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   #sidebar .sidebarHeader::after {
     content: "";
     position: absolute;
-    top: calc(50% - 0.4rem);
+    top: calc(50% - 0.4rem );
     right: 5%;
     height: 0.8rem;
     width: 0.8rem;
@@ -775,6 +796,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   #sidebar ul {
     display: none;
   }
+
   /*#content {margin-top: $sidebarHeaderLineheightWidth768;}*/
 }
 /* ---------------------------------------------------
@@ -801,7 +823,9 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
 /* ---------------------------------------------------
     MAIN&JUMBOTRON STYLE
 ----------------------------------------------------- */
-#mainCarousel { /*main.html에서 수정*/ }
+#mainCarousel {
+  /*main.html에서 수정*/
+}
 
 .mainCarouselWrap {
   max-height: 80vh;
@@ -916,8 +940,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   text-indent: 1rem;
   border-style: solid;
   border-width: 0 2px 0 0;
-  -o-border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgb(255, 255, 255) 30%, rgb(255, 255, 255) 70%, rgba(255, 255, 255, 0) 70%) 1;
-     border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgb(255, 255, 255) 30%, rgb(255, 255, 255) 70%, rgba(255, 255, 255, 0) 70%) 1;
+  border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, white 30%, white 70%, rgba(255, 255, 255, 0) 70%) 1;
 }
 .mainContentTabHeader li:last-child {
   border: 0px;
@@ -1033,19 +1056,23 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     height: auto;
     top: 0;
   }
+
   .mainContentTabHeader li a {
     font-size: 1.6rem;
   }
+
   .jumbotron {
     height: 42rem;
   }
   .jumbotronBg1 {
     background-position: center;
   }
+
   .jumbotronFooter {
     font-size: 3rem;
     border-bottom-width: 2rem;
   }
+
   #content .contentTitle {
     font-size: 2.5rem;
   }
@@ -1053,10 +1080,12 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     padding: 3rem 2.5rem;
     font-size: 1.5rem;
   }
+
   .majorTitle {
     font-size: 2.6rem;
     margin-top: 3.5rem;
   }
+
   .minorTitle {
     margin-top: 3rem;
     margin-bottom: 0.5rem;
@@ -1064,20 +1093,31 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     font-weight: 600;
     font-family: "POPPINS";
   }
+
   .introTitle {
     margin-bottom: 3rem;
     font-size: 1.3rem;
     line-height: 120%;
     font-family: "SUIT";
   }
+
   .detailTitle {
     font-size: 1.5rem;
   }
+
+  .introduce {
+    padding: 3rem 0.9em;
+    font-size: 1.45rem;
+    line-height: 170%;
+    font-weight: 500;
+  }
+
   .footer {
     padding: 3.2rem 0;
     font-size: 1.4rem;
     font-weight: 300;
   }
+
   .footerLocation {
     margin-bottom: 0;
     display: flex;
@@ -1086,4 +1126,4 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
 }
 /* ---------------------------------------------------
     ENG STYLE
------------------------------------------------------ *//*# sourceMappingURL=layout.css.map */
+----------------------------------------------------- */

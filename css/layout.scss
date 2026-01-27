@@ -2,6 +2,7 @@
 - crew에서 tag 설정
 - registraction 부분에서 글자가 정확하게 어떤게 맞는건지?
 - 선생님 자세히 보기에서는 학력 및 연구활동 ? 어떤건 학력?
+- 클래스 자세히 보기 버튼 어떤걸 누르면 되지?
 */
 /* Start Bootstrap - Modern Business (https://startbootstrap.com/templates/modern-business)
  * Copyright 2013-2020 Start Bootstrap
@@ -144,7 +145,8 @@ table {width:100%; margin-bottom:0; caption {position: absolute; width: 1px; hei
 .introTitle {margin-bottom: 7rem; font-size: 1.6rem; font-family: 'SUIT'; color:$duskGray;}
 
 .introduceWrap {background-color: $deepTeal;}
-.introduce {margin:0 auto; padding:3.5rem 0; font-size: 1.7rem; line-height: 180%; font-weight: 600; text-align: center; color: white;}
+.introduce {margin:0 auto; padding:2.9rem 0; font-size: 1.7rem; line-height: 180%; font-weight: 600; font-family: 'SUIT'; text-align: center; color: white;}
+
 .majorHeading {}
 .minorHeading {}
 .subHeading {}
@@ -152,8 +154,9 @@ table {width:100%; margin-bottom:0; caption {position: absolute; width: 1px; hei
   &.sub {}
 }
 
-.textOrange {color:$outrageousOrange;}
+.intro {margin-top: 6.6rem; margin-bottom: 4rem; font-size: 1.7rem; line-height: 120%; font-family: 'Poppins'; font-weight: 600; color: #383838;}
 .notes {font-size: 1.4rem; padding: 1.5rem 3rem; margin-bottom: 2rem; background-color: $solitudeGray; color: $genericGray;}
+.textOrange {color:$outrageousOrange;}
 .highlight {display: inline-block; background: linear-gradient(transparent 50%, rgba(255, 142, 66, 0.3) 50%); line-height: 100%;}
 
 .imageOverText {display: flex; justify-content: space-between;
@@ -473,6 +476,8 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
   .minorTitle {margin-top: 3rem; margin-bottom: 0.5rem; font-size: 1.8rem; font-weight: 600; font-family: 'POPPINS';}
   .introTitle {margin-bottom: 3rem; font-size: 1.3rem; line-height: 120%; font-family: "SUIT";}
   .detailTitle {font-size: 1.5rem;}
+
+  .introduce {padding: 3rem 0.9em; font-size: 1.45rem; line-height: 170%; font-weight: 500;}
 
   .footer {padding: 3.2rem 0; font-size: 1.4rem; font-weight: 300;}
   .footerLocation {margin-bottom: 0; display: flex; flex-direction: column;}
