@@ -204,8 +204,8 @@ block div
 
 
     style.
+        hr {display: none; margin: 0; border-top:0;}
         #content {margin-bottom: 20.5rem;}
-        hr {margin: 0; border-top:0; border: 7px solid #006C67;}
         /*html구조 통일성이 없어서 .lesson, .lessonList, .lessonListContent를 하위속성이 아닌 개별로 선언*/
         .lesson {}
         .lesson .majorTitle {margin-bottom: 0.5rem; font-size: 3rem; font-weight: 500;}
@@ -219,12 +219,6 @@ block div
         .lessonListImgWrap {}
         .lessonListImgWrap img {width: 100%;}
         
-        .lessonListItem {margin-bottom: 7rem;}
-        .lessonListItemList {margin:0 auto; display: flex; justify-content: space-between;}        
-        .lessonListItemList > li {}
-        .lessonListItemListTitle {margin-bottom: 1rem; font-size: 2.4rem; font-weight: bold; font-family: 'SUIT'; color: #383838;}      
-        .lessonListItemListIntro {margin-bottom: 5.5rem; font-size: 1.4rem; font-weight: 600; font-family: 'SUIT'; color: #383838;}
-        
         .lessonListContent {margin-top: 4.5rem;}
         .lessonListContent > li {display: flex; font-size: 1.8rem; color: #383838;}
         .lessonListContent > li b {display: inline-block; min-width: 8rem; font-weight: bold;}
@@ -233,16 +227,15 @@ block div
 
         .contactInfoWrap {background-color: #ff5e00;}
         .contactInfo {padding: 3.4rem 0; font-size: 1.6rem; font-weight: 600; font-family: 'SUIT'; text-align: center; color: white;}
+        
+        .lessonTheme2 .lessonListItem {margin-bottom: 7rem;}
+        .lessonTheme2 .lessonListItemList {margin:0 auto; display: flex; justify-content: space-between;}        
+        .lessonTheme2 .lessonListItemList > li {}
+        .lessonTheme2 .lessonListItemListTitle {margin-bottom: 1rem; font-size: 2.4rem; font-weight: bold; font-family: 'SUIT'; color: #383838;}      
+        .lessonTheme2 .lessonListItemListIntro {margin-bottom: 5.5rem; font-size: 1.4rem; font-weight: 600; font-family: 'SUIT'; color: #383838;}
+        
         @media (max-width: 1199.98px) {
             hr {margin: 0; border-top:0; border: 7px solid #006C67;}
-            .lessonTheme1 .lessonList > li {border-top: 1px solid #CBCBCB;}
-            .lessonTheme2 .majorTitle {margin-top: 7.6rem;}
-            .lessonTheme3 .majorTitle {margin-top: 7rem;}
-
-            .lessonTheme2 .lessonListItem:first-of-type {margin-bottom: 3.4rem;} /*클래식레토릭 이전*/
-            .lessonTheme2 .lessonListItemList > li:last-child {border-bottom: 2px solid #DADADA;}/*클래식 레토릭 이전 실선*/
-            .lessonTheme2 .lessonListItem:last-of-type .lessonList > li {padding: 0;}
-
             .lessonList {flex-direction: column;}
             .lessonList > li {padding: 0; padding-top: 3.2rem; padding-bottom: 7.3rem;}
 
@@ -251,13 +244,17 @@ block div
 
             .lessonListContent {margin-top: 2.2rem;}
             .lessonListContent > li {font-size: 1.6rem; line-height: 120%; padding: 0.35rem 0; font-weight: 500;}
+            .lessonTheme1 .lessonList > li {border-top: 1px solid #898989;}
+            .lessonTheme2 .majorTitle {margin-top: 7.6rem;}
+            .lessonTheme3 .majorTitle {margin-top: 7rem;}
 
-            .lessonListItemList {flex-direction: column;}
-            .lessonListItemList > li {border-top: 2px solid #DADADA; padding-top: 3.6rem; padding-bottom: 4.4rem;}
-
-            .lessonListItemListTitle {font-size: 1.9rem; margin-bottom: 0.5rem; font-weight: 800;}
-            .lessonListItemListIntro {margin-bottom: 3.2rem; font-weight: 500;}
-
+            .lessonTheme2 .lessonListItem:first-of-type {margin-bottom: 3.4rem;} /*클래식레토릭 이전*/
+            .lessonTheme2 .lessonListItem:last-of-type .lessonList > li {padding: 0;}
+            .lessonTheme2 .lessonListItemList {flex-direction: column;}
+            .lessonTheme2 .lessonListItemList > li {border-top: 1px solid #898989; padding-top: 3.6rem; padding-bottom: 4.4rem;}
+            .lessonTheme2 .lessonListItemList > li:last-child {border-bottom: 1px solid #898989;}
+            .lessonTheme2 .lessonListItemListTitle {font-size: 1.9rem; margin-bottom: 0.5rem; font-weight: 800;}
+            .lessonTheme2 .lessonListItemListIntro {margin-bottom: 3.2rem; font-weight: 500;}
         }
         
         @media (max-width: 991.98px) {
