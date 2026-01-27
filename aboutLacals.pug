@@ -467,7 +467,7 @@ block div
                 img(src="./images/registration.png")
                 div
                     b + 테마레슨의 경우 스테이지 아카이브(영상 포트폴리오) 제공
-                    span 감정·언어·자기표현이 통합된 성장 과정
+                        span 감정·언어·자기표현이 통합된 성장 과정
                     ul 
                         li √ 매 클래스 활동 사진 및 1page 분량 클래스 노트 제공
                         li √ 클래스 정기 발달 컨설팅 리포트(레슨별 상이) 제공
@@ -607,7 +607,7 @@ block div
             .philosophy .philosophyList .title {font-size: 1.7rem;}
             .philosophy .philosophyList {flex-direction: column; margin-bottom: 2.8rem;}
             .philosophy .philosophyList > li {display: flex; align-items: flex-end; gap: 0.7rem; margin-bottom: 1.4rem;/*3.5rem*/}
-            .philosophy .philosophyList .imgWrap {min-width: 15rem; margin-bottom: 0rem; margin-right: 0.5rem;}
+            .philosophy .philosophyList .imgWrap {width: 40%; min-width: 15rem; margin-bottom: 0rem; margin-right: 0.5rem;}
             .philosophy .philosophyList .imgWrap img {width: 100%;}
             .philosophy .philosophyList .detail {font-size: 1.3rem; line-height: 120%;}
 
@@ -674,6 +674,7 @@ block div
         .registration .detail {margin-bottom: 8.4rem; display: flex; flex-direction: column; align-items: center; font-size: 1.7rem;}
         .registration .detail img {margin-bottom: 5.5rem; max-width: 64.3rem; width: 100%;}
         .registration .detail b {margin-bottom: 3.5rem; display: block; color: #006c67;}
+        .registration .detail span {display: block;}
     
         .stages {margin-bottom: 8.5rem;}
         .stages .majorTitle {margin-bottom: 5.4rem;}
@@ -744,4 +745,19 @@ block div
                 $('.crewListDesc.collapse').not(target).collapse('hide');
                 $(target).collapse('toggle');
             });
+        });
+        function handleCrewWrapClass() {
+            if ($(window).width() < 1280) {
+                $('.crewWrap').removeClass('change');
+            } else {
+                $('.crewWrap').addClass('change');
+            }
+        }
+
+        $(document).ready(function () {
+            handleCrewWrapClass();
+        });
+
+        $(window).resize(function () {
+            handleCrewWrapClass();
         });
