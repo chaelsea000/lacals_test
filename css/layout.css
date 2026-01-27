@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/*TODO
+- crew에서 tag 설정
+- registraction 부분에서 글자가 정확하게 어떤게 맞는건지?
+- 선생님 자세히 보기에서는 학력 및 연구활동 ? 어떤건 학력?
+*/
 /* Start Bootstrap - Modern Business (https://startbootstrap.com/templates/modern-business)
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
@@ -91,15 +96,12 @@ table caption {
   .mob {
     display: block !important;
   }
-
   .mobHide {
     display: none !important;
   }
-
   .onlyLg {
     display: block;
   }
-
   .onlyLgHide {
     display: none;
   }
@@ -108,7 +110,6 @@ table caption {
   .onlyMd {
     display: block;
   }
-
   .onlyMdHide {
     display: none;
   }
@@ -127,15 +128,16 @@ table caption {
 }
 
 .container-fluid {
-  max-width: 1400px;
+  max-width: 1280px;
+  padding: 0;
 }
 
 /*FOR SIDEBAR
-#wrapper {max-width: 1400px; margin: 0 auto;}
+#wrapper {max-width: 1280px; margin: 0 auto;}
 #content {display: block; flex-wrap: wrap; align-items: stretch; width: 100%; min-height: 58rem; padding: 8rem 0; color: #333;}*/
 /*FOR LAYOUT*/
 .tabMenu {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -155,7 +157,7 @@ table caption {
   position: absolute;
   bottom: 0;
   transform: translateY(-50%);
-  width: calc( 100% - 8rem);
+  width: calc(100% - 8rem);
   height: 0.5rem;
   background-color: #ff5e00;
 }
@@ -184,18 +186,19 @@ table caption {
   background-color: #d9d5cb;
 }
 #content .contentTitle {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 700;
   font-family: "Poppins";
   color: #006c67;
-  padding: 3rem 0 2.5rem 1.5rem;
+  padding: 1.7rem 0;
 }
 #content .contentIntroWrap {
   background-color: #006c67;
 }
 #content .contentIntro {
-  padding: 3.4rem 0;
-  font-size: 1.6rem;
+  padding: 3.3rem 0;
+  font-size: 1.7rem;
+  font-weight: 500;
   font-family: "SUIT";
   text-align: center;
   color: white;
@@ -207,7 +210,7 @@ table caption {
 .majorTitle {
   margin-top: 8rem;
   margin-bottom: 1rem;
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   font-weight: 600;
   font-family: "Poppins";
   text-align: left;
@@ -232,7 +235,7 @@ table caption {
 }
 
 .detailTitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: normal;
   font-family: "Inter";
   color: #006c67;
@@ -295,7 +298,8 @@ table caption {
 .imageOverText li img {
   width: 100%;
   height: 45rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 4rem;
   filter: brightness(50%);
   transition: filter 0.3s ease;
@@ -383,8 +387,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     content: none;
   }
   .gnb .dropdown:hover > .dropdown-menu {
-    display: flex;
-    /* 한줄 정렬을 위해 수정 block;*/
+    display: flex; /* 한줄 정렬을 위해 수정 block;*/
   }
   .gnb .dropdown-menu {
     margin: 0;
@@ -455,8 +458,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     border: 0;
     color: white;
   }
-  .gnbMenu .dropdown-menu .dropdown-item {
-    /*기존 width: 100%; padding:0.5rem; font-size: 1.5rem; text-align:center;*/
+  .gnbMenu .dropdown-menu .dropdown-item { /*기존 width: 100%; padding:0.5rem; font-size: 1.5rem; text-align:center;*/
     width: auto;
     padding: 2rem;
     font-size: 1.5rem;
@@ -486,8 +488,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     width: 100%;
   }
   .gnbInner {
-    justify-content: flex-start;
-    /*center;*/
+    justify-content: flex-start; /*center;*/
     color: white;
   }
   .gnbSub {
@@ -502,7 +503,6 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     font-size: inherit;
     line-height: inherit;
   }
-
   .gnb.scrolled {
     background-color: rgba(255, 255, 255, 0.8);
     transition: background-color 300ms linear;
@@ -597,8 +597,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   }
   .gnbInner {
     display: block !important;
-    padding-top: 9rem;
-    /*상단로고 자리*/
+    padding-top: 9rem; /*상단로고 자리*/
     position: fixed;
     inset: 0;
     z-index: 1050;
@@ -612,8 +611,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   }
   .gnbInner.show {
     opacity: 1;
-    pointer-events: auto;
-    /*열렸을때만 보임*/
+    pointer-events: auto; /*열렸을때만 보임*/
   }
   .gnbMenu {
     font-size: 1.6rem;
@@ -658,7 +656,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
 #sidebar {
   position: absolute;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1280px;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
@@ -696,7 +694,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   /*영문일 경우 글자가 길어지는 경우가 많아서 추가, text-indent, line-height를 padding으로 교체*/
 }
 #sidebar ul.sidebarBody .dropdown-toggle::after {
-  content: "";
+  content: "\f105";
   border: 0;
   font-weight: 900;
   font-family: "Font Awesome 5 Free";
@@ -763,7 +761,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   #sidebar .sidebarHeader::after {
     content: "";
     position: absolute;
-    top: calc(50% - 0.4rem );
+    top: calc(50% - 0.4rem);
     right: 5%;
     height: 0.8rem;
     width: 0.8rem;
@@ -777,7 +775,6 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   #sidebar ul {
     display: none;
   }
-
   /*#content {margin-top: $sidebarHeaderLineheightWidth768;}*/
 }
 /* ---------------------------------------------------
@@ -804,9 +801,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
 /* ---------------------------------------------------
     MAIN&JUMBOTRON STYLE
 ----------------------------------------------------- */
-#mainCarousel {
-  /*main.html에서 수정*/
-}
+#mainCarousel { /*main.html에서 수정*/ }
 
 .mainCarouselWrap {
   max-height: 80vh;
@@ -921,7 +916,8 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   text-indent: 1rem;
   border-style: solid;
   border-width: 0 2px 0 0;
-  border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, white 30%, white 70%, rgba(255, 255, 255, 0) 70%) 1;
+  -o-border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgb(255, 255, 255) 30%, rgb(255, 255, 255) 70%, rgba(255, 255, 255, 0) 70%) 1;
+     border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgb(255, 255, 255) 30%, rgb(255, 255, 255) 70%, rgba(255, 255, 255, 0) 70%) 1;
 }
 .mainContentTabHeader li:last-child {
   border: 0px;
@@ -1028,7 +1024,7 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
   text-align: center;
   color: white;
   background: #ff5e00;
-  border-bottom: 3rem solid #006c67;
+  border-bottom: 2.7rem solid #006c67;
 }
 
 @media (max-width: 1199.98px) {
@@ -1037,23 +1033,19 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     height: auto;
     top: 0;
   }
-
   .mainContentTabHeader li a {
     font-size: 1.6rem;
   }
-
   .jumbotron {
     height: 42rem;
   }
   .jumbotronBg1 {
     background-position: center;
   }
-
   .jumbotronFooter {
     font-size: 3rem;
     border-bottom-width: 2rem;
   }
-
   #content .contentTitle {
     font-size: 2.5rem;
   }
@@ -1061,12 +1053,10 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     padding: 3rem 2.5rem;
     font-size: 1.5rem;
   }
-
   .majorTitle {
     font-size: 2.6rem;
     margin-top: 3.5rem;
   }
-
   .minorTitle {
     margin-top: 3rem;
     margin-bottom: 0.5rem;
@@ -1074,20 +1064,20 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
     font-weight: 600;
     font-family: "POPPINS";
   }
-
   .introTitle {
     margin-bottom: 3rem;
     font-size: 1.3rem;
     line-height: 120%;
     font-family: "SUIT";
   }
-
+  .detailTitle {
+    font-size: 1.5rem;
+  }
   .footer {
     padding: 3.2rem 0;
     font-size: 1.4rem;
     font-weight: 300;
   }
-
   .footerLocation {
     margin-bottom: 0;
     display: flex;
@@ -1096,4 +1086,4 @@ p + .subHeading, figure + .subHeading, div + .subHeading, table + .subHeading, u
 }
 /* ---------------------------------------------------
     ENG STYLE
------------------------------------------------------ */
+----------------------------------------------------- *//*# sourceMappingURL=layout.css.map */

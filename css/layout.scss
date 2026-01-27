@@ -1,3 +1,8 @@
+/*TODO
+- crew에서 tag 설정
+- registraction 부분에서 글자가 정확하게 어떤게 맞는건지?
+- 선생님 자세히 보기에서는 학력 및 연구활동 ? 어떤건 학력?
+*/
 /* Start Bootstrap - Modern Business (https://startbootstrap.com/templates/modern-business)
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
@@ -93,14 +98,14 @@ table {width:100%; margin-bottom:0; caption {position: absolute; width: 1px; hei
     LAYOUT STYLE
 ----------------------------------------------------- */
 #skipAccesibility{display:block; width:100%; padding:1rem 0; font-size:1.5rem; text-align:center; background:#292929; color: #fff;}
-.container-fluid {max-width: 1400px;}
+.container-fluid {max-width: 1280px; padding: 0;}
 
 /*FOR SIDEBAR
-#wrapper {max-width: 1400px; margin: 0 auto;}
+#wrapper {max-width: 1280px; margin: 0 auto;}
 #content {display: block; flex-wrap: wrap; align-items: stretch; width: 100%; min-height: 58rem; padding: 8rem 0; color: #333;}*/
 
 /*FOR LAYOUT*/
-.tabMenu {max-width: 1400px; margin:0 auto; 
+.tabMenu {max-width: 1280px; margin:0 auto; 
   display: flex; justify-content: center;
   a {display: flex; padding: 1.8rem 4rem; font-size: 1.6rem; color:#878686;}
   a.active {position: relative; color:black;}
@@ -108,9 +113,9 @@ table {width:100%; margin-bottom:0; caption {position: absolute; width: 1px; hei
 }
 #content{
 .contentTitleWrap {background-color: $alabasterCream;}
-.contentTitle{font-size: 3.5rem; font-weight: 700; font-family: 'Poppins'; color: $deepTeal; padding: 3rem 0 2.5rem 1.5rem;}
+.contentTitle{font-size: 3.8rem; font-weight: 700; font-family: 'Poppins'; color: $deepTeal; padding: 1.7rem 0;}
 .contentIntroWrap{background-color: $deepTeal;}
-.contentIntro{padding: 3.4rem 0; font-size: 1.6rem; font-family: 'SUIT'; text-align: center; color: white;}
+.contentIntro{padding: 3.3rem 0; font-size: 1.7rem; font-weight: 500; font-family: 'SUIT'; text-align: center; color: white;}
 .contentMain {margin-top: 2rem;}
   /*.contentMenu {
     $contentMenufontSize: 1.6rem;
@@ -131,16 +136,15 @@ table {width:100%; margin-bottom:0; caption {position: absolute; width: 1px; hei
     }}
   }*/
 }
-.majorTitle {margin-top: 8rem; margin-bottom: 1rem; font-size: 2.8rem; font-weight: 600; font-family: 'Poppins'; text-align: left; color: $outrageousOrange;}
+.majorTitle {margin-top: 8rem; margin-bottom: 1rem; font-size: 3.5rem; font-weight: 600; font-family: 'Poppins'; text-align: left; color: $outrageousOrange;}
 .minorTitle {margin-top: 8rem; margin-bottom: 2rem; font-size: 3.2rem; font-weight: bold; font-family: 'Poppins'; color: $deepTeal;}
 .subTitle {margin-bottom: 3rem; font-size: 2.2rem; font-weight: 600; font-family: 'Poppins'; color: $duskGray;}
-.detailTitle {font-size: 1.5rem; font-weight: normal; font-family: 'Inter'; color: $deepTeal;}
+.detailTitle {font-size: 1.8rem; font-weight: normal; font-family: 'Inter'; color: $deepTeal;}
 .overviewTitle {margin-bottom: 7rem; font-size: 1.6rem; font-family: 'Inter'; color:$duskGray;}
 .introTitle {margin-bottom: 7rem; font-size: 1.6rem; font-family: 'SUIT'; color:$duskGray;}
 
 .introduceWrap {background-color: $deepTeal;}
 .introduce {margin:0 auto; padding:3.5rem 0; font-size: 1.7rem; line-height: 180%; font-weight: 600; text-align: center; color: white;}
-.intro {}
 .majorHeading {}
 .minorHeading {}
 .subHeading {}
@@ -304,7 +308,7 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
 #sidebar {
   position: absolute;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1280px;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
@@ -451,7 +455,7 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
   &Bg1{background-image: url('../images/jumbotron.png'); background-size: cover; background-position: 0% 45%;}
 }
 .jumbotronFooter {
-  padding: 5rem 0; font-size: 4.4rem; line-height: 120%; font-weight: 700; font-family: 'Poppins'; text-align: center; color: white; background: $outrageousOrange; border-bottom: 3rem solid $deepTeal;
+  padding: 5rem 0; font-size: 4.4rem; line-height: 120%; font-weight: 700; font-family: 'Poppins'; text-align: center; color: white; background: $outrageousOrange; border-bottom: 2.7rem solid $deepTeal;
 }
 
 @media (max-width: 1199.98px) {    
@@ -468,6 +472,7 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
   .majorTitle {font-size: 2.6rem; margin-top: 3.5rem;}
   .minorTitle {margin-top: 3rem; margin-bottom: 0.5rem; font-size: 1.8rem; font-weight: 600; font-family: 'POPPINS';}
   .introTitle {margin-bottom: 3rem; font-size: 1.3rem; line-height: 120%; font-family: "SUIT";}
+  .detailTitle {font-size: 1.5rem;}
 
   .footer {padding: 3.2rem 0; font-size: 1.4rem; font-weight: 300;}
   .footerLocation {margin-bottom: 0; display: flex; flex-direction: column;}
@@ -478,3 +483,4 @@ p + .subHeading, figure + .subHeading, div+ .subHeading, table + .subHeading, ul
 ----------------------------------------------------- */
 html:lang(en) {
 }
+ 
