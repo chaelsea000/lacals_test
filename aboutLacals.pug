@@ -74,7 +74,7 @@ block div
                     div.textWrap
                         h4.title 언어 감각, 사고 유연성
                         div.detail
-                            p.intro 내생각을 언어로 풀어내고 다양한 언어로 사고 전환
+                            p 내생각을 언어로 풀어내고 다양한 언어로 사고 전환
                             ul 
                                 li - 다중언어 집중환경 Translanguaging
                                 li - 스캐폴딩 접근, 수업 피드백 노트 작성 시 아이의 생각과 성장 기록
@@ -84,7 +84,7 @@ block div
                     div.textWrap
                         h4.title 정서 지능, 자기 조절력
                         div.detail
-                            p.intro 감정을 인식하고 공감하며, 언어로 감정을 표현
+                            p 감정을 인식하고 공감하며, 언어로 감정을 표현
                             ul
                                 li - 기질/자기조절력 검사(TCI/SRRS)
                                     br 
@@ -477,7 +477,7 @@ block div
                 |"LaCalS에서 아이는 배우는 존재를 넘어, 스스로 이야기하고 표현하는 주인공이 됩니다."
         div.stages.container-fluid
             h4.majorTitle Stages
-            //-p.stagesTitle “Stage · Language · Emotion”
+            //p.stagesTitle “Stage · Language · Emotion”
                 span 아이의 무대 위 성장 여정
             p.detail.mobHide
                 img(src="./images/stages.png")
@@ -508,25 +508,24 @@ block div
                         img(src="./images/contactList4.png")
                         
     style.
-        .introduce {padding: 2.9rem 0;/*추후 layout.scss로 변경*/}
         /*About LacalS*/
         .focus {color: #383838;}
         .focus .majorTitle {margin-bottom: 3rem;}
         .focus .detail {margin-bottom: 3.2rem;}
         /*각 키워드별 설명 추가*/
         .focus .detail li {display: flex; font-size: 1.7rem; margin-bottom: 0.4rem;}
-        .focus .detail li span {width: 10rem; font-weight: 900;}
+        .focus .detail li span {width: 10rem; font-weight: 600; font-family: 'Poppins';}
         .focus .detail li p {width: 100%; margin:0; padding:0;}
 
-        .focusStatement {color:#383838; font-size:1.8rem; line-height: 150%; font-weight: 400;}
+        .focusStatement {color:#383838; font-size:1.8rem; line-height: 150%; font-weight: 400; font-family: 'SUIT';}
 
-        .philosophy .minorTitle {margin-top: 8rem; margin-bottom: 0.5rem; font-size: 3.2rem; font-weight: 500; font-family: 'Poppins'; color: #006c67;}
+        .philosophy .minorTitle {margin-top: 8rem; margin-bottom: 0.5rem; font-size: 3.2rem; font-weight: 500; font-family: 'SUIT'; color: #006c67;}
         .philosophy .philosophyList {margin:0 auto; margin-bottom: 8.5rem; display: flex; justify-content: space-between; font-family: 'SUIT';}
         .philosophy .philosophyList .imgWrap {max-width: 35.5rem; margin-bottom: 3.2rem;}
         .philosophy .philosophyList .imgWrap img {width: 100%;}
         .philosophy .philosophyList .title {margin-bottom: 1.2rem; font-size: 2rem; font-weight: 600;}
-        .philosophy .philosophyList .intro {margin-bottom: 1.2rem; line-height: 100%; color: #006c67;}
         .philosophy .philosophyList .detail {font-size: 1.6rem; font-weight: 400;}
+        .philosophy .philosophyList .detail p {margin-bottom: 1.2rem; line-height: 100%; color: #006c67;}
         .philosophy .philosophyList .detail b {font-weight: 600; color: #006c67;}
         
         .keywordWrap {background-color: #ff5e00;}
@@ -547,8 +546,8 @@ block div
 
         .crewListIntro, .crewListTag {display: none; /*사용안함*/}
         .crew .subTitle {margin-bottom: 2.1rem; font-size: 2.8rem;}
-        .crew .crewList {display: flex; flex-wrap: wrap;}
-        .crew .crewList > li {width: 50%; margin-bottom: 2.5rem;}
+        .crew .crewList {display: flex; flex-wrap: wrap; font-family: 'SUIT';/*crewList 하위 전부 SUIT*/}
+        .crew .crewList > li {flex:1; margin-bottom: 2.5rem;}
         .crew .crewList .crewListImg {margin-right: 2.2rem;}
         .crew .crewList .crewListImg img {width: 29.7rem;}
         .crew .crewList .crewListDetail {display: flex; align-items: flex-end;}
@@ -557,33 +556,33 @@ block div
         .crew .crewList .crewListRole {margin-bottom: 4.7rem; font-size: 1.5rem; line-height: 120%; font-weight: 400; color:#006c67;}
         .crew .crewList .crewListStatement {margin-bottom: 0; font-size: 1.5rem; line-height: 120%; font-weight: 600; color:#383838;}
         
-        .crew .cresListDesc {font-family: 'SUIT';}
         .crew .crewListDesc span {display: block; font-size: 1.4rem;}
-        .crew .crewListDescSummary {padding:2rem; border-radius:1.4rem; background-color: white;}
+        .crew .crewListDescSummary {margin-top: 2.5rem; padding: 3.4rem 2.4rem; border-radius:1.4rem; background-color: white;}
         .crew .crewListDescSummary dl {}
-        .crew .crewListDescHistory {padding:2rem; border-radius:1.4rem; background-color: white;}
-        .crew .crewListDescHistory li {font-size: 1.3rem; line-height: 120%;}
-
-        /*이전*/
-        .crewWrap.change {background-color: orange;}
-        .crewWrap.change .crewListDetail {background-color: white;}
-        /*이전 끝*/
-        .crew .crewListDesc {margin-top: 2.8rem;}
-        .crew .crewListDescSummary {padding: 3.4rem 2.4rem; margin-bottom: 2.2rem;}
         .crew .crewListDescSummary > dl {margin-bottom: 0;}
         .crew .crewListDescSummary > dl dt {position: relative; padding-bottom: 2.2rem; font-size: 2.2rem; line-height: 100%; font-weight: 500; color: #006c67;}
         .crew .crewListDescSummary > dl dt::after {content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 0.1px; background-color: #898989;}
+        .crew .crewListDescSummary > dl dd {margin-top: 2.2rem; margin-bottom: 4.6rem;}
         .crew .crewListDescSummary > dl dd > ul li {font-size: 1.6rem; padding: 0.4rem 0; line-height: 120%;}
         .crew .crewListDescSummary .crewListDescEdu {height: auto;}  
         .crew .crewListDescSummary .crewListDescExp {height: auto;}  
         .crew .crewListDescSummary .crewListDescEtc {height: auto;} 
 
+        .crew .crewListDescHistory {margin-top: 2.4rem; padding:3.5rem 2.4rem; border-radius:1.4rem; background-color: white;}
+        .crew .crewListDescHistory > li {margin-bottom: 1.2rem; font-size: 1.4rem; line-height: 120%;}
+        .crew .crewListDescHistory > li:last-child {margin-bottom: 0;}
+        
+        /*crew 자세히*/
+        .crewWrap.change {background-color: #ff5e00;}
+        .crewWrap.change .subTitle {color: white; background-color: #006c67;}
+        .crewWrap.change .crewList {display: flex; gap: 2.7rem;}
+        .crewWrap.change .crewListDetail {padding: 2.7rem; border-radius: 1.8rem; background-color: white;}
 
         .bici .detail {max-width: 1100px; margin:0 auto; display: flex; justify-content: space-between;}
         .bici .detail .biciIcon {width: 28.7rem;/*100%*/}
         .bici .detail .biciIcon img {width: 100%;}
         .bici .detail .biciPalette {display: flex; flex-direction: column; justify-content: flex-end;}
-        .bici .detail .biciPalette h5 {margin-bottom: 6.5rem; font-size:2.8rem; font-weight: 600; font-family: 'Poppins'}
+        .bici .detail .biciPalette h5 {margin-bottom: 6.5rem; font-size:2.8rem; font-weight: 600; font-family: 'Poppins'; color:#383838;}
         .bici .detail .biciPalette img {margin-bottom: 5rem;}
         .bici .detail .biciPalette p {margin-bottom: 0; font-size: 1.6rem; line-height: 120%; color: #383838;}
 
@@ -595,7 +594,6 @@ block div
 
         @media (max-width: 1199.98px) {
             .overviewTitle {font-size: 1.3rem; margin-bottom: 2.5rem;}         
-            .introduce {padding: 3rem 0.9em; font-size: 1.45rem; line-height: 170%; font-weight: 500; font-family: 'SUIT';}
 
             .focus {}
             .focus .title {}
@@ -627,6 +625,7 @@ block div
             .byWhom .introTitle {margin-bottom: 2.9rem;}
 
             .crew .subTitle {font-size: 1.8rem;}
+            .crew .crewList {gap: initial!important;}
             .crew .crewList > li {margin-bottom: 1.4rem; width: 100%;}
 
             .crew .crewList .crewListName {position: relative;}
@@ -645,11 +644,14 @@ block div
             .crew .crewListDescSummary > dl {margin-bottom: 2rem;}
             .crew .crewListDescSummary > dl dt {padding-bottom: 1.5rem; font-size: 1.4rem;}
             .crew .crewListDescSummary > dl dt::after {height: 0.1px;}
+            .crew .crewListDescSummary > dl dd {margin-bottom: 0.5rem;}
             .crew .crewListDescSummary > dl dd > ul li {font-size: 1.3rem;}
             .crew .crewListDescSummary .crewListDescEdu,
             .crew .crewListDescSummary .crewListDescExp,
             .crew .crewListDescSummary .crewListDescEtc {height: auto;} 
             .crew .crewListDescHistory {}
+            .crew .crewListDescHistory > li {margin-bottom:0; font-size: 1.3rem;}
+            .crew .crewListDescHistory > li:last-child {}
 
             .crewWrap.change {background-color: #ff5e00;}
             .crewWrap.change .subTitle {font-size: 1.8rem; line-height: 100%; color: #006c67; background-color: #ff5e00;}
@@ -675,12 +677,15 @@ block div
     
         .stages {margin-bottom: 8.5rem;}
         .stages .majorTitle {margin-bottom: 5.4rem;}
+        .stages .stagesTitle {font-size: 2.4rem; font-weight: 600; font-family: 'Poppins'; color: #383838;}
+        .stages .stagesTitle span {margin-top: 0.8rem; font-size: 1.5rem; font-weight: 400; font-family: 'SUIT';}
+
         .stages .detail {display: flex; flex-direction: column; align-items: center;}
         .stages .detail img {max-width: 92.7rem; width: 100%;}
 
         .contact .intro {margin-top: 6.6rem; margin-bottom: 4rem; font-size: 1.7rem; line-height: 120%; font-family: 'Poppins'; font-weight: 600;}
         .contact .detail {margin-bottom: 6.3rem;}
-        .contact .detail li {font-size: 1.7rem; font-weight: normal; font-family: 'Poppins';}
+        .contact .detail li {font-size: 1.7rem; font-weight: normal; font-family: 'SUIT';}
         .contact .detail li b {display: inline-block; font-weight: 500; min-width: 21.5rem;}
         .contact .detail li a {}
 
@@ -697,8 +702,8 @@ block div
             .registration .detail ul {margin-top: 2rem;}
 
             .stages {margin-bottom: 4.5rem; padding:0;}
-            .stages .stagesTitle {margin-top: 3.5rem; display: flex; flex-direction: column; align-items: center; font-size: 2.2rem; font-weight: 600; font-family: 'Poppins'; color: #383838;}
-            .stages .stagesTitle span {margin-top: 0.8rem; font-size: 1.5rem; font-weight: 400; font-family: 'SUIT';}
+            .stages .stagesTitle {margin-top: 3.5rem; display: flex; flex-direction: column; align-items: center; font-size: 2.2rem;}
+            .stages .stagesTitle span {margin-top: 0.8rem; font-size: 1.5rem;}
             .stages .detail.mob {margin-top: 4.4rem;}
 
             .contact .intro {margin-top: 3.4rem; margin-bottom: 2rem; font-size: 1.5rem; font-weight: 500;}

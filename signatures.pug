@@ -11,7 +11,7 @@ block div
             |All kids have their own stage to PLAY!
     section#content
         div.lesson.lessonTheme1.container-fluid
-            h2.majorTitle 정규레슨
+            h2.majorTitle 정규 레슨
             p.introTitle 사고의 유연성을 길러 세계 어디서든 품격을 갖춘 글로벌 인재 육성을 목표로 합니다.
             ul.lessonList
                 li 
@@ -204,57 +204,61 @@ block div
 
 
     style.
-        hr {display: none; margin: 0; border-top:0;}
+        hr {margin: 0 auto; max-width: 1280px; border-top:0; border: 1px solid rgba(137,137,137,0.6);}
+            
         #content {margin-bottom: 20.5rem;}
         /*html구조 통일성이 없어서 .lesson, .lessonList, .lessonListContent를 하위속성이 아닌 개별로 선언*/
-        .lesson {}
+        .lesson {font-family: 'SUIT';/*lessonListTitle을 제외한 전부 SUIT*/}
         .lesson .majorTitle {margin-bottom: 0.5rem; font-size: 3rem; font-weight: 500;}
         .lesson .introTitle {font-size: 1.7rem; line-height: 140%;}
         
         .lessonList {margin:0 auto; display: flex; justify-content: space-between;}
-        .lessonList > li {}
+        .lessonList > li {flex: 1;}
 
-        .lessonListTitle {margin-bottom: 1rem; font-size: 3.2rem; font-weight: bold; font-family: 'SUIT'; color: #006c67;}
-        .lessonListIntro {margin-bottom: 5rem; font-size: 1.7rem; font-weight: normal; font-family: 'SUIT'; color: #383838;}
-        .lessonListImgWrap {}
+        .lessonListTitle {margin-bottom: 1rem; font-size: 3.2rem; font-weight: 500; font-family: 'Poppins'; color: #006c67;}
+        .lessonListIntro {margin-bottom: 5rem; font-size: 1.9rem; font-weight: 300; color: #383838;}
+        .lessonListImgWrap {width: 53.4rem; margin-bottom: 4.5rem;}
         .lessonListImgWrap img {width: 100%;}
         
-        .lessonListContent {margin-top: 4.5rem;}
-        .lessonListContent > li {display: flex; font-size: 1.8rem; color: #383838;}
-        .lessonListContent > li b {display: inline-block; min-width: 8rem; font-weight: bold;}
+        .lessonListContent {margin-bottom: 7.7rem;}
+        .lessonListContent > li {margin-bottom: 1rem; display: flex; font-size: 1.8rem; line-height: 140%; color: #383838;}
+        .lessonListContent > li:last-child {margin-bottom: 0;}
+        .lessonListContent > li b {display: inline-block; min-width: 10.8rem; font-weight: 600;}
         .lessonListContent > li p {margin-bottom: 0;}
         .lessonListContent > li span {display: block; font-style: italic;}
 
         .contactInfoWrap {background-color: #ff5e00;}
         .contactInfo {padding: 3.4rem 0; font-size: 1.6rem; font-weight: 600; font-family: 'SUIT'; text-align: center; color: white;}
         
-        .lessonTheme2 .lessonListItem {margin-bottom: 7rem;}
         .lessonTheme2 .lessonListItemList {margin:0 auto; display: flex; justify-content: space-between;}        
         .lessonTheme2 .lessonListItemList > li {}
         .lessonTheme2 .lessonListItemListTitle {margin-bottom: 1rem; font-size: 2.4rem; font-weight: bold; font-family: 'SUIT'; color: #383838;}      
-        .lessonTheme2 .lessonListItemListIntro {margin-bottom: 5.5rem; font-size: 1.4rem; font-weight: 600; font-family: 'SUIT'; color: #383838;}
-        
+        .lessonTheme2 .lessonListItemListIntro {margin-bottom: 5.6rem; font-size: 1.8rem; font-weight: 400; font-family: 'SUIT'; color: #383838;}
+
         @media (max-width: 1199.98px) {
             hr {margin: 0; border-top:0; border: 7px solid #006C67;}
             .lessonList {flex-direction: column;}
-            .lessonList > li {padding: 0; padding-top: 3.2rem; padding-bottom: 7.3rem;}
 
-            .lessonListTitle {margin-bottom: 0rem; font-size: 2.2rem; font-weight: 600;}
-            .lessonListIntro {margin-bottom: 3.6rem;}
+            .lessonListTitle {margin-bottom: 0rem; font-size: 2.2rem; font-weight: 400;/*600*/}
+            .lessonListIntro {font-size: 1.7rem; margin-bottom: 3.6rem;}
+            .lessonListImgWrap {width: 100%; margin-bottom: 2.4rem;}
+            .lessonListContent {}
+            .lessonListContent > li {margin-bottom: 0.7rem; font-size: 1.6rem; line-height: 125%;}
+            .lessonListContent > li:last-child {margin-bottom: 0;}
+            .lessonListContent > li b {min-width: 10.8rem;}
 
-            .lessonListContent {margin-top: 2.2rem;}
-            .lessonListContent > li {font-size: 1.6rem; line-height: 120%; padding: 0.35rem 0; font-weight: 500;}
-            .lessonTheme1 .lessonList > li {border-top: 1px solid #898989;}
+            .lessonTheme1 .lessonList > li:last-child {padding-top: 3.2rem; border-top: 1px solid rgba(137,137,137,0.6);}
+
             .lessonTheme2 .majorTitle {margin-top: 7.6rem;}
-            .lessonTheme3 .majorTitle {margin-top: 7rem;}
+            .lessonTheme3 .majorTitle {margin-top: 7rem; margin-bottom: 2.8rem;}
 
             .lessonTheme2 .lessonListItem:first-of-type {margin-bottom: 3.4rem;} /*클래식레토릭 이전*/
             .lessonTheme2 .lessonListItem:last-of-type .lessonList > li {padding: 0;}
             .lessonTheme2 .lessonListItemList {flex-direction: column;}
-            .lessonTheme2 .lessonListItemList > li {border-top: 1px solid #898989; padding-top: 3.6rem; padding-bottom: 4.4rem;}
-            .lessonTheme2 .lessonListItemList > li:last-child {border-bottom: 1px solid #898989;}
-            .lessonTheme2 .lessonListItemListTitle {font-size: 1.9rem; margin-bottom: 0.5rem; font-weight: 800;}
-            .lessonTheme2 .lessonListItemListIntro {margin-bottom: 3.2rem; font-weight: 500;}
+            .lessonTheme2 .lessonListItemList > li {border-top: 1px solid rgba(137,137,137,0.6);}
+            .lessonTheme2 .lessonListItemList > li:last-child {border-bottom: 1px solid rgba(137,137,137,0.6);}
+            .lessonTheme2 .lessonListItemListTitle {margin-top: 3.6rem; margin-bottom: 0.5rem; font-size: 1.8rem; font-weight: 800;}
+            .lessonTheme2 .lessonListItemListIntro {margin-bottom: 3.2rem; font-size: 1.4rem; line-height: 120%; font-weight: 300;}
         }
         
         @media (max-width: 991.98px) {
