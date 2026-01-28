@@ -632,17 +632,18 @@ block div
             .byWhom .introTitle {margin-bottom: 2.9rem;}
 
             .crew .subTitle {font-size: 1.8rem;}
-            .crew .crewList {gap: initial!important;}
-            .crew .crewList > li {margin-bottom: 1.4rem; width: 100%;}
-
             .crew .crewList .crewListName {position: relative;}
             .crew .crewList .crewListName:after {content: '>'; position: absolute; font-size: 1.7rem; right: 0;}
-            
-            .crew .crewList .crewListImg {margin-right: 0; flex: 1;}
+
+            .crew .crewList {flex-direction: column; gap: initial!important;}
+            .crew .crewList > li {margin-bottom: 1.4rem; width: 100%;}        
+            .crew .crewList .crewListImg {width: 15.5rem; margin-right: 0; flex: 1;}
+            .crew .crewList .crewListImg img {width: 100%;}
             .crew .crewList .crewListText {flex: 1;}
             .crew .crewList .crewListDetail {gap: 1.2rem;}
-            .crew .crewList .crewListName {margin-bottom: 2.5rem; font-weight: 600;}
-            .crew .crewList .crewListRole {margin-bottom: 5rem; line-height: 140%;}
+            .crew .crewList .crewListName {margin-bottom: 0em; font-size: 1.9rem; font-weight: 600;}
+            /*.crew .crewList .crewListRole {margin-bottom: 5rem; line-height: 140%;}*/
+            .crew .crewList .crewListRole {margin-bottom: 1.3rem; font-size: 1.3rem;}
             .crew .crewList .crewListStatement {font-size: 1.3rem; font-weight: 500;}
         
             .crew .crewListDesc {margin-top: 1.2rem;}
